@@ -1,7 +1,7 @@
 
 %Reshape vectors
-FX = reshape(F56_X.',1,[]);
-FY = reshape(F74Y_E.',1, []);
+FX = reshape(FX.',1,[]);
+FY = reshape(F74_Y.',1, []);
 
 %Check if lengths match
 if length(FX) ~= length(FY)
@@ -21,6 +21,7 @@ end
 %Plot
 
 %For Tally x6
-semilogy(FX,FY)
+%semilogx(FX,FY)
+plot(FX, FY)
 xlabel("Energy (MeV)"), ylabel("Flux (MeV/cm2)")
 grid
