@@ -19,20 +19,10 @@ convertIntoGray(FY, err, gray);
 
 tally = "6+ for cell 5";
 
-subplot(1,2,1)
-plot(FX, FY)
-title('Linear plot ' + tally + ' in Polyethilene')
-checkIfGray(gray)
-
-if errors == true
-    errorbar(FX,FY,err)
-end
-
-subplot(1,2,2)
 plot(FX, FY)
 
 if errors == true
-    errorbar(FX,FY,err)
+    errorbar(FX,FY,err.*FY)
 end
 
 title('Linear plot ' + tally + ' in Polyethilene')
