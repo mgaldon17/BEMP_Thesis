@@ -8,7 +8,7 @@ C ******* Block A: Cells
 6 2 -0.9 -2 IMP:N=1 IMP:P=0 $Cell of the box 2 (material, density, location)
 7 1 -0.9 -3 IMP:N=1 IMP:P=0 $Cell of the box 3
 8 1 -0.9 -4 IMP:N=1 IMP:P=0 $Cell of the box 4
-9 3 -1.0 1 2 3 4 IMP:N=1 IMP:P=0 $Void
+9 0 1 2 3 4 IMP:N=1 IMP:P=0 $Void
 
 C ***************************************************************
 C ***************************************************************
@@ -59,7 +59,7 @@ M3 1001.80c -1.7404E-10
         54124.80c -2.30549E-13
 C ***************************************************************
 C ******** Source ***********************************************
-SDEF POS 3 -2 3 PAR=1 ERG=D1 VEC = 0 6 0 DIR = 1 $ position, particle type, energy $Energy is defined in this line? What about SI1?
+SDEF POS 3 2 3 PAR=1 ERG=D1 VEC = 0 6 0 DIR = 1 $ position, particle type, energy $Energy is defined in this line? What about SI1?
 SP1 -2 2 $ Maxwellian spectrum, particle type, energy
 f56:N 5 $Energy deposition in cell 5 [MeV/g] (dose)
 f66:N 6 $Energy deposition in cell 6 [MeV/g] (dose)
