@@ -4,11 +4,12 @@ C *** Geometry 3D: shorturl.at/isJSZ
 C ****** Tally: Dose every 1 cm depth
 C ***************************************************************
 C ******* Block A: Cells
-5 2 -0.997 -1 IMP:N=1 IMP:P=0 $Cell of box 1
-6 2 -0.9 -2 IMP:N=1 IMP:P=0 $Cell of the box 2 (material, density, location)
-7 1 -0.9 -3 IMP:N=1 IMP:P=0 $Cell of the box 3
-8 1 -0.9 -4 IMP:N=1 IMP:P=0 $Cell of the box 4
-9 0 1 2 3 4 IMP:N=1 IMP:P=0 $Void
+15 2 -0.997 -1 IMP:N=1 IMP:P=0 $Cell of box 1
+16 2 -0.9 -2 IMP:N=1 IMP:P=0 $Cell of the box 2 (material, density, location)
+17 1 -0.9 -3 IMP:N=1 IMP:P=0 $Cell of the box 3
+18 1 -0.9 -4 IMP:N=1 IMP:P=0 $Cell of the box 4
+19 1 -0.9 1 2 3 4 -5 IMP:N=1 IMP:P=0 $Void
+20 0 (1 2 3 4 5) IMP:N=0 IMP:P=0 $ Graveyard for particles
 
 C ***************************************************************
 C ***************************************************************
@@ -26,6 +27,7 @@ C End of box 3
 C Beginning of surfaces for box 4
 4 RPP 0 5 3 4 0 5 $(xmin, xmax, ymin, ymax, zmin, zmax) d=3-4
 C End of box 4
+5 rpp -1 6 -1 5 -1 6 $ outer world contour
 
 C ***************************************************************
 C ***************************************************************
@@ -59,13 +61,13 @@ M3 1001.80c -1.7404E-10
         54124.80c -2.30549E-13
 C ***************************************************************
 C ******** Source ***********************************************
-SDEF POS 3 2 3 PAR=1 ERG=D1 VEC = 0 6 0 DIR = 1 $ position, particle type, energy $Energy is defined in this line? What about SI1?
+SDEF POS 2.5 -1 2.5 PAR=1 ERG=D1 $ VEC = 0 1 0 DIR = 1 $ position, particle type, energy $Energy is defined in this line? What about SI1?
 SP1 -2 2 $ Maxwellian spectrum, particle type, energy
-f56:N 5 $Energy deposition in cell 5 [MeV/g] (dose)
-f66:N 6 $Energy deposition in cell 6 [MeV/g] (dose)
-f76:N 7 $Energy deposition in cell 7 [MeV/g] (dose)
-f86:N 8 $Energy deposition in cell 8 [MeV/g] (dose)
-+f6 6
+f56:N 15 $Energy deposition in cell 5 [MeV/g] (dose)
+f66:N 16 $Energy deposition in cell 6 [MeV/g] (dose)
+f76:N 17 $Energy deposition in cell 7 [MeV/g] (dose)
+f86:N 18 $Energy deposition in cell 8 [MeV/g] (dose)
++f6 16
 E56 0.001 100i 10
 E66 0.001 100i 10
 E76 0.001 100i 10
