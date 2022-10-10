@@ -8,7 +8,8 @@ C ******* Block A: Cells
 8 1 -0.9 -2 1 6 -5 IMP:N=1 IMP:P=0 $Cell of the chamber wall (A-150)
 9 1 -0.9 -4 3 5 IMP:N=1 IMP:P=0 $Cell of the cask wall (A-150)
 10 2 -0.9 -3 1 5 IMP:N=1 IMP:P=0 $Internal cask
-11 3 -0.001205 4 2:-6 IMP:N=0 IMP:P=0 $Outside 
+11 3 -0.001205 4 2:-6 -20 IMP:N=1 IMP:P=0 $Outside 
+12 0 20 IMP:N=0 IMP:P=0 $Graveyard
 
 C ***************************************************************
 C ***************************************************************
@@ -21,6 +22,7 @@ C Beginning of surfaces
 4 SY 25 85 
 5 PY 25
 6 PY 1
+20 RPP -100 100 -100 150 -100 100
  
 C ***************************************************************
 C ***************************************************************
@@ -58,7 +60,7 @@ M3 1001.80c -1.7404E-10
         54124.80c -2.30549E-13
 C ***************************************************************
 C ******** Source ***********************************************
-SDEF POS 0 1.1 0 PAR=1 ERG=D1 VEC = 0 100 0 DIR = 1 $ position, particle type, energy
+SDEF POS 0 0 0 PAR=1 ERG=D1 VEC = 0 100 0 DIR = 1 $ position, particle type, energy
 SP1 -2 2 $ Maxwellian spectrum, particle type, energy
 f76:N 7 $Energy deposition in cell 7 [MeV/g] (dose)
 f106:N 10 $Energy deposition in cell 10 [MeV/g] (dose)

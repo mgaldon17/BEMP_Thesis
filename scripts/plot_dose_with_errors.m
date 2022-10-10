@@ -1,8 +1,8 @@
 
 %Reshape vectors
 FX = reshape(FX.',[],1);
-FY = reshape(FY_76.',[],1);
-err = reshape(err.',[],1);
+FY = reshape(F86_Y.',[],1);
+err = reshape(err_86.',[],1);
 gray = true;
 errors = true;
 
