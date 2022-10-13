@@ -1,8 +1,8 @@
 
 %Reshape vectors
 FX = reshape(FX.',[],1);
-FY = reshape(F86_Y.',[],1);
-err = reshape(err_86.',[],1);
+FY = reshape(FY_166.',[],1);
+err = reshape(err_166.',[],1);
 gray = true;
 errors = true;
 
@@ -17,10 +17,10 @@ convertIntoGray(FY, err, gray);
 
 %For Tally 6
 
-tally = "F76";
+tally = "F156";
 
 plot(FX, FY)
-
+legend()
 if errors == true
     errorbar(FX,FY,err.*FY)
 end
@@ -28,3 +28,4 @@ end
 title('Linear plot ' + tally + ' in water')
 checkIfGray(gray)
 grid
+hold on
