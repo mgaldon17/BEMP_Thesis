@@ -3,17 +3,17 @@ C ****** 1.10.2022
 C ****** Simulation of the ionization chamber type 33051
 C ***************************************************************
 C ******* Block A: Cells
-7 2 -0.9 -1 6 -5 21 IMP:H=1 IMP:n=0  $Cell of wall (water)
+7 2 -1.06409E-03 -1 6 -5 21 IMP:H=1 IMP:n=0  $Cell of wall (water)
 8 1 -1.127 -2 1 6 -5  IMP:H=1 IMP:n=0 $Cell of the outer wall (A-150)
 9 1 -1.127 -4 3 5 IMP:H=1 IMP:n=0 $Cell of the outermost cask wall (A-150)
-10 2 -1.127 -3 5 22 IMP:H=1 IMP:n=0 $Internal cask wall 
+10 2 -1.06409E-03 -3 5 22 IMP:H=1 IMP:n=0 $Internal cask wall 
 11 3 -0.001205 4 5 -20 IMP:H=1 IMP:n=0 $Air
 12 3 -0.001205 -23 -20 IMP:H=1 IMP:N=0 $Air 
 c 13 3 -0.001205 -5 6 2 -20 IMP:H=1 IMP:N=0 $Air 
 14 0 20 IMP:H=0 IMP:N=0 $Graveyard
 15 1 -1.127 -21 6 -5 IMP:H=0.6 IMP:N=0.3  $Innermost chamber
 16 1 -1.127 -22 5 IMP:H=0.6 IMP:N=0.3  $Innermost sphere
-17 2 -1.127 -24 -6 23 -20 IMP:H=1 IMP:n=0
+17 4 -0.9 -24 -6 23 -20 IMP:H=1 IMP:n=0
 18 3 -0.001205 23 (24:25:-26:2) #19 #17 -20 -5 IMP:H=1 IMP:n=0
 19 1 -1.127 23 -25 24 -26 IMP:H=1 IMP:n=0
 
@@ -24,12 +24,12 @@ C ***************************************************************
 C Beginning of surfaces
 1 CY 0.4
 2 CY 0.7
-3 SY 4.05 0.4
-4 SY 4.05 0.7
-5 PY 4.05
-6 PY 3.05
+3 SY 4.33 0.4
+4 SY 4.33 0.7
+5 PY 4.33
+6 PY 4.05
 21 CY 0.2
-22 SY 4.05 0.2
+22 SY 4.33 0.2
 23 PY 1
 24 CY 0.75
 25 CY 0.85
@@ -40,17 +40,19 @@ C ***************************************************************
 C ***************************************************************
 C Block C: Materials and source
 C ***************************************************************
-C Plastic A-150
+C Plastic A-150 (d=1.127 g/cm3)
 M1 1001.80c -0.101327
         6000.80c -0.775501
         7014.80c -0.035057
         8016.80c -0.052316
         9019.80c -0.017422
         20000.60c -0.018378
-C Water
-M2 1001.80c -0.111894 $ elemental H mass fraction
-        8016.80c -0.888106 $ elemental O mass fraction
-C Dry air
+C Tissue equivalent gas (d=1.06409E-03 g/cm3)
+M2 1001.80c -0.101869
+        6000.80c -0.456179
+        7014.80c -0.035172
+        8016.80c -0.406780
+C Dry air (d=0.001205 g/cm3)
 M3 1001.80c -1.7404E-10
         1002.80c -1.3065E-14
         2003.80c -8.3540E-16
@@ -70,6 +72,9 @@ M3 1001.80c -1.7404E-10
         36084.80c -2.69359E-12
         36086.80c -7.98498E-13
         54124.80c -2.30549E-13
+C Polyethlyene (d=0.9 g/cm3)
+M4 1001.80c 2
+        6000.80c 1
 C ***************************************************************
 C ******** Source ***********************************************
 SDEF POS 0 0 0 PAR=P ERG=D1 VEC = 0 1 0 DIR = 1 $ position, particle type, energy
