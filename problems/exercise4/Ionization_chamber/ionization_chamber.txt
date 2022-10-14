@@ -3,19 +3,19 @@ C ****** 1.10.2022
 C ****** Simulation of the ionization chamber type 33051
 C ***************************************************************
 C ******* Block A: Cells
-7 2 -1.06409E-03 -1 6 -5 21 IMP:H=1 IMP:n=0  $Cell of wall (water)
-8 1 -1.127 -2 1 6 -5  IMP:H=1 IMP:n=0 $Cell of the outer wall (A-150)
-9 1 -1.127 -4 3 5 IMP:H=1 IMP:n=0 $Cell of the outermost cask wall (A-150)
-10 2 -1.06409E-03 -3 5 22 IMP:H=1 IMP:n=0 $Internal cask wall 
-11 3 -0.001205 4 5 -20 IMP:H=1 IMP:n=0 $Air
-12 3 -0.001205 -23 -20 IMP:H=1 IMP:N=0 $Air 
-c 13 3 -0.001205 -5 6 2 -20 IMP:H=1 IMP:N=0 $Air 
-14 0 20 IMP:H=0 IMP:N=0 $Graveyard
-15 1 -1.127 -21 6 -5 IMP:H=0.6 IMP:N=0.3  $Innermost chamber
-16 1 -1.127 -22 5 IMP:H=0.6 IMP:N=0.3  $Innermost sphere
-17 4 -0.9 -24 -6 23 -20 IMP:H=1 IMP:n=0
-18 3 -0.001205 23 (24:25:-26:2) #19 #17 -20 -5 IMP:H=1 IMP:n=0
-19 1 -1.127 23 -25 24 -26 IMP:H=1 IMP:n=0
+7 2 -1.06409E-03 -1 6 -5 21 IMP:E=1 IMP:n=0.2 IMP:P=1 $Cell of wall (water)
+8 1 -1.127 -2 1 6 -5 IMP:E=0.5 IMP:n=0.2 IMP:P=1  $Cell of the outer wall (A-150)
+9 1 -1.127 -4 3 5 IMP:E=0.5 IMP:n=0.2 IMP:P=1  $Cell of the outermost cask wall (A-150)
+10 2 -1.06409E-03 -3 5 22 IMP:E=0.5 IMP:n=0.2 IMP:P=1  $Internal cask wall 
+11 3 -0.001205 4 5 -20 IMP:E=0.5 IMP:n=0.2 IMP:P=1  $Air
+12 3 -0.001205 -23 -20 IMP:E=0.5 IMP:n=0.2 IMP:P=1  $Air 
+c 13 3 -0.001205 -5 6 2 -20 IMP:E=0.5 IMP:n=0.2 IMP:P=1  $Air 
+14 0 20 IMP:E=0 IMP:n=0 IMP:P=0  $Graveyard
+15 1 -1.127 -21 6 -5 IMP:E=1.5 IMP:n=1.2 IMP:P=2   $Innermost chamber
+16 1 -1.127 -22 5 IMP:E=1.5 IMP:n=1.2 IMP:P=2   $Innermost sphere
+17 4 -0.9 -24 -6 23 -20 IMP:E=0.5 IMP:n=0.2 IMP:P=1 
+18 3 -0.001205 23 (24:25:-26:2) #19 #17 -20 -5 IMP:E=0.5 IMP:n=0.2 IMP:P=1 
+19 1 -1.127 23 -25 24 -26 IMP:E=0.5 IMP:n=0.2 IMP:P=1 
 
 C ***************************************************************
 C ***************************************************************
@@ -73,17 +73,17 @@ M3 1001.80c -1.7404E-10
         36086.80c -7.98498E-13
         54124.80c -2.30549E-13
 C Polyethlyene (d=0.9 g/cm3)
-M4 1001.80c 2
-        6000.80c 1
+M4 1001.80c -0.143711
+        6000.80c -0.856289
 C ***************************************************************
 C ******** Source ***********************************************
-SDEF POS 0 0 0 PAR=P ERG=D1 VEC = 0 1 0 DIR = 1 $ position, particle type, energy
+SDEF POS 0 0 0 PAR=N ERG=D1 VEC = 0 1 0 DIR = 1 $ position, particle type, energy
 SP1 -2 3 $ Maxwellian spectrum, energy
-+f156 15 $Energy deposition in cell 15 [MeV/g] (dose)
-+f166 16 $Energy deposition in cell 16 [MeV/g] (dose)
-E156 0.001 100i 10
-E166 0.001 100i 10
-MODE N P E H
-c PHYS:D 100.0 0.1 $max sigma table energy; analog capture below 100 keV
+f176:N 17 $Energy deposition in cell 17 [MeV/g] (dose)
+f166:N 16 $Energy deposition in cell 166 [MeV/g] (dose)
+c E176 0.001 100i 10
+c E166 0.001 100i 10
+MODE N P E
+c PHYS:P 100.0 0.1 $max sigma table energy; analog capture below 100 keV
 nps 10E4 $Number of particles
 prdmp 2j 1 $Print and dump card; PRDMP NDP NDM MCT NDMP DMMP with 1 for writing tallies for plotting
