@@ -62,7 +62,7 @@ M4 1001.80c -0.143711
         6000.80c -0.856289
 C ***************************************************************
 C ******** Source ***********************************************
-SDEF POS 0 0 0 PAR=N ERG=D1 VEC = 0 1 0 DIR = 1 $ position, particle type, energy
+SDEF POS 0 0 0 PAR=H ERG=D1 VEC = 0 1 0 DIR = 1 $ position, particle type, energy
 SP1 -2 3 $ Maxwellian spectrum, energy
 +f176 17 $Energy deposition in cell 17 [MeV/g] (dose)
 +f166 16 $Energy deposition in cell 16 [MeV/g] (dose)
