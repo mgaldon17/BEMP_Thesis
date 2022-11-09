@@ -7,11 +7,14 @@ C ******* Block A: Cells
 8 1 -1.127 -2 1 6 -5                                    $Cell of the outer wall (A-150)
 9 1 -1.127 -4 3 5                                       $Cell of the outermost cask wall (A-150)
 10 2 -1.06409E-03 -3 5 22                               $Internal cask wall 
+11 3 -0.001205 4 5 -20                                  $Air
+12 3 -0.001205 -23 -20                                  $Air 
+c 13 3 -0.001205 -5 6 2 -20                             $Air 
 14 0 20                                                 $Graveyard
-15 1 -1.127 -21 -5 6                                   $Innermost chamber
+15 1 -1.127 -21 6 -5                                    $Innermost chamber
 16 1 -1.127 -22 5                                       $Innermost sphere
 17 4 -0.9 -24 -6 23 
-18 3 -0.001205 -20 #17 #19 #8 #9 #7 #15 #16 #10 
+18 3 -0.001205 23 (24:25:-26:2) #19 #17 -20 -5 
 19 1 -1.127 23 -25 24 -26 
 
 C ***************************************************************
@@ -59,26 +62,20 @@ M4 1001.80c -0.143711
         6000.80c -0.856289
 C ***************************************************************
 C ******** Source ***********************************************
-SDEF POS 0 4 0 X=D2 Y=0 Z=D1  PAR=N ERG=1.0 VEC = 0 1 0 DIR = 1      $ position, particle type, energy
-SI1 -0.5 0.5                                                 $ sampling range Ymin to Ymax
-SP1 0 1                                                 $ weighting for y sampling: here constant
-SI2 -0.5 0.5                                            $ sampling range ZYmin to Zmax
-SP2 0 1                                                 $ weighting for z sampling: here constant
-c +f106 10                                              $Energy deposition in cell 17 [MeV/g] (dose)
-c +f76 7                                                $Energy deposition in cell 16 [MeV/g] (dose)
-c E106 0.001 100i 10
-c E76 0.001 100i 10
+SDEF POS 3 4.3 0 PAR=N ERG=D1 VEC = -1 0 0 DIR = 1 $ position, particle type, energy
+c SP1 -2 3 $ Maxwellian spectrum, energy
+SI1 1 5 $ sampling range Xmin to Xmax
+SP1 0 1 $ weighting for x sampling: here constant
+SI2 1.3 4.3 $ sampling range Ymin to Ymax
+SP2 0 1 $ weighting for y sampling: here constant
++f106 10 $Energy deposition in cell 17 [MeV/g] (dose)
++f76 7 $Energy deposition in cell 16 [MeV/g] (dose)
+E106 0.001 100i 10
+E76 0.001 100i 10
 MODE N H E
-IMP:N 2 3r 0 2 4r
-IMP:E 1 3r 0 1 4r
-IMP:H 1.5 3r 0 1.5 4r
+IMP:N 2 5r 0 2 4r
+IMP:E 1 5r 0 1 4r
+IMP:H 1.5 5r 0 1.5 4r
 PHYS:P 100.0 0.1 $max sigma table energy; analog capture below 100 keV
 nps 10E4 $Number of particles
 prdmp 2j 1 $Print and dump card; PRDMP NDP NDM MCT NDMP DMMP with 1 for writing tallies for plotting
-C **************************************************************
-C ******** TMESH ***********************************************
-c --- mesh tally specification
-fmesh4:n geom=xyz origin= 3 3 -1
-                imesh=5 iints=50
-                jmesh=5 jints=100
-                kmesh=1 kints=200
