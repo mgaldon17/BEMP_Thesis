@@ -1,10 +1,10 @@
 
 %Reshape vectors
 FX = reshape(FX.',[],1);
-FY_156 = reshape(FY_156.',[],1);
-err_156 = reshape(err_156.',[],1);
-FY_166 = reshape(FY_166.',[],1);
-err_166 = reshape(err_166.',[],1);
+FY_156 = reshape(FY_76.',[],1);
+err_156 = reshape(err_76.',[],1);
+FY_166 = reshape(FY_106.',[],1);
+err_166 = reshape(err_106.',[],1);
 gray = true;
 errors = true;
 
@@ -19,17 +19,17 @@ convertIntoGray(FY_2, err_2, gray);
 %Plot
 
 
-plot(FX, FY_1, 'r') %F156
+plot(FX, FY_1, 'r') %F76
 hold on
-plot(FX, FY_2, 'b') %F166
+plot(FX, FY_2, 'b') %F176
 hold on
-title('Linear plot of H')
+title('Linear plot of E with 2x2 planar source in (3, 2.3, 0)')
 checkIfGray(gray)
 if errors == true
     errorbar(FX,FY_1,err_1.*FY_1, 'r', 'HandleVisibility','off')
     errorbar(FX,FY_2,err_2.*FY_2, 'b', 'HandleVisibility','off')
 end
 hold off
-%legend('F156', 'F166')
+legend('F76', 'F106')
 
 
