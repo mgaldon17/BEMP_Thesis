@@ -1,0 +1,3 @@
+#ignore all kind of files
+scripts/Python/MCNP/output
+scripts/Python/MCNP/input_files
