@@ -3,12 +3,12 @@ C ****** 1.10.2022
 C ****** Simulation of the ionization chamber type 33051
 C ***************************************************************
 C ******* Block A: Cells
-7 2 -1.06409E-03 -1 6 -5 21                             $Cell of wall (water)
+7 2 -0.4E-3 -1 6 -5 21                             $Cell of wall (water)
 8 1 -1.127 -2 1 6 -5                                    $Cell of the outer wall (A-150)
 9 1 -1.127 -4 3 5                                       $Cell of the outermost cask wall (A-150)
-10 2 -1.06409E-03 -3 5 22                               $Internal cask wall 
+10 2 -0.4E-3 -3 5 22                               $Internal cask wall 
 14 0 20                                                 $Graveyard
-15 1 -1.127 -21 -5 6                                   $Innermost chamber
+15 1 -1.127 -21 -5 6                                    $Innermost chamber
 16 1 -1.127 -22 5                                       $Innermost sphere
 17 4 -0.9 -24 -6 23 
 18 3 -0.001205 -20 #17 #19 #8 #9 #7 #15 #16 #10 
@@ -21,17 +21,17 @@ C ***************************************************************
 C Beginning of surfaces
 1 CY 0.4
 2 CY 0.7
-3 SY 4.33 0.4
-4 SY 4.33 0.7
-5 PY 4.33
-6 PY 4.05
+3 SY 6.35 0.4
+4 SY 6.35 0.7
+5 PY 6.35
+6 PY 4.25
 21 CY 0.2
-22 SY 4.33 0.2
+22 SY 6.35 0.2
 23 PY 1
 24 CY 0.75
 25 CY 0.85
 26 PY 1.5
-20 RPP -1 6 -1 6 -2 2 $Outer world contour
+20 RPP -1 55 -1 8 -3 3 $Outer world contour
 
 C ***************************************************************
 C ***************************************************************
@@ -44,7 +44,7 @@ M1 1001.80c -0.101327
         8016.80c -0.052316
         9019.80c -0.017422
         20000.60c -0.018378
-C Tissue equivalent gas (d=1.06409E-03 g/cm3)
+C Tissue equivalent gas (d=1.06409E-03 g/cm3) $0.2E-3, 0.5E-3, 1.06409E-3, 1.5E-3, 2E-3, 4E-4 8E-3, 1E-2, 3E-2
 M2 1001.80c -0.101869
         6000.80c -0.456179
         7014.80c -0.035172
@@ -59,26 +59,30 @@ M4 1001.80c -0.143711
         6000.80c -0.856289
 C ***************************************************************
 C ******** Source ***********************************************
-SDEF POS 0 4 0 X=D2 Y=0 Z=D1  PAR=N ERG=1.0 VEC = 0 1 0 DIR = 1      $ position, particle type, energy
-SI1 -0.5 0.5                                                 $ sampling range Ymin to Ymax
+SDEF POS 50 3.7625 0 X=50 Y=D2 Z=D1 PAR=E ERG=1.9 VEC = -1 0 0 DIR = 1          $ position, particle type, energy
+SI1 -3 3                                                $ sampling range Ymin to Ymax
 SP1 0 1                                                 $ weighting for y sampling: here constant
-SI2 -0.5 0.5                                            $ sampling range ZYmin to Zmax
+SI2 2.525 5.0                                           $ sampling range ZYmin to Zmax
 SP2 0 1                                                 $ weighting for z sampling: here constant
-c +f106 10                                              $Energy deposition in cell 17 [MeV/g] (dose)
-c +f76 7                                                $Energy deposition in cell 16 [MeV/g] (dose)
+c +f106 10                                                $ Energy deposition in cell 10 [MeV/g] (dose)
+c f16:N 10                                                $ Energy deposition in cell 10 for N [MeV/g] (dose)
+f26:E 10                                                $ Energy deposition in cell 10 for E [MeV/g] (dose)
+c f36:#,H 10                                              $ Energy deposition in cell 10 for heavy ions [MeV/g] (dose)
 c E106 0.001 100i 10
-c E76 0.001 100i 10
-MODE N H E
-IMP:N 2 3r 0 2 4r
+c E16 0.001 100i 10
+E26 1.9
+c E36 0.001 100i 10
+MODE N P E #
+IMP:N 1 3r 0 2 4r
 IMP:E 1 3r 0 1 4r
-IMP:H 1.5 3r 0 1.5 4r
-PHYS:P 100.0 0.1 $max sigma table energy; analog capture below 100 keV
+IMP:# 1 3r 0 1.5 4r
+c PHYS:P 100.0 0.1 $max sigma table energy; analog capture below 100 keV
 nps 10E4 $Number of particles
 prdmp 2j 1 $Print and dump card; PRDMP NDP NDM MCT NDMP DMMP with 1 for writing tallies for plotting
 C **************************************************************
 C ******** TMESH ***********************************************
 c --- mesh tally specification
-fmesh4:n geom=xyz origin= 3 3 -1
-                imesh=5 iints=50
-                jmesh=5 jints=100
-                kmesh=1 kints=200
+c fmesh4:n geom=xyz origin= 3 3 -1
+c                 imesh=5 iints=50
+c                 jmesh=5 jints=100
+c                 kmesh=1 kints=200
