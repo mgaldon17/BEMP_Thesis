@@ -1,4 +1,4 @@
-import os
+import matplotlib.pyplot as plt
 import MCNP
 
 # Conversion rate from MeV/g to Gray
@@ -6,41 +6,65 @@ import MCNP
 con_rate = 6.24E9
 
 
-def createVectors(dataname, gray):
-    dose = []  # Dose in MeV/g (y)
-    error = []  # Absolute error
-    density = MCNP.values  # Density in g/cm3 (x)
+class Analyzer:
 
-    for d in dataname:
+    def __init__(self, dataname, gray, plot):
+        self.dataname = dataname
+        self.gray = gray
+        self.plot = plot
 
-        f = iter(open(d))
+    def analyze(self):
 
-        for lines in f:
-            if 'vals' in lines:
-                vals = next(f).strip()
-                dose.append(float(vals.split(' ')[0]))
-                error.append(float(vals.split(' ')[1]))
+        dose = []  # Dose in MeV/g (y)
+        error = []  # Absolute error
+        density = list(MCNP.values)  # Density in g/cm3 (x)
 
-        # Relative error
-        rel_error = calculateRelError(dose, error)
-        if gray:
-            convertIntoGray(dose)
+        for d in self.dataname:
 
-    print(density, dose, rel_error)
+            f = iter(open(d))
 
+            for lines in f:
+                if 'vals' in lines:
+                    vals = next(f).strip()
+                    dose.append(float(vals.split(' ')[0]))
+                    error.append(float(vals.split(' ')[1]))
 
-def calculateRelError(dose, error):
-    rel_error = []
-    for f, b in zip(dose, error):
-        rel_error.append(float(f) * float(b))
-    return rel_error
+                rel_error = self.calculateRelError(dose, error)
 
+            if self.gray:
+                self.convertIntoGray(dose, rel_error)
 
-def convertIntoGray(dose):
-    for d in range(len(dose)):
-        x = float(dose[d])
-        x /= con_rate
+            else:
+                pass
 
+        if self.plot:
+            self.savePlot(density, dose, rel_error)
 
-if __name__ == '__main__':
-    createVectors(True)
+        return dose, density, rel_error
+
+    def calculateRelError(self, dose, error):
+        rel_error = []
+        for f, b in zip(dose, error):
+            rel_error.append(float(f) * float(b))
+
+        return rel_error
+
+    def convertIntoGray(self, dose, rel_error):
+        for d in range(len(dose)):
+            x = float(dose[d])
+            x /= con_rate
+
+        for r in range(len(rel_error)):
+            x = float(rel_error[r])
+            x /= con_rate
+
+    def savePlot(self, X, Y, rel_error):
+
+        plt.plot(X, Y)
+
+        plt.errorbar(X, Y, rel_error)  # Relative error of dose
+        plt.ylabel('Dose (Gray)')
+        plt.xlabel('Density (g/cm3)')
+        plt.title('Dose vs. density @1.9 MeV')
+
+        plt.savefig("output.jpg")

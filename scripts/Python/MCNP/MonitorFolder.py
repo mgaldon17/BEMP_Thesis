@@ -1,3 +1,4 @@
+import logging
 import os
 import time
 from watchdog.observers import Observer
@@ -38,7 +39,7 @@ if __name__ == "__main__":
     event_handler = MonitorFolder()
     observer = Observer()
     observer.schedule(event_handler, path=src_path, recursive=True)
-    print("Monitoring started")
+    logging.info("Monitoring started")
 
     observer.start()
 
