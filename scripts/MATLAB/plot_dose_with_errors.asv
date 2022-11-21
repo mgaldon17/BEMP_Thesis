@@ -1,0 +1,52 @@
+
+%Reshape vectors
+FX = reshape(FX.',[],1);
+FY = reshape(F6_Y_P.',[],1);
+err = reshape(F6_Y_P_err.',[],1);
+gray = true;
+conversion = 6.24E9; %1 gray in MeV/g is 6.24E9 
+tally = "6+ for cell 5";
+
+%Check if lengths match
+if length(FX) ~= length(FY)
+    fprintf("\nCorrecting length of vectors...\n")
+    while length(FX)<length(FY)
+        FY(end)=[];
+        err(end)=[];
+    end
+
+    fprintf("Length FX: %d\n", length(FX))
+    fprintf("Length FY: %d\n", length(FY))
+else
+    
+
+end
+
+%Convert dose in MeV/g into gray
+if gray == true
+    for i=1:length(FY)
+        FY(i)=FY(i)./conversion;
+        err(i)=err(i)./conversion;
+    end
+
+end
+
+
+%Plot
+
+%For Tally 6
+subplot(1,2,1)
+plot(FX, FY)
+title('Linear plot ' + tally + ' in Polyethilene')
+xlabel("Energy (J)")
+if (gray =true)
+    ylabel("Dose (gray)")
+    e
+end
+
+subplot(1,2,2)
+plot(FX, FY)
+errorbar(FX,FY,err)
+title('Linear plot ' + tally + ' in Polyethilene')
+xlabel("Energy (J)"), ylabel("Dose (gray)")
+grid
