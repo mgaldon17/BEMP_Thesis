@@ -1,0 +1,77 @@
+MCNP Runfile for 
+C ****** 1.10.2022
+C ****** Simulation of the ionization chamber type 33051
+C ***************************************************************
+C ******* Block A: Cells
+7 2 -1.06409E-03 -1 6 -5 21                             $Cell of wall (water)
+8 1 -1.127 -2 1 6 -5                                    $Cell of the outer wall (A-150)
+9 1 -1.127 -4 3 5                                       $Cell of the outermost cask wall (A-150)
+10 2 -1.06409E-03 -3 5 22                               $Internal cask wall 
+11 3 -0.001205 4 5 -20                                  $Air
+12 3 -0.001205 -23 -20                                  $Air 
+c 13 3 -0.001205 -5 6 2 -20                             $Air 
+14 0 20                                                 $Graveyard
+15 1 -1.127 -21 6 -5                                    $Innermost chamber
+16 1 -1.127 -22 5                                       $Innermost sphere
+17 4 -0.9 -24 -6 23 
+18 3 -0.001205 23 (24:25:-26:2) #19 #17 -20 -5 
+19 1 -1.127 23 -25 24 -26 
+
+C ***************************************************************
+C ***************************************************************
+C Block B: Planes
+C ***************************************************************
+C Beginning of surfaces
+1 CY 0.4
+2 CY 0.7
+3 SY 4.33 0.4
+4 SY 4.33 0.7
+5 PY 4.33
+6 PY 4.05
+21 CY 0.2
+22 SY 4.33 0.2
+23 PY 1
+24 CY 0.75
+25 CY 0.85
+26 PY 1.5
+20 RPP -1 6 -1 6 -2 2 $Outer world contour
+
+C ***************************************************************
+C ***************************************************************
+C Block C: Materials and source
+C ***************************************************************
+C Plastic A-150 (d=1.127 g/cm3)
+M1 1001.80c -0.101327
+        6000.80c -0.775501
+        7014.80c -0.035057
+        8016.80c -0.052316
+        9019.80c -0.017422
+        20000.60c -0.018378
+C Tissue equivalent gas (d=1.06409E-03 g/cm3)
+M2 1001.80c -0.101869
+        6000.80c -0.456179
+        7014.80c -0.035172
+        8016.80c -0.406780
+C Dry air (d=0.001205 g/cm3)
+M3 6012.80c -0.000124
+        7014.80c -0.755267 
+        8016.80c -0.231781 
+        18040.80c -0.012827 
+C Polyethlyene (d=0.9 g/cm3)
+M4 1001.80c -0.143711
+        6000.80c -0.856289
+C ***************************************************************
+C ******** Source ***********************************************
+SDEF POS 0 0 0 PAR=N ERG=D1 VEC = 0 1 0 DIR = 1 $ position, particle type, energy
+SP1 -2 3 $ Maxwellian spectrum, energy
++f176 17 $Energy deposition in cell 17 [MeV/g] (dose)
++f166 16 $Energy deposition in cell 16 [MeV/g] (dose)
+E176 0.001 100i 10
+E166 0.001 100i 10
+MODE N H E
+IMP:N 2 2 2 2 2 2 0 2 2 2 2 2
+IMP:E 1 1 1 1 1 1 0 1 1 1 1 1
+IMP:H 1.5 1.5 1.5 1.5 1.5 1.5 0 1.5 1.5 1.5 1.5 1.5
+PHYS:P 100.0 0.1 $max sigma table energy; analog capture below 100 keV
+nps 10E4 $Number of particles
+prdmp 2j 1 $Print and dump card; PRDMP NDP NDM MCT NDMP DMMP with 1 for writing tallies for plotting
