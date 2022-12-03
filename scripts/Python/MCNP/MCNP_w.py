@@ -1,4 +1,5 @@
-import time
+import os.path
+from pathlib import Path
 import numpy as np
 import os
 import logging
@@ -7,17 +8,18 @@ import queue
 
 # Configuration
 
-os.environ["DATAPATH"] = "/Users/maga2/MCNP/MCNP_DATA"
+
 values = np.arange(0.8E-3, 1.2, 0.05)  # Density values
-input_file_name = "input.txt"
-OUTPUT = "output/"
+input_file_name = "/input.txt"
+OUTPUT = "output"
 q = queue.Queue()
 datanames = []  # Datanames of the mctax files containing the dose info
 
 
 class MCNP():
 
-    def __init__(self, density, input_file):
+    def __init__(self, density):
+
         self.density = density
         self.input_file = '''MCNP Runfile for
                         C ****** 1.10.2022
@@ -443,14 +445,14 @@ class MCNP():
         return self.input_file
 
     def runMCNP(self, gray, plot):
-        logging.info("DATAPATH variable set to " + """/Users/maga2/MCNP/MCNP_DATA""")
+        logging.info("DATAPATH variable set to " + """Z:\MCNP\MCNP_DATA""")
         # Change working dir to output for file creation purposes
         os.chdir(OUTPUT)
         logging.warning("Working directory changed to " + OUTPUT)
 
         for d in values:
             density = str(d)
-            input_file = MCNP(density, '').get_input_file()
+            input_file = MCNP(density).get_input_file()
 
             file = open(input_file_name, 'w')
             file.write(input_file)
@@ -466,7 +468,7 @@ class MCNP():
         logging.warning("Working directory changed back to root")
         logging.warning("----- END OF THE SCRIPT -----")
 
-    def format_input_file(self, input_file_name):
+    def format_input_file(self):
         formatted_input = ''
         f0 = open(input_file_name)
         n = 0
@@ -484,3 +486,11 @@ class MCNP():
 
         f.close()
         f0.close()
+
+    def set_env_variables(self):
+
+        home = str(Path.home())
+        with open('env_variables_w.txt', encoding='utf8') as f:
+            for line in f:
+                os.environ[line.split(' ')[0]] = line.split(' ')[1]
+                os.path.join(home, line.split(' ')[0])
