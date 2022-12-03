@@ -5,6 +5,7 @@ import self as self
 
 from MonitorFolder import MonitorFolder
 from MCNP import MCNP
+from MCNP_w import MCNP as MCNP_w
 from watchdog.observers import Observer
 
 if __name__ == '__main__':
@@ -12,6 +13,7 @@ if __name__ == '__main__':
     t = Timer()
     plot = True
     gray = True
+    w = True
     event_handler = MonitorFolder()
     observer = Observer()
     observer.schedule(event_handler, path=OUTPUT_PATH, recursive=True)
@@ -19,5 +21,11 @@ if __name__ == '__main__':
     t.start()
     logging.info("Monitoring started")
     watcher = Thread(observer.start())
-    run = Thread(MCNP.runMCNP(self, gray, plot))
+    if w:
+
+
+        MCNP_w.set_env_variables(MCNP_w)
+        run = Thread(MCNP_w.runMCNP(self, gray, plot))
+    else:
+        run = Thread(MCNP.runMCNP(self, gray, plot))
     t.stop()
