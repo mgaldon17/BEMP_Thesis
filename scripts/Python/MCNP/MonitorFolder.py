@@ -18,13 +18,14 @@ class MonitorFolder(FileSystemEventHandler):
 
         if mctan[:2] == "mc":
             q.put(mctan)
-        self.checkFolderSize(event.src_path)
+        #self.checkFolderSize(event.src_path)
 
     def on_modified(self, event):
-        # print(event.src_path, event.event_type)
-        self.checkFolderSize(event.src_path)
+        pass
+        #self.checkFolderSize(event.src_path)
 
     def checkFolderSize(self, src_path):
+        print(os.path.getsize(src_path))
         if os.path.isdir(src_path):
             if os.path.getsize(src_path) > self.FILE_SIZE:
                 pass
@@ -34,7 +35,7 @@ class MonitorFolder(FileSystemEventHandler):
 
 
 if __name__ == "__main__":
-    src_path = "output/"
+    src_path = "/output"
 
     event_handler = MonitorFolder()
     observer = Observer()

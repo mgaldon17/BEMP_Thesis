@@ -5,9 +5,9 @@ import os
 import logging
 from analysis import Analyzer
 import queue
+from subprocess import *
 
 # Configuration
-
 
 values = np.arange(0.8E-3, 1.2, 0.05)  # Density values
 input_file_name = "/input.txt"
@@ -446,7 +446,10 @@ class MCNP():
 
     def runMCNP(self, gray, plot):
         logging.info("DATAPATH variable set to " + """Z:\MCNP\MCNP_DATA""")
+        os.system("set DATAPATH=Z:\MY_MCNP\MCNP_DATA")
+
         # Change working dir to output for file creation purposes
+
         os.chdir(OUTPUT)
         logging.warning("Working directory changed to " + OUTPUT)
 
@@ -486,11 +489,3 @@ class MCNP():
 
         f.close()
         f0.close()
-
-    def set_env_variables(self):
-
-        home = str(Path.home())
-        with open('env_variables_w.txt', encoding='utf8') as f:
-            for line in f:
-                os.environ[line.split(' ')[0]] = line.split(' ')[1]
-                os.path.join(home, line.split(' ')[0])

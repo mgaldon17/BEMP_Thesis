@@ -2,14 +2,14 @@ import logging
 from threading import Thread
 from timer import Timer
 import self as self
-
+import os
 from MonitorFolder import MonitorFolder
 from MCNP import MCNP
 from MCNP_w import MCNP as MCNP_w
 from watchdog.observers import Observer
 
 if __name__ == '__main__':
-    OUTPUT_PATH = "output/"
+    OUTPUT_PATH = "output"
     t = Timer()
     plot = True
     gray = True
@@ -22,9 +22,6 @@ if __name__ == '__main__':
     logging.info("Monitoring started")
     watcher = Thread(observer.start())
     if w:
-
-
-        MCNP_w.set_env_variables(MCNP_w)
         run = Thread(MCNP_w.runMCNP(self, gray, plot))
     else:
         run = Thread(MCNP.runMCNP(self, gray, plot))
