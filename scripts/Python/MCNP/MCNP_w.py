@@ -10,8 +10,7 @@ from subprocess import *
 # Configuration
 
 values = np.arange(0.8E-3, 1.2, 0.05)  # Density values
-input_file_name = "/input.txt"
-OUTPUT = "output"
+INPUT_FILE_NAME = "input.txt"
 q = queue.Queue()
 datanames = []  # Datanames of the mctax files containing the dose info
 
@@ -444,25 +443,27 @@ class MCNP():
     def get_input_file(self):
         return self.input_file
 
-    def runMCNP(self, gray, plot):
+    def runMCNP(self, gray, plot, OUTPUT):
         logging.info("DATAPATH variable set to " + """Z:\MCNP\MCNP_DATA""")
-        os.system("set DATAPATH=Z:\MY_MCNP\MCNP_DATA")
+
+        # Set environment variables
+        os.environ['DATAPATH'] = 'Z:\MY_MCNP\MCNP_DATA'
 
         # Change working dir to output for file creation purposes
-
         os.chdir(OUTPUT)
         logging.warning("Working directory changed to " + OUTPUT)
 
         for d in values:
             density = str(d)
-            input_file = MCNP(density).get_input_file()
+            mcnp = MCNP(density)
+            input_file = mcnp.get_input_file()
 
-            file = open(input_file_name, 'w')
+            file = open(INPUT_FILE_NAME, 'w')
             file.write(input_file)
             file.close()
-            MCNP.format_input_file(input_file_name)
+            mcnp.format_input_file()
 
-            os.system("mcnp6 i = " + input_file_name)
+            os.system("mcnp6 i = " + INPUT_FILE_NAME)
             datanames.append(q.get())
 
         analyzer = Analyzer(datanames, gray, plot)
@@ -473,7 +474,7 @@ class MCNP():
 
     def format_input_file(self):
         formatted_input = ''
-        f0 = open(input_file_name)
+        f0 = open(INPUT_FILE_NAME)
         n = 0
         for line in f0:
             n += 1
@@ -484,7 +485,7 @@ class MCNP():
                 if len(line[24:]) == 0:
                     formatted_input += "\n"
 
-        with open(input_file_name, 'w') as f:
+        with open(INPUT_FILE_NAME, 'w') as f:
             f.write(formatted_input)
 
         f.close()
