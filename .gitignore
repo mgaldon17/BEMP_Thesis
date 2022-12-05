@@ -1,4 +1,4 @@
 #ignore all kind of files
-scripts/Python/MCNP/output
+scripts/Python/MCNP/output/*
 scripts/Python/MCNP/input_files
 scripts/Python/MCNP/__pycache__
