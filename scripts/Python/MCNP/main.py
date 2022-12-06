@@ -1,5 +1,4 @@
 import logging
-import os
 from threading import Thread
 from timer import Timer
 import self as self
@@ -7,13 +6,13 @@ from MonitorFolder import MonitorFolder
 from MCNP import MCNP
 from MCNP_w import MCNP as MCNP_w
 from watchdog.observers import Observer
-from dotenv import load_dotenv
+
 
 if __name__ == '__main__':
     OUTPUT_PATH = "output"
     plot = True
     gray = True
-    w = True
+    w = False
     t = Timer()
     event_handler = MonitorFolder()
     observer = Observer()
