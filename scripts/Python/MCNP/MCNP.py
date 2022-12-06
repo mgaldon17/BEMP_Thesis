@@ -4,7 +4,7 @@ import os
 import logging
 from analysis import Analyzer
 import queue
-
+import re
 # Configuration
 
 os.environ["DATAPATH"] = "/Users/maga2/MCNP/MCNP_DATA"
@@ -17,7 +17,7 @@ datanames = []  # Datanames of the mctax files containing the dose info
 
 class MCNP():
 
-    def __init__(self, density, input_file):
+    def __init__(self, density):
         self.density = density
         self.input_file = '''MCNP Runfile for
                         C ****** 1.10.2022
@@ -398,8 +398,12 @@ class MCNP():
                                 0.000020721767423
                                 0.000009376964469
                                 0.000044598718343
+                        C ***************************************************************
+                        C Tallies
                         +f6 10                               $ Energy deposition in cell 10 for E [MeV/g] (dose)
-                        MODE N P E h l q u v L - X y o ! < > g / z ~ C W @ D T S A k % b _ + ? #
+                        f4:n 10
+                        C ***************************************************************
+                        MODE N P E h l q u v L - X y o ! g / z ~ C W @ D T S A k % b _ + ? #
                         IMP:N 1 3r 0 2 4r
                         IMP:E 1 3r 0 1 4r
                         IMP:P 1 3r 0 1 4r
@@ -413,8 +417,6 @@ class MCNP():
                         IMP:y 1 3r 0 1 4r
                         IMP:o 1 3r 0 1 4r
                         IMP:! 1 3r 0 1 4r
-                        IMP:< 1 3r 0 1 4r
-                        IMP:> 1 3r 0 1 4r
                         IMP:g 1 3r 0 1 4r
                         IMP:/ 1 3r 0 1 4r
                         IMP:z 1 3r 0 1 4r
@@ -435,38 +437,61 @@ class MCNP():
                         IMP:# 1 3r 0 1 4r
                         c PHYS:P 100.0 0.1 $max sigma table energy; analog capture below 100 keV
                         PRINT 110
-                        nps 10E6 $Number of particles
+                        nps 10E4 $Number of particles
                         prdmp 2j 1 $Print and dump card; PRDMP NDP NDM MCT NDMP DMMP with 1 for writing tallies for plotting
                         '''
 
+    def getNPS(self):
+        it = iter(open(input_file_name))
+        nps = 0
+        for lines in it:
+            if "nps" in lines:
+                nps = lines.split(" ")[1]
+        return nps
+    def getTallies(self, input_file_name):
+
+        it = iter(open(input_file_name))
+        n = ["f1", "f2", "f4", "f5a", "fip5", "fir5", "fic5",  "f6", "+f6", "f7", "f8", "+f8"]
+        tallies = []
+        for lines in it:
+
+            if any(item in lines for item in n):
+
+                tallies.append(re.split(' |:', lines)[0])
+
+        return tallies
     def get_input_file(self):
         return self.input_file
 
     def runMCNP(self, gray, plot):
         logging.info("DATAPATH variable set to " + """/Users/maga2/MCNP/MCNP_DATA""")
-        # Change working dir to output for file creation purposes
+        # Change working dir to output_nps10E7 for file creation purposes
         os.chdir(OUTPUT)
         logging.warning("Working directory changed to " + OUTPUT)
 
         for d in values:
             density = str(d)
-            input_file = MCNP(density, '').get_input_file()
+            mcnp = MCNP(density)
+            input_file = mcnp.get_input_file()
 
             file = open(input_file_name, 'w')
             file.write(input_file)
             file.close()
-            MCNP.format_input_file(input_file_name)
+
+            mcnp.format_input_file()
 
             os.system("mcnp6 i = " + input_file_name)
             datanames.append(q.get())
 
-        analyzer = Analyzer(datanames, gray, plot)
+        tallies = mcnp.getTallies(input_file_name)
+        nps = mcnp.getNPS()
+        analyzer = Analyzer(datanames, gray, plot, tallies, nps)
         analyzer.analyze()
         os.chdir("..")
         logging.warning("Working directory changed back to root")
         logging.warning("----- END OF THE SCRIPT -----")
 
-    def format_input_file(self, input_file_name):
+    def format_input_file(self):
         formatted_input = ''
         f0 = open(input_file_name)
         n = 0
@@ -484,3 +509,4 @@ class MCNP():
 
         f.close()
         f0.close()
+
