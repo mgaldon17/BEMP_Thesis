@@ -2,3 +2,4 @@
 scripts/Python/MCNP/output/*
 scripts/Python/MCNP/input_files
 scripts/Python/MCNP/__pycache__
+scripts/Python/MCNP/output_nps10E7/*
