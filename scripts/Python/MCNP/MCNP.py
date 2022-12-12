@@ -403,41 +403,24 @@ class MCNP():
                         +f6 10                               $ Energy deposition in cell 10 for E [MeV/g] (dose)
                         f4:n 10
                         C ***************************************************************
-                        MODE N P E h l q u v L - X y o ! g / z ~ C W @ D T S A k % b _ + ? #
+                        MODE N P E H D T S A #
                         IMP:N 1 3r 0 2 4r
-                        IMP:E 1 3r 0 1 4r
                         IMP:P 1 3r 0 1 4r
-                        IMP:h 1 3r 0 1 4r
-                        IMP:l 1 3r 0 1 4r
-                        IMP:q 1 3r 0 1 4r
-                        IMP:u 1 3r 0 1 4r
-                        IMP:v 1 3r 0 1 4r
-                        IMP:- 1 3r 0 1 4r
-                        IMP:X 1 3r 0 1 4r
-                        IMP:y 1 3r 0 1 4r
-                        IMP:o 1 3r 0 1 4r
-                        IMP:! 1 3r 0 1 4r
-                        IMP:g 1 3r 0 1 4r
-                        IMP:/ 1 3r 0 1 4r
-                        IMP:z 1 3r 0 1 4r
-                        IMP:~ 1 3r 0 1 4r
-                        IMP:C 1 3r 0 1 4r
-                        IMP:W 1 3r 0 1 4r
-                        IMP:@ 1 3r 0 1 4r
+                        IMP:E 1 3r 0 1 4r
+                        IMP:H 1 3r 0 1 4r
                         IMP:D 1 3r 0 1 4r
                         IMP:T 1 3r 0 1 4r
                         IMP:S 1 3r 0 1 4r
                         IMP:A 1 3r 0 1 4r
-                        IMP:k 1 3r 0 1 4r
-                        IMP:% 1 3r 0 1 4r
-                        IMP:b 1 3r 0 1 4r
-                        IMP:_ 1 3r 0 1 4r
-                        IMP:+ 1 3r 0 1 4r
-                        IMP:? 1 3r 0 1 4r
-                        IMP:# 1 3r 0 1 4r
+                        IMP:# 1 3r 0 1 4r                        
+                        C ***************************************************************
+                        C Tallies
+                        CUT:N j 0.000000010 $kill neutrons below 10 µeV
+                        CUT:E j 0.050 $Kill electrons below 50 KeV
+                        CUT:P j 0.003 $Kill photons below 3 KeV
                         c PHYS:P 100.0 0.1 $max sigma table energy; analog capture below 100 keV
                         PRINT 110
-                        nps 10E4 $Number of particles
+                        nps 10E7 $Number of particles
                         prdmp 2j 1 $Print and dump card; PRDMP NDP NDM MCT NDMP DMMP with 1 for writing tallies for plotting
                         '''
 
