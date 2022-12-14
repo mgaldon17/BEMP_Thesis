@@ -8,12 +8,13 @@ con_rate = 6.24E9
 
 class Analyzer:
 
-    def __init__(self, dataname, gray, plot, tallies, nps):
+    def __init__(self, dataname, gray, plot, tallies, nps, density):
         self.dataname = dataname
         self.gray = gray
         self.plot = plot
         self.tallies = tallies
         self.nps = nps
+        self.density = density
 
     # Return the tally stored in the dict correspondint to the number read off the output file
     def getTallyWithN(self, tally_dict, n):
@@ -21,7 +22,7 @@ class Analyzer:
 
     def analyze(self):
 
-        density = list(MCNP.setDensityValues(self, MCNP.d_0, MCNP.d_f))  # Density in g/cm3 (x)
+        density = self.density  # Density in g/cm3 (x)
         tally_dict = {}
         n = 0
 
