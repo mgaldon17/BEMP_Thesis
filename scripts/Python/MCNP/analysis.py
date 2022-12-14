@@ -21,7 +21,7 @@ class Analyzer:
 
     def analyze(self):
 
-        density = list(MCNP.values)  # Density in g/cm3 (x)
+        density = list(MCNP.setDensityValues(self, MCNP.d_0, MCNP.d_f))  # Density in g/cm3 (x)
         tally_dict = {}
         n = 0
 

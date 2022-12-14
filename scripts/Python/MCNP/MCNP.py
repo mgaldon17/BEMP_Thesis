@@ -1,3 +1,4 @@
+import sys
 import time
 import numpy as np
 import os
@@ -8,7 +9,8 @@ import re
 # Configuration
 
 os.environ["DATAPATH"] = "/Users/maga2/MCNP/MCNP_DATA"
-values = np.arange(0.8E-3, 1.2, 0.05)  # Density values
+d_0 = 0.0008 #g/cm3
+d_f = 0.0013 #g/cm3
 input_file_name = "input.txt"
 OUTPUT = "output/"
 q = queue.Queue()
@@ -95,9 +97,9 @@ class MCNP():
                         si3   -1 0.99943 1 $ acosd(0.99943)=1.9346
                         sp3    0 0.999715 0.000285
                         sb3 0 0 1
-                        SI4 L 1  2
-                        SP4   3.25 3.74
-                        DS5 S 6 7
+                        SI4 L 1  2 $Discrete lines od particles 1 and 2 (photons and neutrons)
+                        SP4   3.25 3.74 $Distribution probabilities 
+                        DS5 S 6 7  $Energy bins for neutrons and photons 
                         si6 h   1.00e-10            $// Energy-Bins Neutron
                                 1.00E-09
                                 1.00E-08
@@ -424,6 +426,17 @@ class MCNP():
                         prdmp 2j 1 $Print and dump card; PRDMP NDP NDM MCT NDMP DMMP with 1 for writing tallies for plotting
                         '''
 
+    def setDensityValues(self, d_0, d_f):
+        print(d_0, d_f)
+        step = (d_f-d_0)/25
+
+        values = np.arange(d_0, d_f, step)
+
+        if len(values) > 25:
+            logging.warning("Density vector contains more values than MCNP can handle.")
+            sys.exit()
+
+        return values
     def getNPS(self):
         it = iter(open(input_file_name))
         nps = 0
@@ -447,6 +460,8 @@ class MCNP():
         return self.input_file
 
     def runMCNP(self, gray, plot):
+
+        values = MCNP.setDensityValues(self, d_0, d_f)
         logging.info("DATAPATH variable set to " + """/Users/maga2/MCNP/MCNP_DATA""")
         # Change working dir to output_nps10E7 for file creation purposes
         os.chdir(OUTPUT)
