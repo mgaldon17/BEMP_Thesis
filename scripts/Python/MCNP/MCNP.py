@@ -6,16 +6,14 @@ import logging
 from analysis import Analyzer
 import queue
 import re
-# Configuration
 
-os.environ["DATAPATH"] = "/Users/maga2/MCNP/MCNP_DATA"
-d_0 = 0.0008 #g/cm3
-d_f = 0.0013 #g/cm3
-input_file_name = "input.txt"
+# Configuration
+d_0 = 0.0008 #Lowest density value in g/cm3
+d_f = 0.0013 #Highest density value in g/cm3
+INPUT_FILE_NAME = "input.txt"
 OUTPUT = "output/"
 q = queue.Queue()
 datanames = []  # Datanames of the mctax files containing the dose info
-
 
 class MCNP():
 
@@ -422,9 +420,41 @@ class MCNP():
                         CUT:P j 0.003 $Kill photons below 3 KeV
                         c PHYS:P 100.0 0.1 $max sigma table energy; analog capture below 100 keV
                         PRINT 110
-                        nps 10E7 $Number of particles
+                        nps 10E6 $Number of particles
                         prdmp 2j 1 $Print and dump card; PRDMP NDP NDM MCT NDMP DMMP with 1 for writing tallies for plotting
                         '''
+
+    def runMCNP(self, gray, plot, DATAPATH):
+
+        # Set environment variables
+        os.environ['DATAPATH'] = DATAPATH
+        values = MCNP.setDensityValues(self, d_0, d_f)
+        logging.info("DATAPATH variable set to " + DATAPATH)
+        # Change working dir to output_nps10E7 for file creation purposes
+        os.chdir(OUTPUT)
+        logging.warning("Working directory changed to " + OUTPUT)
+
+        for d in values:
+            density = str(d)
+            mcnp = MCNP(density)
+            input_file = mcnp.get_input_file()
+
+            file = open(INPUT_FILE_NAME, 'w')
+            file.write(input_file)
+            file.close()
+
+            mcnp.format_input_file()
+
+            os.system("mcnp6 i = " + INPUT_FILE_NAME)
+            datanames.append(q.get())
+
+        tallies = mcnp.getTallies(INPUT_FILE_NAME)
+        nps = mcnp.getNPS()
+        analyzer = Analyzer(datanames, gray, plot, tallies, nps, values)
+        analyzer.analyze()
+        os.chdir("..")
+        logging.warning("Working directory changed back to root")
+        logging.warning("----- END OF THE SCRIPT -----")
 
     def setDensityValues(self, d_0, d_f):
         step = (d_f-d_0)/25
@@ -436,7 +466,7 @@ class MCNP():
 
         return values
     def getNPS(self):
-        it = iter(open(input_file_name))
+        it = iter(open(INPUT_FILE_NAME))
         nps = 0
         for lines in it:
             if "nps" in lines:
@@ -457,39 +487,9 @@ class MCNP():
     def get_input_file(self):
         return self.input_file
 
-    def runMCNP(self, gray, plot):
-
-        values = MCNP.setDensityValues(self, d_0, d_f)
-        logging.info("DATAPATH variable set to " + """/Users/maga2/MCNP/MCNP_DATA""")
-        # Change working dir to output_nps10E7 for file creation purposes
-        os.chdir(OUTPUT)
-        logging.warning("Working directory changed to " + OUTPUT)
-
-        for d in values:
-            density = str(d)
-            mcnp = MCNP(density)
-            input_file = mcnp.get_input_file()
-
-            file = open(input_file_name, 'w')
-            file.write(input_file)
-            file.close()
-
-            mcnp.format_input_file()
-
-            os.system("mcnp6 i = " + input_file_name)
-            datanames.append(q.get())
-
-        tallies = mcnp.getTallies(input_file_name)
-        nps = mcnp.getNPS()
-        analyzer = Analyzer(datanames, gray, plot, tallies, nps, values)
-        analyzer.analyze()
-        os.chdir("..")
-        logging.warning("Working directory changed back to root")
-        logging.warning("----- END OF THE SCRIPT -----")
-
     def format_input_file(self):
         formatted_input = ''
-        f0 = open(input_file_name)
+        f0 = open(INPUT_FILE_NAME)
         n = 0
         for line in f0:
             n += 1
@@ -500,7 +500,7 @@ class MCNP():
                 if len(line[24:]) == 0:
                     formatted_input += "\n"
 
-        with open(input_file_name, 'w') as f:
+        with open(INPUT_FILE_NAME, 'w') as f:
             f.write(formatted_input)
 
         f.close()

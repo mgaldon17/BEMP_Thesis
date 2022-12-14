@@ -20,10 +20,11 @@ if __name__ == '__main__':
     t.start()
     logging.info("Monitoring started")
     watcher = Thread(observer.start())
-
+    DATAPATH = "/Users/maga2/MCNP/MCNP_DATA"
+    #DATAPATH = "'X:\MY_MCNP\MCNP_DATA'"
     if w:
         run = Thread(MCNP_w.runMCNP(self, gray, plot, OUTPUT_PATH))
     else:
-        run = Thread(MCNP.runMCNP(self, gray, plot))
+        run = Thread(MCNP.runMCNP(self, gray, plot, DATAPATH))
 
     t.stop()

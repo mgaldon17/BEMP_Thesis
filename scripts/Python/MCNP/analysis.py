@@ -6,6 +6,7 @@ from tally import Tally
 # 1 gray in MeV/g is 6.24E9
 con_rate = 6.24E9
 
+
 class Analyzer:
 
     def __init__(self, dataname, gray, plot, tallies, nps, density):
@@ -16,7 +17,7 @@ class Analyzer:
         self.nps = nps
         self.density = density
 
-    # Return the tally stored in the dict correspondint to the number read off the output file
+    # Return the tally stored in the dict correspondint to the number read off the output_old file
     def getTallyWithN(self, tally_dict, n):
         return tally_dict["tally_" + str(n)]
 
@@ -25,10 +26,13 @@ class Analyzer:
         density = self.density  # Density in g/cm3 (x)
         tally_dict = {}
         n = 0
+        tal_6 = False
 
         # Create Tally objects
         for t in range(len(self.tallies)):
             tally_num = self.tallies[t].split("f")[1]
+            if self.tallies[t].split("f")[0] == "+" and tally_num == str(6):
+                tal_6 = True
             tally_dict["tally_" + str(tally_num)] = Tally(tally_num, [], [])
 
         # Iterate over Datanames list. Each Dataname = mcta.x
@@ -36,7 +40,7 @@ class Analyzer:
             f = iter(open(d))
             for lines in f:
                 if 'tally' in lines:
-                    # Number of Tally of output file
+                    # Number of Tally of output_old file
                     n = lines.split('    ')[1]
 
                 if 'vals' in lines:
@@ -45,20 +49,11 @@ class Analyzer:
                     val = float(vals.split(' ')[0])
                     abs_error = float(vals.split(' ')[1])
                     rel_error = self.calculateRelError(val, abs_error)
-
-                    if n == 6 and self.gray:
-                        val, rel_error = self.convertIntoGray(val, rel_error)
-                        tally.set_list_vals(val)
-                        tally.set_list_errors(rel_error)
-                        dens_unit = "Gray"
-
-                    else:
-                        dens_unit = "MeV/g"
-                        tally.set_list_vals(val)
-                        tally.set_list_errors(rel_error)
+                    tally.set_list_vals(val)
+                    tally.set_list_errors(rel_error)
 
         if self.plot:
-            self.savePlot(tally_dict, density, self.nps, dens_unit)
+            self.savePlot(tally_dict, density, self.nps, tal_6)
 
     def calculateRelError(self, val, error):
 
@@ -71,10 +66,10 @@ class Analyzer:
         rel_error /= con_rate
         return val, rel_error
 
-    def savePlot(self, tally_dict, density, nps, dens_unit):
+    def savePlot(self, tally_dict, density, nps, tal_6):
 
         for tally in tally_dict:
-            #print(tally, '->', tally_dict[tally])
+
             y = tally_dict[tally].get_list_vals()
             y_err = tally_dict[tally].get_list_errors()
             plt.plot(density, y)
@@ -84,25 +79,35 @@ class Analyzer:
             match number:
                 case "1":
                     plt.ylabel('Current integrated over surface (particles)')
-                    plt.title(tally + ' Current vs. density')
+                    plt.title("Tally " + tally_dict[tally] + ' Current vs. density')
                 case "2":
                     plt.ylabel('Flux averaged over surface (particles/cm2)')
-                    plt.title(tally + ' Avg flux vs. density')
+                    plt.title("Tally " + tally_dict[tally] + ' Avg flux vs. density')
                 case "4":
                     plt.ylabel('Flux (particles/cm2)')
-                    plt.title(tally + ' Flux vs. density')
+                    plt.title("Tally " + tally_dict[tally] + ' Flux vs. density')
                 case "6":
-                    plt.ylabel('Dose (' + dens_unit + ')')
-                    plt.title(tally + ' Dose vs. density')
+                    if self.gray:
+                        dose_unit = "Gray"
+                    else:
+                        dose_unit = "MeV/g"
+                    plt.ylabel('Dose (' + dose_unit + ')')
+                    plt.title("Tally " + tally_dict[tally] + ' Dose vs. density')
+                    if tal_6:
+                        plt.title('Tally +f6' + ' Dose vs. density')
                 case "7":
-                    plt.ylabel('Fission dose averaged over a cell (' + dens_unit + ')')
-                    plt.title(tally + ' Fission dose vs. density')
+                    if self.gray:
+                        dose_unit = "Gray"
+                    else:
+                        dose_unit = "MeV/g"
+                    plt.ylabel('Fission dose averaged over a cell (' + dose_unit + ')')
+                    plt.title("Tally " + tally_dict[tally] + ' Fission dose vs. density')
                 case "8":
                     plt.ylabel('Energy distribution (pulses)')
-                    plt.title(tally + ' Energy distribution of pulses vs. density')
+                    plt.title("Tally " + tally_dict[tally] + ' Energy distribution of pulses vs. density')
                 case "+8":
                     plt.ylabel('Charge deposition')
-                    plt.title(tally + ' Charge deposition vs. density')
+                    plt.title("Tally " + tally_dict[tally] + ' Charge deposition vs. density')
 
             plt.xlabel('Density (g/cm3)')
             plt.savefig(tally + " output @ nps" + str(nps) + ".jpg")
