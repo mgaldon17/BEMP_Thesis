@@ -1,4 +1,5 @@
 import os.path
+import sys
 from pathlib import Path
 import numpy as np
 import os
@@ -8,8 +9,8 @@ import queue
 from subprocess import *
 
 # Configuration
-
-values = np.arange(0.8E-3, 1.2, 0.05)  # Density values
+d_0 = 0.0008 #g/cm3
+d_f = 0.0013 #g/cm3
 INPUT_FILE_NAME = "input.txt"
 q = queue.Queue()
 datanames = []  # Datanames of the mctax files containing the dose info
@@ -440,12 +441,23 @@ class MCNP():
                         prdmp 2j 1 $Print and dump card; PRDMP NDP NDM MCT NDMP DMMP with 1 for writing tallies for plotting
                         '''
 
+    def setDensityValues(self, d_0, d_f):
+
+        step = (d_f-d_0)/25
+
+        values = np.arange(d_0, d_f, step)
+
+        if len(values) > 25:
+            logging.warning("Density vector contains more values than MCNP can handle.")
+            sys.exit()
+
+        return values
     def get_input_file(self):
         return self.input_file
 
     def runMCNP(self, gray, plot, OUTPUT):
         logging.info("DATAPATH variable set to " + """Z:\MCNP\MCNP_DATA""")
-
+        values = MCNP.setDensityValues(self, d_0, d_f)
         # Set environment variables
         os.environ['DATAPATH'] = 'Z:\MY_MCNP\MCNP_DATA'
 
