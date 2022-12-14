@@ -455,13 +455,13 @@ class MCNP():
     def get_input_file(self):
         return self.input_file
 
-    def runMCNP(self, gray, plot, OUTPUT):
+    def runMCNP(self, gray, plot, OUTPUT, DATAPATH):
         logging.info("DATAPATH variable set to " + """Z:\MCNP\MCNP_DATA""")
         values = MCNP.setDensityValues(self, d_0, d_f)
         # Set environment variables
-        os.environ['DATAPATH'] = 'Z:\MY_MCNP\MCNP_DATA'
+        os.environ['DATAPATH'] = 'X:\MY_MCNP\MCNP_DATA'
 
-        # Change working dir to output for file creation purposes
+        # Change working dir to output_old for file creation purposes
         os.chdir(OUTPUT)
         logging.warning("Working directory changed to " + OUTPUT)
 
