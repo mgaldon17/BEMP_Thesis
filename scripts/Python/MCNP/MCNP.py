@@ -427,9 +427,7 @@ class MCNP():
                         '''
 
     def setDensityValues(self, d_0, d_f):
-        print(d_0, d_f)
         step = (d_f-d_0)/25
-
         values = np.arange(d_0, d_f, step)
 
         if len(values) > 25:
@@ -483,7 +481,7 @@ class MCNP():
 
         tallies = mcnp.getTallies(input_file_name)
         nps = mcnp.getNPS()
-        analyzer = Analyzer(datanames, gray, plot, tallies, nps)
+        analyzer = Analyzer(datanames, gray, plot, tallies, nps, values)
         analyzer.analyze()
         os.chdir("..")
         logging.warning("Working directory changed back to root")
