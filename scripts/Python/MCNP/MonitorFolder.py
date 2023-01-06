@@ -14,7 +14,7 @@ class MonitorFolder(FileSystemEventHandler):
 
         print(event.src_path, event.event_type)
 
-        mctan = event.src_path.split("/")[-1]
+        mctan = event.src_path.split("\\")[-1]
 
         if mctan[:2] == "mc":
             q.put(mctan)

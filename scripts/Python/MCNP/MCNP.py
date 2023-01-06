@@ -8,8 +8,8 @@ import queue
 import re
 
 # Configuration
-d_0 = 0.0008 #Lowest density value in g/cm3
-d_f = 0.0013 #Highest density value in g/cm3
+d_0 = 0.0005 #Lowest density value in g/cm3
+d_f = 0.0025 #Highest density value in g/cm3
 INPUT_FILE_NAME = "input.txt"
 OUTPUT = "output/"
 q = queue.Queue()
@@ -24,16 +24,16 @@ class MCNP():
                         C ****** Simulation of the ionization chamber type 33051
                         C ***************************************************************
                         C ******* Block A: Cells
-                        7 2 -''' + self.density + ''' -1 6 -5 21                     $Cell of wall (water)
-                        8 1 -1.127 -2 1 6 -5                                    $Cell of the outer wall (A-150)
-                        9 1 -1.127 -4 3 5                                       $Cell of the outermost cask wall (A-150)
-                        10 2 -''' + self.density + ''' -3 5 22                       $Internal cask wall
-                        14 0 20                                                 $Graveyard
-                        15 1 -1.127 -21 -5 6                                    $Innermost chamber
-                        16 1 -1.127 -22 5                                       $Innermost sphere
+                        7 2 -''' + self.density + ''' -1 6 -5 21               $Cell of wall (Ar)
+                        8 1 -1.5914 -2 1 6 -5                                    $Cell of the outer wall (A-150)
+                        9 1 -1.5914 -4 3 5                                       $Cell of the outermost cask wall (A-150)
+                        10 2 -''' + self.density + ''' -3 5 22                 $Internal cask wall   
+                        14 0 20                                                $Graveyard
+                        15 1 -1.5914 -21 -5 6                                    $Innermost chamber
+                        16 1 -1.5914 -22 5                                       $Innermost sphere
                         17 4 -0.9 -24 -6 23
                         18 3 -0.001205 -20 #17 #19 #8 #9 #7 #15 #16 #10
-                        19 1 -1.127 23 -25 24 -26
+                        19 1 -1.5914 23 -25 24 -26
     
                         C ***************************************************************
                         C ***************************************************************
@@ -53,23 +53,17 @@ class MCNP():
                         25 CY 0.85
                         26 PY 1.5
                         20 RPP -60 60 -60 60 -60 60 $Outer world contour
-    
+                        
                         C ***************************************************************
                         C ***************************************************************
                         C Block C: Materials and source
                         C ***************************************************************
-                        C Plastic A-150 (d=1.127 g/cm3)
-                        M1 1001.80c -0.101327
-                                6000.80c -0.775501
-                                7014.80c -0.035057
-                                8016.80c -0.052316
-                                9019.80c -0.017422
-                                20000.60c -0.018378
-                        C Tissue equivalent gas (d=1.06409E-03 g/cm3) $0.2E-3, 0.5E-3, 1.06409E-3, 1.5E-3, 2E-3, 4E-4 8E-3, 1E-2, 3E-2
-                        M2 1001.80c -0.101869
-                                6000.80c -0.456179
-                                7014.80c -0.035172
-                                8016.80c -0.406780
+                        C Mg (d=1.5914 g/cm3) with 20% water
+                        M1 12000.60c -0.8
+                                1000.80c -0.02238
+                                8000.80c -0.17762
+                        C Ar gas (d=1.66201E-03 g/cm3) $0.2E-3, 0.5E-3, 1.06409E-3, 1.5E-3, 2E-3, 4E-4 8E-3, 1E-2, 3E-2
+                        M2 18000.59c 1
                         C Dry air (d=0.001205 g/cm3)
                         M3 6012.80c -0.000124
                                 7014.80c -0.755267
@@ -78,23 +72,26 @@ class MCNP():
                         C Polyethlyene (d=0.9 g/cm3)
                         M4 1001.80c -0.143711
                                 6000.80c -0.856289
+                        C Water (d=0.997 g/cm3)
+                        M5 1000.80c -0.11190
+                                8000.80c -0.88810
                         C ***************************************************************
                         C ******** Source ***********************************************
                         sdef erg=fpar=d5
                              par=d4
-                             pos= 50 3.7625 0
-                             x=d1
-                             y=3.7625
+                             pos= 50 6.5 0
+                             x=50
+                             y=d1
                              z=d2
                              vec=-1 0 0
-                             dir=d3
-                        si1 48 52
+                             dir=1
+                        si1 6 7
                         sp1    0.   1.
-                        si2 2.525 5.0
-                        sp2    0.   1.
-                        si3   -1 0.99943 1 $ acosd(0.99943)=1.9346
-                        sp3    0 0.999715 0.000285
-                        sb3 0 0 1
+                        si2 -1.0 1.0
+                        sp2    0.   1.                        
+                        c si3   -1 0.99943 1 $ acosd(0.99943)=1.9346
+                        c sp3    0 0.999715 0.000285
+                        c sb3 0 0 1
                         SI4 L 1  2 $Discrete lines od particles 1 and 2 (photons and neutrons)
                         SP4   3.25 3.74 $Distribution probabilities 
                         DS5 S 6 7  $Energy bins for neutrons and photons 
@@ -400,8 +397,10 @@ class MCNP():
                                 0.000044598718343
                         C ***************************************************************
                         C Tallies
-                        +f6 10                               $ Energy deposition in cell 10 for E [MeV/g] (dose)
-                        f4:n 10
+                        f06:n 10                               $ Energy deposition in cell 10 for E [MeV/g] (dose)
+                        f16:e 10
+                        f26:h 10
+                        f4:n 7
                         C ***************************************************************
                         MODE N P E H D T S A #
                         IMP:N 1 3r 0 2 4r
@@ -421,7 +420,12 @@ class MCNP():
                         c PHYS:P 100.0 0.1 $max sigma table energy; analog capture below 100 keV
                         PRINT 110
                         nps 10E6 $Number of particles
-                        prdmp 2j 1 $Print and dump card; PRDMP NDP NDM MCT NDMP DMMP with 1 for writing tallies for plotting
+                        prdmp 2j 1 1 10E12 $Print and dump card; PRDMP NDP NDM MCT NDMP DMMP with 1 for writing tallies for plotting
+                        C ***************************************************************
+                        fmesh34:n geom=xyz origin= -5 0 -2
+                                        imesh=53 iints=99
+                                        jmesh=9 jints=30
+                                        kmesh=2 kints=15
                         '''
 
     def runMCNP(self, gray, plot, DATAPATH):
@@ -445,7 +449,7 @@ class MCNP():
 
             mcnp.format_input_file()
 
-            os.system("mcnp6 i = " + INPUT_FILE_NAME)
+            os.system("mpiexec -np 96 mcnp6.mpi i = " + INPUT_FILE_NAME)
             datanames.append(q.get())
 
         tallies = mcnp.getTallies(INPUT_FILE_NAME)
