@@ -14,8 +14,8 @@ class MonitorFolder(FileSystemEventHandler):
 
         print(event.src_path, event.event_type)
 
-        mctan = event.src_path.split("\\")[-1]
-
+        mctan = event.src_path.split("/")[-1]
+        #Remember to change the above / to \\ from mac to win respectively
         if mctan[:2] == "mc":
             q.put(mctan)
         #self.checkFolderSize(event.src_path)
