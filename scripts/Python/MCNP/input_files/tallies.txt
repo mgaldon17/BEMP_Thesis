@@ -1,0 +1,6 @@
+C ***************************************************************
+C Tallies
+f06:n 10   $ Energy deposition in cell 10 for E [MeV/g] (dose)
+f16:e 10
+f26:h 10
+f4:n 7
