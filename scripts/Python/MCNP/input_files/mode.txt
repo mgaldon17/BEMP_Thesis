@@ -1,0 +1,16 @@
+C ***************************************************************
+MODE N P E H D T S A #
+IMP:N 1 3r 0 2 4r
+IMP:P 1 3r 0 1 4r
+IMP:E 1 3r 0 1 4r
+IMP:H 1 3r 0 1 4r
+IMP:D 1 3r 0 1 4r
+IMP:T 1 3r 0 1 4r
+IMP:S 1 3r 0 1 4r
+IMP:A 1 3r 0 1 4r
+IMP:# 1 3r 0 1 4r
+C ***************************************************************
+C CUT
+CUT:N j 0.000000010 $kill neutrons below 10 µeV
+CUT:E j 0.050 $Kill electrons below 50 KeV
+CUT:P j 0.003 $Kill photons below 3 KeV
