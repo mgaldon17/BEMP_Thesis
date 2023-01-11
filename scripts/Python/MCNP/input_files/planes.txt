@@ -15,4 +15,4 @@ C Beginning of surfaces
 24 CY 0.75
 25 CY 0.85
 26 PY 1.5
-20 RPP -60 60 -60 60 -60 60 $Outer world contour
+100 RPP -60 60 -60 60 -60 60 $Outer world contour

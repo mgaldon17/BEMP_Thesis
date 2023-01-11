@@ -30,15 +30,12 @@ class MCNP():
                         C ****** Simulation of the ionization chamber type 33051
                         C ***************************************************************
                         C ******* Block A: Cells
-                        7 2 -''' + self.density + ''' -1 6 -5 21               $Cell of wall (Ar)
-                        8 1 -1.5914 -2 1 6 -5                                    $Cell of the outer wall (A-150)
-                        9 1 -1.5914 -4 3 5                                       $Cell of the outermost cask wall (A-150)
-                        10 2 -''' + self.density + ''' -3 5 22                 $Internal cask wall   
-                        14 0 20                                                $Graveyard
-                        15 1 -1.5914 -21 -5 6                                    $Innermost chamber
-                        16 1 -1.5914 -22 5                                       $Innermost sphere
+                        14 0 100                                                            $Graveyard
+                        8 1 -1.5914 1 6 -2 (-5:-4):(-4 3) #15 #7 -100                       $Outermost wall (Mg)
+                        7 2 -''' + self.density + ''' -1 6 21 (-5:-3):(22 -3) #15           $Middle cavity (Ar)
+                        15 1 -1.5914 -21 6 (-22:-5)                                         $Innermost cavity (Mg)
                         17 4 -0.9 -24 -6 23
-                        18 3 -0.001205 -20 #17 #19 #8 #9 #7 #15 #16 #10
+                        18 3 -0.001205 -100 #17 #19 #7 #15 #8
                         19 1 -1.5914 23 -25 24 -26
     
                         ''' + self.planes + '''
@@ -49,7 +46,7 @@ class MCNP():
                         ''' + self.mode + '''
                         c PHYS:P 100.0 0.1 $max sigma table energy; analog capture below 100 keV
                         PRINT 110
-                        nps 10E7 $Number of particles
+                        nps 10E5 $Number of particles
                         prdmp 2j 1 1 10E12 $Print and dump card; PRDMP NDP NDM MCT NDMP DMMP with 1 for writing tallies for plotting
                         C ***************************************************************
                         fmesh34:n geom=xyz origin= -5 0 -2

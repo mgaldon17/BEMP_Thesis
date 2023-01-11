@@ -1,14 +1,14 @@
 C ***************************************************************
 MODE N P E H D T S A #
-IMP:N 1 3r 0 2 4r
-IMP:P 1 3r 0 1 4r
-IMP:E 1 3r 0 1 4r
-IMP:H 1 3r 0 1 4r
-IMP:D 1 3r 0 1 4r
-IMP:T 1 3r 0 1 4r
-IMP:S 1 3r 0 1 4r
-IMP:A 1 3r 0 1 4r
-IMP:# 1 3r 0 1 4r
+IMP:N 1 1 0 1 3r
+IMP:P 1 1 0 1 3r
+IMP:E 1 1 0 1 3r
+IMP:H 1 1 0 1 3r
+IMP:D 1 1 0 1 3r
+IMP:T 1 1 0 1 3r
+IMP:S 1 1 0 1 3r
+IMP:A 1 1 0 1 3r
+IMP:# 1 1 0 1 3r
 C ***************************************************************
 C CUT
 CUT:N j 0.000000010 $kill neutrons below 10 µeV
