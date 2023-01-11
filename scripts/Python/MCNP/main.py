@@ -4,7 +4,6 @@ from timer import Timer
 import self as self
 from MonitorFolder import MonitorFolder
 from MCNP import MCNP
-from MCNP_w import MCNP as MCNP_w
 from watchdog.observers import Observer
 
 
