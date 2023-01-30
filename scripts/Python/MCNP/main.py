@@ -7,7 +7,6 @@ from MCNP import MCNP
 from watchdog.observers import Observer
 from create_output import createOutputFile
 from checkOS import checkSystem
-
 if __name__ == '__main__':
     OUTPUT_PATH = "output"
     plot = True
