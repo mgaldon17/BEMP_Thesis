@@ -3,3 +3,4 @@ scripts/Python/MCNP/output*
 scripts/Python/MCNP/output/*
 scripts/Python/MCNP/__pycache__
 scripts/Python/MCNP/output_nps10E7/*
+scripts/Python/.idea*
