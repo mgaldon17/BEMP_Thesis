@@ -3,26 +3,32 @@ C ****** 1.10.2022
 C ****** Simulation of the ionization chamber type 33051
 C ***************************************************************
 C ******* Block A: Cells
-101 0 100                                           $Graveyard
-11 4 -0.9 -1                                        $Chamber tail
-113 1 -1.5914 -3 1 -3:-21                           $Central anode
-114 2 0.00166201 3 1 -4 21 -4:-22 #113              $Cavity
-115 1 -1.5914 1 4 -2 22 -2:-23 #114 #113            $Chamber wall
-20 3 -0.001205 1 2 23 -100 #11 #115 #113 #114       $Space object-graveyard
+14 0 100                                                            $Graveyard
+8 1 -1.588428 1 6 -2 (-5:-4):(-4 3) #15 #7 -100                       $Outermost wall (Mg)
+7 2 -0.0005 -1 6 21 (-5:-3):(22 -3) #15           $Middle cavity (Ar)
+15 1 -1.588428 -21 6 (-22:-5)                                         $Innermost cavity (Mg)
+17 4 -0.9 -24 -6 23
+18 3 -0.001205 -100 #17 #19 #7 #15 #8
+19 1 -1.588428 23 -25 24 -26
     
 C ***************************************************************
 C ***************************************************************
 C Block B: Planes
 C ***************************************************************
 C Beginning of surfaces
-1 RCC 0 1 0 0 3.25 0 0.75                           $Chamber tail
-2 RCC 0 4.25 0 0 2.1 0 0.7                          $Chamber wall
-3 RCC 0 4.25 0 0 2.1 0 0.2                          $Anode
-4 RCC 0 4.25 0 0 2.1 0 0.4                          $Cavity
-21 SY 6.35 0.2                                      $Anode
-22 SY 6.35 0.4                                      $Cavity
-23 SY 6.35 0.7                                      $Chamber cap
-100 RPP -60 60 -60 60 -60 60                        $Outer world contour
+1 CY 0.4
+2 CY 0.7
+3 SY 6.35 0.4
+4 SY 6.35 0.7
+5 PY 6.35
+6 PY 4.25
+21 CY 0.2
+22 SY 6.35 0.2
+23 PY 1
+24 CY 0.75
+25 CY 0.85
+26 PY 1.5
+100 RPP -60 60 -60 60 -60 60 $Outer world contour
 
 C ***************************************************************
 C ***************************************************************
@@ -367,21 +373,21 @@ SP7 D   0.0                   $// Wahrscheinlichkeiten Photonen
         0.000044598718343
 C ***************************************************************
 C Tallies
-f16:e 114
-f26:h 114
-f4:n 114
-+f6 114
+f16:e 7
+f26:h 7
+f4:n 7
++f6 7
 C ***************************************************************
 MODE N P E H D T S A #
-IMP:N 0 1 1 1 1 1
-IMP:P 0 1 1 1 1 1
-IMP:E 0 1 1 1 1 1
-IMP:H 0 1 1 1 1 1
-IMP:D 0 1 1 1 1 1
-IMP:T 0 1 1 1 1 1
-IMP:S 0 1 1 1 1 1
-IMP:A 0 1 1 1 1 1
-IMP:# 0 1 1 1 1 1
+IMP:N 0 1 1 1 1 1 1
+IMP:P 0 1 1 1 1 1 1
+IMP:E 0 1 1 1 1 1 1
+IMP:H 0 1 1 1 1 1 1
+IMP:D 0 1 1 1 1 1 1
+IMP:T 0 1 1 1 1 1 1
+IMP:S 0 1 1 1 1 1 1
+IMP:A 0 1 1 1 1 1 1
+IMP:# 0 1 1 1 1 1 1
 C ***************************************************************
 C CUT
 CUT:N j 0.000000010 $kill neutrons below 10 µeV
@@ -389,7 +395,7 @@ CUT:E j 0.050 $Kill electrons below 50 KeV
 CUT:P j 0.003 $Kill photons below 3 KeV
 c PHYS:P 100.0 0.1 $max sigma table energy; analog capture below 100 keV
 PRINT 110
-nps 10E5 $Number of particles
+nps 10E6 $Number of particles
 prdmp 2j 1 1 10E12 $Print and dump card; PRDMP NDP NDM MCT NDMP DMMP with 1 for writing tallies for plotting
 C ***************************************************************
 fmesh34:n geom=xyz origin= -5 0 -2
