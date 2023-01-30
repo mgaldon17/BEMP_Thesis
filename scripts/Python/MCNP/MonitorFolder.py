@@ -4,6 +4,7 @@ import time
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
+import checkOS
 from MCNP import q
 
 
@@ -13,8 +14,8 @@ class MonitorFolder(FileSystemEventHandler):
     def on_created(self, event):
 
         print(event.src_path, event.event_type)
-
-        mctan = event.src_path.split("/")[-1]
+        win, DATAPATH, sep =  checkOS.checkSystem()
+        mctan = event.src_path.split(sep)[-1]
         #Remember to change the above / to \\ from mac to win respectively
         if mctan[:2] == "mc":
             q.put(mctan)
