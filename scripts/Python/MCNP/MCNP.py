@@ -30,13 +30,12 @@ class MCNP():
                         C ****** Simulation of the ionization chamber type 33051
                         C ***************************************************************
                         C ******* Block A: Cells
-                        14 0 100                                                            $Graveyard
-                        8 1 -1.588428 1 6 -2 (-5:-4):(-4 3) #15 #7 -100                       $Outermost wall (Mg)
-                        7 2 -''' + self.density + ''' -1 6 21 (-5:-3):(22 -3) #15           $Middle cavity (Ar)
-                        15 1 -1.588428 -21 6 (-22:-5)                                         $Innermost cavity (Mg)
-                        17 4 -0.9 -24 -6 23
-                        18 3 -0.001205 -100 #17 #19 #7 #15 #8
-                        19 1 -1.588428 23 -25 24 -26
+                        101 0 100                         $Graveyard
+                        11 4 -0.9 -1                      $Chamber tail
+                        113 1 -1.5914 -3:-21              $Central anode
+                        114 2 0.00166201 (-4:-22) (3 21)  $Cavity
+                        115 1 -1.5914 (-2:-23) (4 22)     $Chamber wall
+                        20 3 -0.001205 -100 1 2 23        $Space object-graveyard
     
                         ''' + self.planes + '''
                         
