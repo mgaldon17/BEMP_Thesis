@@ -3,11 +3,11 @@ C ***************************************************************
 C Block B: Planes
 C ***************************************************************
 C Beginning of surfaces
-1 RCC 0 1 0 0 3.25 0 0.75           $Chamber tail
-2 RCC 0 4.25 0 0 2.1 0 0.7          $Chamber wall
-3 RCC 0 4.25 0 0 2.1 0 0.2          $Anode
-4 RCC 0 4.25 0 0 2.1 0 0.4          $Cavity
-21 SY 6.35 0.19                     $Anode
-22 SY 6.35 0.39                     $Cavity
-23 SY 6.35 0.69                     $Chamber cap
-100 RPP -60 60 -60 60 -60 60        $Outer world contour
+1 RCC 0 1 0 0 3.25 0 0.75       $Chamber tail
+2 RCC 0 4.25 0 0 2.1 0 0.7      $Chamber wall
+3 RCC 0 4.25 0 0 2.1 0 0.2      $Anode
+4 RCC 0 4.25 0 0 2.1 0 0.4      $Cavity
+21 SY 6.35 0.19                 $Anode
+22 SY 6.35 0.39                 $Cavity
+23 SY 6.35 0.69                 $Chamber cap
+100 RPP -60 60 -60 60 -60 60    $Outer world contour

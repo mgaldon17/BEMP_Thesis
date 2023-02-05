@@ -30,12 +30,12 @@ class MCNP():
                         C ****** Simulation of the ionization chamber type 33051
                         C ***************************************************************
                         C ******* Block A: Cells
-                        101 0 100                         $Graveyard
-                        11 4 -0.9 -1                      $Chamber tail
-                        113 1 -1.5914 -3:-21              $Central anode
-                        114 2 0.00166201 (-4:-22) (3 21)  $Cavity
-                        115 1 -1.5914 (-2:-23) (4 22)     $Chamber wall
-                        20 3 -0.001205 -100 1 2 23        $Space object-graveyard
+                        101 0 100                                           $Graveyard
+                        11 4 -0.9 -1                                        $Chamber tail
+                        113 1 -1.573568 -3:-21                          	$Central anode
+                        114 2 -''' + self.density + ''' (-4:-22) (3 21)     $Cavity
+                        115 1 -1.573568 (-2:-23) (4 22)         			$Chamber wall (Mg + 3% H2O)
+                        20 3 -0.001205 -100 1 2 23       					$Space object-graveyard
     
                         ''' + self.planes + '''
                         
@@ -45,7 +45,7 @@ class MCNP():
                         ''' + self.mode + '''
                         c PHYS:P 100.0 0.1 $max sigma table energy; analog capture below 100 keV
                         PRINT 110
-                        nps 10E6 $Number of particles
+                        nps 10E8 $Number of particles
                         prdmp 2j 1 1 10E12 $Print and dump card; PRDMP NDP NDM MCT NDMP DMMP with 1 for writing tallies for plotting
                         C ***************************************************************
                         fmesh34:n geom=xyz origin= -5 0 -2
