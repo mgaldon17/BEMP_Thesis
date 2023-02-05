@@ -16,6 +16,27 @@ from tally import Tally
 con_rate = 6.24E9
 
 
+def outputToTxt(tally_dict, density):
+
+    f = open("result.txt", "w+")
+
+    # The purpose of this method is to send raw output data to txt for further processing in an external tool
+    # Dose results come in MeV/g. Conversion into Gy must be done separately
+    for tally in tally_dict:
+        y = tally_dict[tally].get_list_vals()
+        y_err = tally_dict[tally].get_list_errors()
+        f.write("Tally " + tally_dict[tally].get_number())
+        f.write("\n")
+        f.write("y = " + str(y))
+        f.write("\n")
+        f.write("y_err" + str(y_err))
+        f.write("\n")
+        f.write("\n")
+    f.write("x = " + str(density))
+
+    pass
+
+
 class Analyzer:
 
     def __init__(self, dataname, gray, plot, tallies, nps, density):
@@ -69,6 +90,8 @@ class Analyzer:
                     rel_error = self.calculateRelError(val, abs_error)
                     tally.set_list_vals(val)
                     tally.set_list_errors(rel_error)
+
+        outputToTxt(tally_dict, density)
 
         if self.plot:
             self.savePlot(tally_dict, density, self.nps, tal_plus)
@@ -126,7 +149,10 @@ class Analyzer:
 
                     ))
                 fig.show()
+            #####
 
+
+            ####
             match number:
 
                 case "1":
@@ -142,7 +168,6 @@ class Analyzer:
                     if self.gray:
                         y, y_err = self.convertIntoGray(tally_dict[tally].get_list_vals(),
                                                         tally_dict[tally].get_list_errors())
-
                         plt.plot(density, y)
                         plt.errorbar(density, y, y_err)  # Relative error of dose
                         dose_unit = "Gray"
@@ -208,5 +233,5 @@ if __name__ == '__main__':
     values = np.arange(MCNP.d_0, MCNP.d_f, step)
     tallies = ["f06", "f16", "f26", "f4"]
 
-    analyzer = Analyzer(datanames, True, True, tallies, '10E5', values)
+    analyzer = Analyzer(datanames, True, True, tallies, '10E8', values)
     analyzer.analyze()
