@@ -84,8 +84,8 @@ class MCNP():
             mcnp.format_input_file()
 
             # Run MCNP command
-            os.system("mpiexec -np 96 mcnp6.mpi i = " + INPUT_FILE_NAME)
-            #os.system("mcnp6 ipx i = " + INPUT_FILE_NAME)
+            #os.system("mpiexec -np 96 mcnp6.mpi i = " + INPUT_FILE_NAME)
+            os.system("mcnp6 ipx i = " + INPUT_FILE_NAME)
             datanames.append(q.get())
 
         tal = mcnp.getTallies(tallies)
