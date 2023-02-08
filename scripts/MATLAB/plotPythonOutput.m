@@ -10,7 +10,7 @@ x = [0.0005, 0.00058, 0.00066, 0.00074, 0.00082, 0.0009, 0.00098, 0.00106, 0.001
 plot(x, FY_05, x, FY_1, x, FY_15, x, FY_2, x, FY_3)
 hold on 
 legend('0.5 %','1 %','1.5 %','2 %', '3 %')
-xlabel("Density g/cmE-3")
+xlabel("Density g/cm3")
 ylabel("Dose (Gray)")
-title("Electron Tally F6") %Edit this line for tally type
+title("Electron F6") %Edit this line for tally type
 save("electron.mat") %save
