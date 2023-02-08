@@ -1,156 +1,178 @@
+import sys
 import time
 import numpy as np
 import os
 import logging
 from analysis import Analyzer
 import queue
-# Configuration
+import re
 
-os.environ["DATAPATH"] = "/Users/maga2/MCNP/MCNP_DATA"
-values = np.arange(0.8E-3, 1.2, 0.05) #Density values
-input_file_name = "input.txt"
+# Configuration
+d_0 = 0.0005 #Lowest density value in g/cm3
+d_f = 0.0025 #Highest density value in g/cm3
+INPUT_FILE_NAME = "input.txt"
 OUTPUT = "output/"
 q = queue.Queue()
-datanames = [] #Datanames of the mctax files containing the dose info
+datanames = []  # Datanames of the mctax files containing the dose info
 
 class MCNP():
 
-    def __init__(self, density, input_file):
+    def __init__(self, density, tallies, source, materials, planes, mode):
+
         self.density = density
+        self.tallies = tallies
+        self.source = source
+        self.materials = materials
+        self.planes = planes
+        self.mode = mode
         self.input_file = '''MCNP Runfile for
                         C ****** 1.10.2022
                         C ****** Simulation of the ionization chamber type 33051
                         C ***************************************************************
                         C ******* Block A: Cells
-                        7 2 -''' + self.density + ''' -1 6 -5 21                     $Cell of wall (water)
-                        8 1 -1.127 -2 1 6 -5                                    $Cell of the outer wall (A-150)
-                        9 1 -1.127 -4 3 5                                       $Cell of the outermost cask wall (A-150)
-                        10 2 -''' + self.density + ''' -3 5 22                       $Internal cask wall
-                        14 0 20                                                 $Graveyard
-                        15 1 -1.127 -21 -5 6                                    $Innermost chamber
-                        16 1 -1.127 -22 5                                       $Innermost sphere
-                        17 4 -0.9 -24 -6 23
-                        18 3 -0.001205 -20 #17 #19 #8 #9 #7 #15 #16 #10
-                        19 1 -1.127 23 -25 24 -26
+                        101 0 100                                           $Graveyard
+                        11 4 -0.9 -1                                        $Chamber tail
+                        113 1 -1.573568 -3:-21                          	$Central anode
+                        114 2 -''' + self.density + ''' (-4:-22) (3 21)     $Cavity
+                        115 1 -1.573568 (-2:-23) (4 22)         			$Chamber wall (Mg + 3% H2O)
+                        20 3 -0.001205 -100 1 2 23       					$Space object-graveyard
     
-                        C ***************************************************************
-                        C ***************************************************************
-                        C Block B: Planes
-                        C ***************************************************************
-                        C Beginning of surfaces
-                        1 CY 0.4
-                        2 CY 0.7
-                        3 SY 6.35 0.4
-                        4 SY 6.35 0.7
-                        5 PY 6.35
-                        6 PY 4.25
-                        21 CY 0.2
-                        22 SY 6.35 0.2
-                        23 PY 1
-                        24 CY 0.75
-                        25 CY 0.85
-                        26 PY 1.5
-                        20 RPP -1 55 -1 8 -3 3 $Outer world contour
-    
-                        C ***************************************************************
-                        C ***************************************************************
-                        C Block C: Materials and source
-                        C ***************************************************************
-                        C Plastic A-150 (d=1.127 g/cm3)
-                        M1 1001.80c -0.101327
-                                6000.80c -0.775501
-                                7014.80c -0.035057
-                                8016.80c -0.052316
-                                9019.80c -0.017422
-                                20000.60c -0.018378
-                        C Tissue equivalent gas (d=1.06409E-03 g/cm3) $0.2E-3, 0.5E-3, 1.06409E-3, 1.5E-3, 2E-3, 4E-4 8E-3, 1E-2, 3E-2
-                        M2 1001.80c -0.101869
-                                6000.80c -0.456179
-                                7014.80c -0.035172
-                                8016.80c -0.406780
-                        C Dry air (d=0.001205 g/cm3)
-                        M3 6012.80c -0.000124
-                                7014.80c -0.755267
-                                8016.80c -0.231781
-                                18040.80c -0.012827
-                        C Polyethlyene (d=0.9 g/cm3)
-                        M4 1001.80c -0.143711
-                                6000.80c -0.856289
-                        C ***************************************************************
-                        C ******** Source ***********************************************
-                        SDEF POS 50 3.7625 0 X=50 Y=D2 Z=D1 PAR=E ERG=1.9 VEC = -1 0 0 DIR = 1          $ position, particle type, energy
-                        SI1 -3 3                                                $ sampling range Ymin to Ymax
-                        SP1 0 1                                                 $ weighting for y sampling: here constant
-                        SI2 2.525 5.0                                           $ sampling range ZYmin to Zmax
-                        SP2 0 1                                                 $ weighting for z sampling: here constant
-                        c +f106 10                                              $ Energy deposition in cell 10 [MeV/g] (dose)
-                        c f16:N 10                                              $ Energy deposition in cell 10 for N [MeV/g] (dose)
-                        f26:E 10                                                $ Energy deposition in cell 10 for E [MeV/g] (dose)
-                        c f36:#,H 10                                            $ Energy deposition in cell 10 for heavy ions [MeV/g] (dose)
-                        c E106 0.001 100i 10
-                        c E16 0.001 100i 10
-                        E26 1.9
-                        c E36 0.001 100i 10
-                        MODE N P E #
-                        IMP:N 1 3r 0 2 4r
-                        IMP:E 1 3r 0 1 4r
-                        IMP:# 1 3r 0 1.5 4r
+                        ''' + self.planes + '''
+                        
+                        ''' + self.materials + '''
+                        ''' + self.source + '''
+                        ''' + self.tallies + '''
+                        ''' + self.mode + '''
                         c PHYS:P 100.0 0.1 $max sigma table energy; analog capture below 100 keV
-                        nps 10E4 $Number of particles
-                        prdmp 2j 1 $Print and dump card; PRDMP NDP NDM MCT NDMP DMMP with 1 for writing tallies for plotting
-                        C **************************************************************
-                        C ******** TMESH ***********************************************
-                        c --- mesh tally specification
-                        c fmesh4:n geom=xyz origin= 3 3 -1
-                        c                 imesh=5 iints=50
-                        c                 jmesh=5 jints=100
-                        c                 kmesh=1 kints=200
+                        PRINT 110
+                        nps 10E8 $Number of particles
+                        prdmp 2j 1 1 10E12 $Print and dump card; PRDMP NDP NDM MCT NDMP DMMP with 1 for writing tallies for plotting
+                        C ***************************************************************
+                        fmesh34:n geom=xyz origin= -5 0 -2
+                                        imesh=53 iints=99
+                                        jmesh=9 jints=30
+                                        kmesh=2 kints=15
                         '''
 
-    def get_input_file(self):
-        return self.input_file
+    def runMCNP(self, gray, plot, DATAPATH):
 
-    def runMCNP(self, gray, plot):
-        logging.info("DATAPATH variable set to " + """/Users/maga2/MCNP/MCNP_DATA""")
-        # Change working dir to output for file creation purposes
+        # Set environment variables
+        os.environ['DATAPATH'] = DATAPATH
+        density_values = MCNP.setDensityValues(self, d_0, d_f)
+
+        tallies, source, materials, planes, mode = MCNP.loadMCNPBlocks(self)
+
+        logging.info("DATAPATH variable set to " + DATAPATH)
+        # Change working dir to output_nps10E7 for file creation purposes
         os.chdir(OUTPUT)
         logging.warning("Working directory changed to " + OUTPUT)
 
-        for d in values:
+        for d in density_values:
             density = str(d)
-            input_file = MCNP(density,'').get_input_file()
 
-            file = open(input_file_name, 'w')
+            mcnp = MCNP(density, tallies, source, materials, planes, mode)
+
+            #Get the input file data from object
+            input_file = mcnp.get_input_file()
+
+            # Write to input.txt the input data of MCNP
+            file = open(INPUT_FILE_NAME, 'w')
             file.write(input_file)
             file.close()
-            MCNP.format_input_file(input_file_name)
 
-            os.system("mcnp6 i = " + input_file_name)
+            # Format input file
+            mcnp.format_input_file()
+
+            # Run MCNP command
+            #os.system("mpiexec -np 96 mcnp6.mpi i = " + INPUT_FILE_NAME)
+            os.system("mcnp6 ipx i = " + INPUT_FILE_NAME)
             datanames.append(q.get())
 
-
-        analyzer = Analyzer(datanames, gray, plot)
+        tal = mcnp.getTallies(tallies)
+        nps = mcnp.getNPS()
+        analyzer = Analyzer(datanames, gray, plot, tal, nps, density_values)
         analyzer.analyze()
         os.chdir("..")
         logging.warning("Working directory changed back to root")
         logging.warning("----- END OF THE SCRIPT -----")
 
+    def loadMCNPBlocks(self):
+        # Open tally file and read the lines
+        with open("input_files/tallies.txt") as tally_file:
+            tallies = tally_file.read().rstrip()
+        tally_file.close()
+
+        with open("input_files/source.txt") as src_file:
+            source = src_file.read().rstrip()
+        src_file.close()
+
+        with open("input_files/materials.txt") as mat_file:
+            materials = mat_file.read().rstrip()
+        mat_file.close()
+
+        with open("input_files/planes.txt") as planes_file:
+            planes = planes_file.read().rstrip()
+        planes_file.close()
+
+        with open("input_files/mode.txt") as mode_file:
+            mode = mode_file.read().rstrip()
+        mode_file.close()
+
+        return tallies, source, materials, planes, mode
+    def setDensityValues(self, d_0, d_f):
+        step = (d_f-d_0)/25
+        values = np.arange(d_0, d_f, step)
+
+        if len(values) > 25:
+            logging.warning("Density vector contains more values than MCNP can handle.")
+            sys.exit()
+
+        return values
+    def getNPS(self):
+        it = iter(open(INPUT_FILE_NAME))
+        nps = 0
+        for lines in it:
+            if "nps" in lines:
+                nps = lines.split(" ")[1]
+        return nps
+    def getTallies(self, tallies):
+
+        tal_array = tallies.split("\n")
+        t = []
+        tal = []
+        particle = []
+        for s in tal_array:
+            if "f" in s:
+                t.append(s.split(' ')[0])
+
+        for i in t:
+            tal.append(i.split(":")[0])
+            particle.append(i.split(":")[-1])
+
+        return tal
+    def get_input_file(self):
+        return self.input_file
 
     def format_input_file(self):
         formatted_input = ''
-        f0 = open(input_file_name)
+        f0 = open(INPUT_FILE_NAME)
         n = 0
+        s = "                        "
         for line in f0:
+
             n += 1
             if n == 1:
                 formatted_input += line.strip() + "\n"
-            elif n > 1:
+
+            elif n>1 and s in line:
                 formatted_input += line[24:]
                 if len(line[24:]) == 0:
                     formatted_input += "\n"
-
-        with open(input_file_name, 'w') as f:
+            else:
+                formatted_input += line
+        with open(INPUT_FILE_NAME, 'w') as f:
             f.write(formatted_input)
 
         f.close()
         f0.close()
+
