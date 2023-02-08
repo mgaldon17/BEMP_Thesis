@@ -8,7 +8,7 @@ def cleanOutputFolder():
     for f in all_files:
         os.remove(f)
 
-    logging.info("All files in output folder were removed")
+    logging.info("All files in output_nps10E7 folder were removed")
 
 
 if __name__ == '__main__':
