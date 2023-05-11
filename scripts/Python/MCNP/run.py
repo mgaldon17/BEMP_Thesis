@@ -8,7 +8,7 @@ from MCNP import MCNP
 from watchdog.observers import Observer
 from checkOS import checkSystem
 
-def run(source, material, nps, gray, plot):
+def run(source, material, targetMaterial, nps, gray, plot):
     OUTPUT_PATH = "output"
 
     # Checks the operative system
@@ -23,7 +23,7 @@ def run(source, material, nps, gray, plot):
 
     checkIfFolderExists(OUTPUT_PATH)
     watcher = Thread(observer.start())
-    mcnp_run = Thread(MCNP.runMCNP(self, source, material, nps, gray, plot, DATAPATH))
+    mcnp_run = Thread(MCNP.runMCNP(self, source, material, targetMaterial, nps, gray, plot, DATAPATH))
 
     watcher.start()  # Start watcher thread
     mcnp_run.start()  # Start MCNP thread
