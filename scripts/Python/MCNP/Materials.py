@@ -9,7 +9,7 @@ class Materials:
 
             with open("input_files/" + self.material, 'r') as f:
                 for line in f:
-                    if line.startswith('c Mg'):
+                    if line.startswith('c MgO'):
                         parts = line.strip().split(',')
                         for part in parts:
                             if 'd =' in part:
