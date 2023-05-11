@@ -7,7 +7,11 @@ C Beginning of surfaces
 2 RCC 0 4.25 0 0 2.1 0 0.7      $Chamber wall
 3 RCC 0 4.25 0 0 2.1 0 0.2      $Anode
 4 RCC 0 4.25 0 0 2.1 0 0.4      $Cavity
+5 RCC 0 4.25 0 0 2.1 0 0.22     $Anode layer of MgO
+6 RCC 0 4.25 0 0 2.1 0 0.43     $Anode layer of MgO
 21 SY 6.35 0.19                 $Anode
 22 SY 6.35 0.39                 $Cavity
 23 SY 6.35 0.69                 $Chamber cap
+24 SY 6.35 0.22                 $Anode layer of MgO
+25 SY 6.35 0.43                 $Cavity layer of MgO
 100 RPP -60 60 -60 60 -60 60    $Outer world contour

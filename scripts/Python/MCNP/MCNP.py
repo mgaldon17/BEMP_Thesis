@@ -38,15 +38,13 @@ class MCNP():
                         C ***************************************************************
                         C ******* Block A: Cells
                         101 0 100                                                   $Graveyard
-                        11 1 -''' + self.magnesiumDensity + ''' -1                  $Chamber tail
-                        113 1 -''' + self.magnesiumDensity + ''' -3:-21             $Central anode
+                        11 1 -1.5914 -1                  $Chamber tail
+                        113 1 -1.5914 -3:-21             $Central anode
                         114 2 -''' + self.argonDensity + ''' (-4:-22) (3 21)        $Cavity
-                        115 1 -''' + self.magnesiumDensity + ''' (-2:-23) (4 22)    $Chamber wall (Mg + % H2O)
+                        115 7 -''' + self.magnesiumDensity + ''' (-6:-25) (4 22)    $Chamber wall
+                        116 7 -''' + self.magnesiumDensity + ''' (-5:-24) (3 21)
+                        117 1 -1.5914 (-2:-23) (6 25)
                         20 3 -0.001205 -100 1 2 23 #61 #62 #63 #64    $Space object-graveyard
-                        61 3 -0.001205 -51
-                        62 6 -11.35 51 -52 53 -54
-                        63 LIKE 61 BUT TRCL=(0 0 0 -1 0 0 0 1 0 0 0 -1 1)
-                        64 LIKE 62 BUT TRCL=(0 0 0 -1 0 0 0 1 0 0 0 -1 1)
     
                         ''' + self.planes + '''
                         
@@ -73,7 +71,7 @@ class MCNP():
         # Read density of Magnesium from material input file
  
         magnesiumDensity = Materials(material).getDensityOfMg()
-        water_percentage = Materials(material).get_solute_percentage()
+        solute_percentage = Materials(material).get_solute_percentage()
         particle_type = Source(src).getParticleType()
 
         # Change working dir to output
@@ -104,7 +102,7 @@ class MCNP():
 
         tal = mcnp.getTallies(tallies)
         nps = mcnp.getNPS()
-        analyzer = Analyzer(datanames, gray, plot, tal, nps, argon_density_values, particle_type, water_percentage)
+        analyzer = Analyzer(datanames, gray, plot, tal, nps, argon_density_values, particle_type, solute_percentage)
         analyzer.analyze()
         datanames.clear()
         os.chdir("..")

@@ -7,7 +7,7 @@ def checkSystem():
     if platform.system() == "Windows":
 
         win = True
-        DATAPATH = "Z:\MY_MCNP\MCNP_DATA"
+        DATAPATH = "X:\MY_MCNP\MCNP_DATA"
         sep = "\\"
 
     else:
