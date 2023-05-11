@@ -22,9 +22,9 @@ datanames = []  # Datanames of the mctax files containing the dose info
 
 class MCNP():
 
-    def __init__(self, magnesiumDensity, argonDensity, tallies, source, materials, planes, mode, nps):
+    def __init__(self, soluteDensity, argonDensity, tallies, source, materials, planes, mode, nps):
 
-        self.magnesiumDensity = magnesiumDensity
+        self.soluteDensity = soluteDensity
         self.argonDensity = argonDensity
         self.tallies = tallies
         self.source = source
@@ -33,18 +33,17 @@ class MCNP():
         self.mode = mode
         self.nps = nps
         self.input_file = '''MCNP Runfile for
-                        C ****** 1.10.2022
                         C ****** Simulation of the ionization chamber type 33051
                         C ***************************************************************
                         C ******* Block A: Cells
-                        101 0 100                                                   $Graveyard
-                        11 1 -1.5914 -1                  $Chamber tail
-                        113 1 -1.5914 -3:-21             $Central anode
-                        114 2 -''' + self.argonDensity + ''' (-4:-22) (3 21)        $Cavity
-                        115 7 -''' + self.magnesiumDensity + ''' (-6:-25) (4 22)    $Chamber wall
-                        116 7 -''' + self.magnesiumDensity + ''' (-5:-24) (3 21)
+                        101 0 100                           $Graveyard
+                        11 1 -1.5914 -1                     $Chamber tail
+                        113 1 -1.5914 -3:-21                $Central anode
+                        114 2 -''' + self.argonDensity + ''' (-4:-22) (5 24)        $Cavity
+                        115 7 -''' + self.soluteDensity + ''' (-6:-25) (4 22)    $Chamber wall
+                        116 7 -''' + self.soluteDensity + ''' (-5:-24) (3 21)
                         117 1 -1.5914 (-2:-23) (6 25)
-                        20 3 -0.001205 -100 1 2 23 #61 #62 #63 #64    $Space object-graveyard
+                        20 3 -0.001205 -100 1 2 23     $Space object-graveyard
     
                         ''' + self.planes + '''
                         
@@ -58,7 +57,7 @@ class MCNP():
                         prdmp 2j 1 1 10E12 $Print and dump card; PRDMP NDP NDM MCT NDMP DMMP with 1 for writing tallies for plotting
                         '''
 
-    def runMCNP(self, src, material, nps, gray, plot, DATAPATH):
+    def runMCNP(self, src, material, targetMaterial, nps, gray, plot, DATAPATH):
 
         # Set environment variables
         os.environ['DATAPATH'] = DATAPATH
@@ -70,8 +69,8 @@ class MCNP():
 
         # Read density of Magnesium from material input file
  
-        magnesiumDensity = Materials(material).getDensityOfMg()
-        solute_percentage = Materials(material).get_solute_percentage()
+        soluteDensity = Materials(material, targetMaterial).getDensityOfSolute()
+        solute_percentage = Materials(material, targetMaterial).get_solute_percentage()
         particle_type = Source(src).getParticleType()
 
         # Change working dir to output
@@ -80,9 +79,9 @@ class MCNP():
         logging.warning("Working directory changed to " + OUTPUT)
 
         for d in argon_density_values:
-            argonDensity = str(d)
 
-            mcnp = MCNP(magnesiumDensity, argonDensity, tallies, source, materials, planes, mode, nps)
+            argonDensity = str(d)
+            mcnp = MCNP(soluteDensity, argonDensity, tallies, source, materials, planes, mode, nps)
 
             # Get the input file data from object
             input_file = mcnp.get_input_file()
@@ -124,7 +123,7 @@ class MCNP():
             materials = mat_file.read().rstrip()
         mat_file.close()
 
-        with open("input_files/planesSrSource.txt") as planes_file:
+        with open("input_files/planes.txt") as planes_file:
             planes = planes_file.read().rstrip()
         planes_file.close()
 
