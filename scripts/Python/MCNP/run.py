@@ -39,7 +39,7 @@ def run(source, material, targetMaterial, nps, gray, plot):
 if __name__ == '__main__':
     # Source and materials
     source = "pureNeutronSource.txt"
-    material = "materials_Mg_3%.txt"
+    material = "materials_97%_Mg + 3%_H2O.txt"
     nps = "1"
     plot = False
     gray = True

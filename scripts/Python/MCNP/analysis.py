@@ -90,34 +90,34 @@ class Analyzer:
                     vals = next(f).strip()
                     tally = self.getTallyWithN(tally_dict, n)
                     val = float(vals.split(' ')[0])
-                    abs_error = float(vals.split(' ')[1])
-                    rel_error = self.calculateRelError(val, abs_error)
+                    rel_error = float(vals.split(' ')[1])
+                    abs_error = self.calculateAbsError(val, rel_error)
                     tally.set_list_vals(val)
-                    tally.set_list_errors(rel_error)
+                    tally.set_list_errors(abs_error) # List of absolute errors
 
         outputToTxt(tally_dict, self.particleType, self.water_percentage)
 
         if self.plot:
             self.savePlot(tally_dict, argon_density_values, self.nps, tal_plus)
 
-    def calculateRelError(self, val, error):
+    def calculateAbsError(self, val, rel_error):
 
-        relative_error = float(error) * float(val)
-        return relative_error
+        absolute_error = float(rel_error) * float(val)
+        return absolute_error
 
-    def convertIntoGray(self, val, rel_error):
+    def convertIntoGray(self, val, abs_error):
 
         val_gray = []
-        rel_error_gray = []
+        abs_error_gray = []
         for v in (val):
             v /= con_rate
             val_gray.append(v)
 
-        for r in rel_error:
+        for r in abs_error:
             r /= con_rate
-            rel_error_gray.append(r)
+            abs_error_gray.append(r)
 
-        return val_gray, rel_error_gray
+        return val_gray, abs_error_gray
 
     def savePlot(self, tally_dict, density, nps, tal_plus):
 
@@ -131,7 +131,7 @@ class Analyzer:
                 y = tally_dict[tally].get_list_vals()
                 y_err = tally_dict[tally].get_list_errors()
                 plt.plot(density, y)
-                plt.errorbar(density, y, y_err)  # Relative error of dose
+                plt.errorbar(density, y, y_err)  # Absolute error of dose
 
                 fig = go.Figure(go.Scatter(
                     x=density,
@@ -172,7 +172,7 @@ class Analyzer:
                         y, y_err = self.convertIntoGray(tally_dict[tally].get_list_vals(),
                                                         tally_dict[tally].get_list_errors())
                         plt.plot(density, y)
-                        plt.errorbar(density, y, y_err)  # Relative error of dose
+                        plt.errorbar(density, y, y_err)  # Absolute error of dose
                         dose_unit = "Gray"
 
                     else:
