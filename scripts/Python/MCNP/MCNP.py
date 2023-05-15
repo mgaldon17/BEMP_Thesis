@@ -43,7 +43,8 @@ class MCNP():
                         115 7 -''' + self.soluteDensity + ''' (-6:-25) (4 22)    $Chamber wall
                         116 7 -''' + self.soluteDensity + ''' (-5:-24) (3 21)
                         117 1 -1.5914 (-2:-23) (6 25)
-                        20 3 -0.001205 -100 1 2 23     $Space object-graveyard
+                        118 7 -1.611286 (-7:-26) (2 23)
+                        20 3 -0.001205 -100 1 7 26     $Space object-graveyard
     
                         ''' + self.planes + '''
                         
