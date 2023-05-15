@@ -12,13 +12,12 @@ if __name__ == '__main__':
 
     # Source and materials
     sources = ["MEDAPP_Source.txt"]
-    materials = [ "materials_MgO_1.5%.txt", "materials_MgO_2%.txt",
-                 "materials_MgO_3%.txt"]
-    nps = "10E8"
+    materials = ["materials_100%_MgO + 0%_Mg.txt"]
+    nps = "10E7"
     plot = False
     gray = True
     folders_to_move = []
-    targetMaterial = "MgO"
+    targetMaterial = "MgO + H2O"
     DATAPATH = "D:\MY_MCNP\MCNP_DATA"
 
     for s in range(0, len(sources)):
