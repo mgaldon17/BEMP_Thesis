@@ -12,7 +12,7 @@ if __name__ == '__main__':
 
     # Source and materials
     sources = ["MEDAPP_Source.txt"]
-    materials = ["materials_100%_MgO + 0%_Mg.txt"]
+    materials = ["materials_98%_MgO+2%_H2O.txt", "materials_95%_MgO+5%_H2O.txt"]
     nps = "10E7"
     plot = False
     gray = True
