@@ -16,36 +16,40 @@ from tally import Tally
 con_rate = 6.24E9
 
 
-def outputToTxt(tally_dict, density):
-
+def outputToTxt(tally_dict, particleType, water_percentage):
     f = open("result.txt", "w+")
 
     # The purpose of this method is to send raw output data to txt for further processing in an external tool
     # Dose results come in MeV/g. Conversion into Gy must be done separately
     for tally in tally_dict:
         y = tally_dict[tally].get_list_vals()
+        f.write("y_" + tally_dict[tally].get_number() + particleType + "_" + water_percentage + " = " + str(y))
+
+        f.write("\n")
+    f.write("\n")
+    f.write("\n")
+
+    # Errors
+    for tally in tally_dict:
         y_err = tally_dict[tally].get_list_errors()
-        f.write("Tally " + tally_dict[tally].get_number())
+        f.write("y_err_" + tally_dict[tally].get_number() + particleType + "_" + water_percentage + " = " + str(y_err))
         f.write("\n")
-        f.write("y = " + str(y))
-        f.write("\n")
-        f.write("y_err" + str(y_err))
-        f.write("\n")
-        f.write("\n")
-    f.write("x = " + str(density))
+
 
     pass
 
 
 class Analyzer:
 
-    def __init__(self, dataname, gray, plot, tallies, nps, density):
+    def __init__(self, dataname, gray, plot, tallies, nps, argon_density_values, particleType, water_percentage):
         self.dataname = dataname
         self.gray = gray
         self.plot = plot
         self.tallies = tallies
         self.nps = nps
-        self.density = density
+        self.argon_density_values = argon_density_values
+        self.particleType = particleType
+        self.water_percentage = water_percentage
 
     # Return the tally stored in the dict corresponding to the number read off the output_old file
     def getTallyWithN(self, tally_dict, n):
@@ -53,7 +57,7 @@ class Analyzer:
 
     def analyze(self):
 
-        density = self.density  # Density in g/cm3 (x)
+        argon_density_values = self.argon_density_values  # Density of Argon in g/cm3 (x)
         tally_dict = {}
         n = 0
         tal_plus = False
@@ -86,34 +90,34 @@ class Analyzer:
                     vals = next(f).strip()
                     tally = self.getTallyWithN(tally_dict, n)
                     val = float(vals.split(' ')[0])
-                    abs_error = float(vals.split(' ')[1])
-                    rel_error = self.calculateRelError(val, abs_error)
+                    rel_error = float(vals.split(' ')[1])
+                    abs_error = self.calculateAbsError(val, rel_error)
                     tally.set_list_vals(val)
-                    tally.set_list_errors(rel_error)
+                    tally.set_list_errors(abs_error) # List of absolute errors
 
-        outputToTxt(tally_dict, density)
+        outputToTxt(tally_dict, self.particleType, self.water_percentage)
 
         if self.plot:
-            self.savePlot(tally_dict, density, self.nps, tal_plus)
+            self.savePlot(tally_dict, argon_density_values, self.nps, tal_plus)
 
-    def calculateRelError(self, val, error):
+    def calculateAbsError(self, val, rel_error):
 
-        relative_error = float(error) * float(val)
-        return relative_error
+        absolute_error = float(rel_error) * float(val)
+        return absolute_error
 
-    def convertIntoGray(self, val, rel_error):
+    def convertIntoGray(self, val, abs_error):
 
         val_gray = []
-        rel_error_gray = []
+        abs_error_gray = []
         for v in (val):
             v /= con_rate
             val_gray.append(v)
 
-        for r in rel_error:
+        for r in abs_error:
             r /= con_rate
-            rel_error_gray.append(r)
+            abs_error_gray.append(r)
 
-        return val_gray, rel_error_gray
+        return val_gray, abs_error_gray
 
     def savePlot(self, tally_dict, density, nps, tal_plus):
 
@@ -127,7 +131,7 @@ class Analyzer:
                 y = tally_dict[tally].get_list_vals()
                 y_err = tally_dict[tally].get_list_errors()
                 plt.plot(density, y)
-                plt.errorbar(density, y, y_err)  # Relative error of dose
+                plt.errorbar(density, y, y_err)  # Absolute error of dose
 
                 fig = go.Figure(go.Scatter(
                     x=density,
@@ -151,7 +155,6 @@ class Analyzer:
                 fig.show()
             #####
 
-
             ####
             match number:
 
@@ -169,7 +172,7 @@ class Analyzer:
                         y, y_err = self.convertIntoGray(tally_dict[tally].get_list_vals(),
                                                         tally_dict[tally].get_list_errors())
                         plt.plot(density, y)
-                        plt.errorbar(density, y, y_err)  # Relative error of dose
+                        plt.errorbar(density, y, y_err)  # Absolute error of dose
                         dose_unit = "Gray"
 
                     else:
@@ -178,10 +181,10 @@ class Analyzer:
                     fig = go.Figure(go.Scatter(
                         x=density,
                         y=y,
-                        error_y = dict(
-                            type = 'data',
-                            array = y_err,
-                            visible = True)))
+                        error_y=dict(
+                            type='data',
+                            array=y_err,
+                            visible=True)))
 
                     fig.update_layout(
                         title="Tally " + str(tally_dict[tally].get_number()) + ' Dose vs. density',
@@ -218,12 +221,13 @@ class Analyzer:
                     plt.title("Tally " + str(tally_dict[tally]) + ' Charge deposition vs. density')
 
             plt.xlabel('Density (g/cm3)')
-            #plt.show()
+            # plt.show()
             plt.savefig(tally + " output @ nps" + str(nps) + ".jpg")
             plt.close()
 
+
 if __name__ == '__main__':
-    os.chdir(MCNP.OUTPUT)
+    os.chdir("P source/0")
     logging.warning("Working directory changed to " + MCNP.OUTPUT)
     datanames = ['mctal', 'mctam', 'mctan', 'mctao', 'mctap', 'mctaq', 'mctar', 'mctas', 'mctat', 'mctau',
                  'mctav', 'mctaw', 'mctax', 'mctay', 'mctaz', 'mctaa', 'mctab', 'mctac', 'mctad', 'mctae', 'mctaf',
@@ -231,7 +235,7 @@ if __name__ == '__main__':
 
     step = (MCNP.d_f - MCNP.d_0) / 25
     values = np.arange(MCNP.d_0, MCNP.d_f, step)
-    tallies = ["f06", "f16", "f26", "f4"]
+    tallies = ["f06", "f16", "f26", "f36", "f46", "f56"]
 
-    analyzer = Analyzer(datanames, True, True, tallies, '10E8', values)
+    analyzer = Analyzer(datanames, True, False, tallies, '10E8', values, "P", "0")
     analyzer.analyze()
