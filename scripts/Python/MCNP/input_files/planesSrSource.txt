@@ -11,7 +11,7 @@ C Beginning of surfaces
 22 SY 6.35 0.39                 $Cavity
 23 SY 6.35 0.69                 $Chamber cap
 100 RPP -60 60 -60 60 -60 60    $Outer world contour
-51 RCC 12.5 5.625 0 3 0 0 1.375
+51 RCC 2.5 5.625 0 3 0 0 1.375
 52 C/X 5.625 0 1.875
 53 PX 2.5
 54 PX 6
