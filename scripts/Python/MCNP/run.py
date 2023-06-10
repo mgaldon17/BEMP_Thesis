@@ -8,7 +8,8 @@ from MCNP import MCNP
 from watchdog.observers import Observer
 from checkOS import checkSystem
 
-def run(source, material, targetMaterial, nps, gray, plot):
+
+def run(source, material, nps, gray, plot):
     OUTPUT_PATH = "output"
 
     # Checks the operative system
@@ -23,7 +24,7 @@ def run(source, material, targetMaterial, nps, gray, plot):
 
     checkIfFolderExists(OUTPUT_PATH)
     watcher = Thread(observer.start())
-    mcnp_run = Thread(MCNP.runMCNP(self, source, material, targetMaterial, nps, gray, plot, DATAPATH))
+    mcnp_run = Thread(MCNP.runMCNP(self, source, material, nps, gray, plot, DATAPATH))
 
     watcher.start()  # Start watcher thread
     mcnp_run.start()  # Start MCNP thread
@@ -38,9 +39,9 @@ def run(source, material, targetMaterial, nps, gray, plot):
 
 if __name__ == '__main__':
     # Source and materials
-    source = "pureNeutronSource.txt"
-    material = "materials_97%_Mg + 3%_H2O.txt"
-    nps = "1"
+    source = "Sr90Source.txt"
+    material = "materials_MgO_1%.txt"
+    nps = "10E7"
     plot = False
     gray = True
 
