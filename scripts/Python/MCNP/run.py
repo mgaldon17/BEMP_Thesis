@@ -8,6 +8,7 @@ from MCNP import MCNP
 from watchdog.observers import Observer
 from checkOS import checkSystem
 
+
 def run(source, material, nps, gray, plot):
     OUTPUT_PATH = "output"
 
@@ -38,9 +39,9 @@ def run(source, material, nps, gray, plot):
 
 if __name__ == '__main__':
     # Source and materials
-    source = "pureNeutronSource.txt"
-    material = "materials_Mg_3%.txt"
-    nps = "1"
+    source = "Sr90Source.txt"
+    material = "materials_MgO_1%.txt"
+    nps = "10E7"
     plot = False
     gray = True
 
