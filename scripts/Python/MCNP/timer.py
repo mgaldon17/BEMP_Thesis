@@ -1,8 +1,10 @@
-import logging
 import time
 from datetime import timedelta
+
+
 class TimerError(Exception):
     """A custom exception used to report errors in use of Timer class"""
+
 
 class Timer:
     def __init__(self):
@@ -24,4 +26,5 @@ class Timer:
         self._start_time = None
         print("\n")
         t = float("{:.1f}".format(elapsed_time))
-        print(f"Elapsed time: {timedelta(seconds=t)} seconds" + "\n")
+
+        return f"Elapsed time: {timedelta(seconds=t)} seconds" + "\n"
