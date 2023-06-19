@@ -4,9 +4,9 @@ import time
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 from checkOS import checkSystem
-from MCNP import q
 
-
+import queue
+q = queue.Queue()
 class MonitorFolder(FileSystemEventHandler):
     FILE_SIZE = 1000
 

@@ -1,10 +1,9 @@
-
 class Materials:
 
     def __init__(self, material, target_material):
 
         self.material = material
-        self.target_material=target_material
+        self.target_material = target_material
 
     def getDensityOfSolute(self):
         with open("input_files/" + self.material, 'r') as f:
@@ -21,7 +20,6 @@ class Materials:
                             except ValueError:
                                 print("Invalid density value: ", density_str)
 
-
     def get_solute_percentage(self):
 
         with open("input_files/" + self.material, 'r') as f:
@@ -31,5 +29,3 @@ class Materials:
                     solute_percentage = str(solute_str.split("%")[0])  # extract the percentage and convert to float
                     return solute_percentage
             return None  # return None if the line containing the water percentage is not found
-
-

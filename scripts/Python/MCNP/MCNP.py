@@ -1,23 +1,5 @@
-import sys
-import time
-from threading import Thread
 
-from checkIfFolderExists import *
-from Source import *
-from Materials import *
-import numpy as np
-import os
 import logging
-from analysis import Analyzer
-import queue
-
-# Configuration
-d_0 = 0.0005  # Lowest density value in g/cm3
-d_f = 0.0025  # Highest density value in g/cm3
-INPUT_FILE_NAME = "input.txt"
-OUTPUT = "output"
-q = queue.Queue()
-datanames = []  # Datanames of the mctax files containing the dose info
 
 
 class MCNP():
@@ -58,94 +40,10 @@ class MCNP():
                         prdmp 2j 1 1 10E12 $Print and dump card; PRDMP NDP NDM MCT NDMP DMMP with 1 for writing tallies for plotting
                         '''
 
-    def runMCNP(self, src, material, targetMaterial, nps, gray, plot, DATAPATH):
 
-        # Set environment variables
-        os.environ['DATAPATH'] = DATAPATH
-        argon_density_values = MCNP.setDensityValues(self, d_0, d_f)
-
-        tallies, source, materials, planes, mode = MCNP.loadMCNPBlocks(self, src, material)
-
-        logging.info("DATAPATH variable set to " + DATAPATH)
-
-        # Read density of Magnesium from material input file
- 
-        soluteDensity = Materials(material, targetMaterial).getDensityOfSolute()
-        solute_percentage = Materials(material, targetMaterial).get_solute_percentage()
-        particle_type = Source(src).getParticleType()
-
-        # Change working dir to output
-        checkIfFolderExists(OUTPUT)
-        os.chdir(OUTPUT)
-        logging.warning("Working directory changed to " + OUTPUT)
-
-        for d in argon_density_values:
-
-            argonDensity = str(d)
-            mcnp = MCNP(soluteDensity, argonDensity, tallies, source, materials, planes, mode, nps)
-
-            # Get the input file data from object
-            input_file = mcnp.get_input_file()
-
-            # Write to input.txt the input data of MCNP
-            file = open(INPUT_FILE_NAME, 'w')
-            file.write(input_file)
-            file.close()
-
-            # Format input file
-            mcnp.format_input_file()
-
-            # Run MCNP command
-            os.system("mpiexec -np 16 mcnp6.mpi i = " + INPUT_FILE_NAME)
-            # os.system("mcnp6 i = " + INPUT_FILE_NAME)
-            datanames.append(q.get())
-
-        tal = mcnp.getTallies(tallies)
-        nps = mcnp.getNPS()
-        analyzer = Analyzer(datanames, gray, plot, tal, nps, argon_density_values, particle_type, solute_percentage)
-        analyzer.analyze()
-        datanames.clear()
-        os.chdir("..")
-        logging.warning("Working directory changed back to root")
-        logging.warning("----- END OF THE SCRIPT -----\n")
-        time.sleep(3)
-
-    def loadMCNPBlocks(self, source, material):
-        # Open tally file and read the lines
-        with open("input_files/tallies.txt") as tally_file:
-            tallies = tally_file.read().rstrip()
-        tally_file.close()
-
-        with open("input_files/" + source) as src_file:
-            source = src_file.read().rstrip()
-        src_file.close()
-
-        with open("input_files/" + material) as mat_file:
-            materials = mat_file.read().rstrip()
-        mat_file.close()
-
-        with open("input_files/planes.txt") as planes_file:
-            planes = planes_file.read().rstrip()
-        planes_file.close()
-
-        with open("input_files/mode.txt") as mode_file:
-            mode = mode_file.read().rstrip()
-        mode_file.close()
-
-        return tallies, source, materials, planes, mode
-
-    def setDensityValues(self, d_0, d_f):
-        step = (d_f - d_0) / 25
-        values = np.arange(d_0, d_f, step)
-
-        if len(values) > 25:
-            logging.warning("Density vector contains more values than MCNP can handle.")
-            sys.exit()
-
-        return values
 
     def getNPS(self):
-        it = iter(open(INPUT_FILE_NAME))
+        it = iter(open("input.txt"))
         nps = 0
         for lines in it:
             if "nps" in lines:
@@ -173,23 +71,21 @@ class MCNP():
 
     def format_input_file(self):
         formatted_input = ''
-        f0 = open(INPUT_FILE_NAME)
-        n = 0
-        s = "                        "
-        for line in f0:
 
-            n += 1
-            if n == 1:
-                formatted_input += line.strip() + "\n"
+        with open("input.txt", 'r') as f0:
+            n = 0
+            s = "                        "
 
-            elif n > 1 and s in line:
-                formatted_input += line[24:]
-                if len(line[24:]) == 0:
-                    formatted_input += "\n"
-            else:
-                formatted_input += line
-        with open(INPUT_FILE_NAME, 'w') as f:
+            for line in f0:
+                n += 1
+                if n == 1:
+                    formatted_input += line.strip() + "\n"
+                elif n > 1 and s in line:
+                    formatted_input += line[24:].rstrip() + "\n"
+                else:
+                    formatted_input += line
+
+        with open("input.txt", 'w') as f:
             f.write(formatted_input)
 
-        f.close()
         f0.close()

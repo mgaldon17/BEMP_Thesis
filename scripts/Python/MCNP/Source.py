@@ -7,11 +7,12 @@ class Source:
         self.source = source
 
     def getParticleType(self):
-
         with open("input_files/" + self.source, "r") as f:
             for line in f:
+                if "MEDAPP" in line:
+                    return "MEDAPP"
 
-                if "par" or "PAR" in line:
+                if "par" in line or "PAR" in line:
                     match = re.search(r'\d+', line)
 
                     if match:
@@ -23,5 +24,5 @@ class Source:
                         }
 
                         return switch.get(par, "")
-        if match is False:
-            print("Not particle type found")
+
+        print("No particle type found")
