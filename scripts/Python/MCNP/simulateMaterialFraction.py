@@ -1,7 +1,8 @@
 import shutil
 import time
-
 import pytz
+import tweepy.errors
+
 import MessageCenter as msg_center
 from timer import Timer
 from run import run
@@ -11,6 +12,7 @@ from Source import *
 
 
 def simulate_material_composition(sources, materials, targetMaterial, nps, gray, plot):
+    global particle_type
     t = Timer()
     t.start()
 
@@ -73,13 +75,11 @@ def run_simulate_material_composition(sources, materials, targetMaterial, nps, g
         total_time)
 
     # Send tweet
-    msg_center.MessageCenter(message).send_tweet()
+    try:
+        msg_center.MessageCenter(message).send_tweet()
+    except tweepy.errors.BadRequest:
+        message = "Simulation finished at " + str(timestamp) + " h " + str(timezone) + ". " + str(
+            total_time)
+        msg_center.MessageCenter(message).send_tweet()
 
 
-if __name__ == '__main__':
-    run_simulate_material_composition(["MEDAPP_Source.txt"],
-                                      ["materials_98%_MgO+2%_H2O.txt", "materials_95%_MgO+5%_H2O.txt"],
-                                      "MgO + H2O",
-                                      "1",
-                                      True,
-                                      False)
