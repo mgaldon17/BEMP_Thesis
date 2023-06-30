@@ -92,6 +92,10 @@ class Analyzer:
                     val = float(vals.split(' ')[0])
                     rel_error = float(vals.split(' ')[1])
                     abs_error = self.calculateAbsError(val, rel_error)
+                    if self.gray:
+                        val_list, err_list = self.convertIntoGray([val], [abs_error])
+                        val = val_list[0]
+                        abs_error = err_list[0]
                     tally.set_list_vals(val)
                     tally.set_list_errors(abs_error) # List of absolute errors
 

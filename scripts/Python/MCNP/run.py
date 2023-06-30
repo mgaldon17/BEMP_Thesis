@@ -57,9 +57,9 @@ def runMCNP(src, material, targetMaterial, nps, gray, plot, DATAPATH):
     particle_type = Source(src).getParticleType()
 
     # Change working dir to output
-    checkIfFolderExists("input.txt")
+    checkIfFolderExists("output")
     os.chdir("output")
-    logging.warning("Working directory changed to input.txt")
+    logging.warning("Working directory changed to output")
 
     for d in argon_density_values:
         argonDensity = str(d)
@@ -77,7 +77,7 @@ def runMCNP(src, material, targetMaterial, nps, gray, plot, DATAPATH):
         mcnp.format_input_file()
 
         # Run MCNP command
-        os.system("mpiexec -np 16 mcnp6.mpi i = input.txt")
+        os.system("mpiexec -np 96 mcnp6.mpi i = input.txt")
         # os.system("mcnp6 i = " + INPUT_FILE_NAME)
         datanames.append(q.get())
 
