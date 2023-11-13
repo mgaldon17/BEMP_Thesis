@@ -3,17 +3,17 @@ C ***************************************************************
 C Block B: Planes
 C ***************************************************************
 C Beginning of surfaces
-1 RCC 0 1 0 0 3.25 0 0.75       $Chamber tail
-2 RCC 0 4.25 0 0 2.1 0 0.7      $Chamber wall
-3 RCC 0 4.25 0 0 2.1 0 0.2      $Anode
-4 RCC 0 4.25 0 0 2.1 0 0.4      $Cavity
-5 RCC 0 4.25 0 0 2.1 0 0.202     $Anode layer of MgO
-6 RCC 0 4.25 0 0 2.1 0 0.402     $Anode layer of MgO
-7 RCC 0 4.25 0 0 2.1 0 0.70164     $Anode layer of MgO
-21 SY 6.35 0.19                 $Anode
-22 SY 6.35 0.39                 $Cavity
-23 SY 6.35 0.69                 $Chamber cap
-24 SY 6.35 0.202                 $Anode layer of MgO
-25 SY 6.35 0.402                 $Cavity layer of MgO
-26 SY 6.35 0.70164
+1 RCC 0 1 0 0 3.25 0 0.75         $Chamber tail
+2 RCC 0 4.25 0 0 2.1 0 0.7        $Chamber wall
+3 RCC 0 4.25 0 0 2.1 0 0.2        $Anode
+4 RCC 0 4.25 0 0 2.1 0 0.4        $Cavity
+5 RCC 0 4.25 0 0 2.1 0 0.2236     $Anode layer of hydromagnesite (+0.0236 cm)
+6 RCC 0 4.25 0 0 2.1 0 0.4236     $Cavity layer of hydromagnesite
+7 RCC 0 4.25 0 0 2.1 0 0.7236     $Wall layer of hydromagnesite
+21 SY 6.35 0.2                    $Anode sphere
+22 SY 6.35 0.4                    $Cavity sphere
+23 SY 6.35 0.7                    $Chamber sphere
+24 SY 6.35 0.2236                 $Anode layer of hydromagnesite (+0.0236 cm)
+25 SY 6.35 0.4236                 $Cavity layer of hydromagnesite
+26 SY 6.35 0.7236                 $Wall layer of hydromagnesite
 100 RPP -60 60 -60 60 -60 60    $Outer world contour

@@ -241,5 +241,5 @@ if __name__ == '__main__':
     values = np.arange(MCNP.d_0, MCNP.d_f, step)
     tallies = ["f06", "f16", "f26", "f36", "f46", "f56"]
 
-    analyzer = Analyzer(datanames, True, False, tallies, '10E8', values, "P", "0")
+    analyzer = Analyzer(datanames, True, False, tallies, '10E9', values, "P", "0")
     analyzer.analyze()

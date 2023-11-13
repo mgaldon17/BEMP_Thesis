@@ -44,6 +44,7 @@ def simulate_material_composition(sources, materials, targetMaterial, nps, gray,
 
 
 def run_simulate_material_composition(sources, materials, targetMaterial, nps, gray, plot):
+
     single_material = False # Must be false by default
     single_source = False
     mats_msg = ""
