@@ -13,8 +13,8 @@ sp1    0.   1.
 si2 -1.0 1.0
 sp2    0.   1.
 SI4 L 1 $Discrete lines of particles 1 (1 = neutrons and 2 = photons)
-SP4   3.25 $Distribution probabilities
-DS5 S 6 $Energy bins for neutrons
+SP4 1 $Distribution probabilities
+DS5 S 6 $Energy bins for neutrons and photons
 si6 h   1.00e-10            $// Energy-Bins Neutron
         1.00E-09
         1.00E-08

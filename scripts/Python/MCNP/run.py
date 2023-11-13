@@ -71,6 +71,7 @@ def runMCNP(src, material, targetMaterial, nps, gray, plot, DATAPATH):
         # Write to input.txt the input data of MCNP
         file = open("input.txt", 'w')
         file.write(input_file)
+
         file.close()
 
         # Format input file
