@@ -1,15 +1,17 @@
+import logging
 import os
 import shutil
 import time
+
 import pytz
-import logging
 import tweepy.errors
 
-from .materials import Materials
-from ..utilities.timer import Timer
 from source import Source
+from .materials import Materials
 from ..notificationBot import message_center as msg_center
 from ..utilities.ensureDirExists import ensureDirectoryExists
+from ..utilities.timer import Timer
+
 
 def validate_inputs(sources, materials, target_material, nps, gray, plot):
     if not sources or not materials:

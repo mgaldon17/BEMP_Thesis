@@ -4,8 +4,8 @@ import os
 import matplotlib.pyplot as plt
 import numpy as np
 import plotly.graph_objects as go
-from plotly.subplots import make_subplots
 from Python.MCNPSimulationScripts.main.withCorrosion.tally import Tally
+from plotly.subplots import make_subplots
 
 # Conversion rate from MeV/g to Gray
 # 1 gray in MeV/g is 6.24E9

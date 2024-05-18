@@ -1,5 +1,6 @@
-import os
 import logging
+import os
+
 
 def clean_output_folder():
     if os.path.exists("output/"):
