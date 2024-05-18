@@ -3,16 +3,17 @@ import os
 import time
 import numpy as np
 import configparser
+
 from threading import Thread
 from watchdog.observers import Observer
-from Materials import Materials
-from Source import Source
+from materials import Materials
+from source import Source
 from ..analysis.analysis import Analyzer
 from ..utilities.ensureDirExists import ensureDirectoryExists
-from Python.MCNPSimulationScripts.utilities.timer import Timer
-from ..MonitorFolder import MonitorFolder, q
-from Python.MCNPSimulationScripts.withCorrosion.MCNP_simulation import MCNP
-from Python.MCNPSimulationScripts.utilities.checkOS import checkSystem
+from ...MonitorFolder import MonitorFolder, q
+from .MCNP_simulation import MCNP
+from ..utilities.checkOS import checkSystem
+from ..utilities.timer import Timer
 
 
 def load_config():
@@ -103,7 +104,7 @@ def run_mcnp(src, material, target_material, nps, gray, plot, datapath):
     analyzer = Analyzer(DATANAMES, gray, plot, tal, nps, argon_density_values, particle_type, solute_percentage)
     analyzer.analyze()
     DATANAMES.clear()
-    os.chdir("../..")
+    os.chdir("../../..")
     logging.warning("Working directory changed back to root")
     logging.warning("----- END OF THE SCRIPT -----\n")
     time.sleep(3)

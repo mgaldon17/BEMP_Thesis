@@ -10,7 +10,7 @@ def clean_output_folder():
         for f in all_files:
             os.remove(f)
 
-        logging.info("All files in output_nps10E7 folder were removed")
+        logging.info("All files in output_nps10E7 simulation were removed")
     else:
         print('Folder does not exist.')
 

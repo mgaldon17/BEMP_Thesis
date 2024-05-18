@@ -3,10 +3,11 @@ import queue
 import time
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
-from Python.MCNPSimulationScripts.utilities.checkOS import checkSystem
+from .main.utilities.checkOS import checkSystem
+
 
 class MonitorFolder(FileSystemEventHandler):
-    """Class to monitor changes in a folder."""
+    """Class to monitor changes in a simulation."""
 
     def __init__(self, queue, file_size=1000):
         self.queue = queue
