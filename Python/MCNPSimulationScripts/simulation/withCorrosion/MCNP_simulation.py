@@ -1,4 +1,4 @@
-import logging
+import os
 
 
 class MCNP:
@@ -46,10 +46,17 @@ class MCNP:
 
     def get_nps(self):
         """Get the number of particles from the input file."""
-        with open("input.txt") as file:
-            for line in file:
-                if "nps" in line:
-                    return line.split(" ")[1]
+        try:
+            with open("input.txt") as file:
+                for line in file:
+                    if "nps" in line:
+                        return line.split(" ")[1]
+        except FileNotFoundError:
+            print("Error: The file 'input.txt' was not found.")
+        except PermissionError:
+            print("Error: Permission denied when trying to open 'input.txt'.")
+        except Exception as e:
+            print(f"An unexpected error occurred: {str(e)}")
 
     def get_tallies(self):
         """Get the tallies from the input file."""
@@ -59,10 +66,18 @@ class MCNP:
 
     def format_input_file(self):
         """Format the input file to make it more readable."""
-        with open("input.txt", 'r') as file:
-            lines = file.readlines()
+        try:
+            with open("input.txt", 'r') as file:
+                lines = file.readlines()
 
-        formatted_lines = [line[24:].rstrip() if line.startswith("                        ") else line for line in lines]
+            formatted_lines = [line[24:].rstrip() if line.startswith("                        ") else line for line in
+                               lines]
 
-        with open("input.txt", 'w') as file:
-            file.write("\n".join(formatted_lines))
+            with open("input.txt", 'w') as file:
+                file.write("\n".join(formatted_lines))
+        except FileNotFoundError:
+            print("Error: The file 'input.txt' was not found.")
+        except PermissionError:
+            print("Error: Permission denied when trying to open 'input.txt'.")
+        except Exception as e:
+            print(f"An unexpected error occurred: {str(e)}")

@@ -1,4 +1,4 @@
-from Python.MCNPSimulationScripts.withCorrosion.simulate_material_fraction import run
+from .main.withCorrosion.simulate_material_fraction import run
 
 if __name__ == '__main__':
     run(["MEDAPP_Source.txt"], ["/hydromagnesite/materials_0%_water + 100%_hydro.txt",

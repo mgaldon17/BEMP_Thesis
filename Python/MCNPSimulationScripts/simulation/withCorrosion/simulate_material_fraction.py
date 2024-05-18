@@ -5,13 +5,11 @@ import pytz
 import logging
 import tweepy.errors
 
-from Python.MCNPSimulationScripts.notificationBot import MessageCenter as msg_center
-from Python.MCNPSimulationScripts.utilities.timer import Timer
-from Python.MCNPSimulationScripts.withCorrosion.run import run
-from Python.MCNPSimulationScripts.withCorrosion.Materials import *
-from Python.MCNPSimulationScripts.withCorrosion.Source import *
-from Python.MCNPSimulationScripts.utilities.ensureDirExists import ensureDirectoryExists
-
+from .materials import Materials
+from ..utilities.timer import Timer
+from source import Source
+from ..notificationBot import message_center as msg_center
+from ..utilities.ensureDirExists import ensureDirectoryExists
 
 def validate_inputs(sources, materials, target_material, nps, gray, plot):
     if not sources or not materials:
@@ -59,7 +57,7 @@ def simulate_material_composition(sources, materials, target_material, nps, gray
 
         destination_folder = particle_type + " source"
 
-        # Create the destination folder if it doesn't exist
+        # Create the destination simulation if it doesn't exist
         ensureDirectoryExists(destination_folder)
 
         for folder_name in os.listdir():
@@ -123,8 +121,7 @@ def send_message(message, timestamp, timezone, total_time):
     try:
         msg_center.MessageCenter(message).send_tweet()
     except tweepy.errors.BadRequest:
-        message = "Simulation finished at " + str(timestamp) + " h " + str(timezone) + ". " + str(
-            total_time)
+        message = f"Simulation finished at {timestamp}  h {timezone}. {total_time}"
         msg_center.MessageCenter(message).send_tweet()
 
     return message
