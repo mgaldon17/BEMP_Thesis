@@ -1,4 +1,5 @@
 #ignore all kind of files
-Python/MCNPSimulationScripts/output*
-Python/MCNPSimulationScripts/__pycache__
-Python/.idea*
+.idea/
+Python/.DS_Store
+Python/MCNPSimulationScripts/simulation/withCorrosion/__pycache__/
+Python/MCNPSimulationScripts/__pycache__/
