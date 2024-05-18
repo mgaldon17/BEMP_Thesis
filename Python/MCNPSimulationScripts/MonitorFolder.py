@@ -1,8 +1,10 @@
 import logging
 import queue
 import time
-from watchdog.observers import Observer
+
 from watchdog.events import FileSystemEventHandler
+from watchdog.observers import Observer
+
 from .main.utilities.checkOS import checkSystem
 
 

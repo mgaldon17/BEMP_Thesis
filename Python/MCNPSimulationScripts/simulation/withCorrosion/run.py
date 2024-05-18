@@ -1,19 +1,20 @@
+import configparser
 import logging
 import os
 import time
-import numpy as np
-import configparser
-
 from threading import Thread
+
+import numpy as np
 from watchdog.observers import Observer
+
 from materials import Materials
 from source import Source
-from ..analysis.analysis import Analyzer
-from ..utilities.ensureDirExists import ensureDirectoryExists
-from ...MonitorFolder import MonitorFolder, q
 from .MCNP_simulation import MCNP
+from ..analysis.analysis import Analyzer
 from ..utilities.checkOS import checkSystem
+from ..utilities.ensureDirExists import ensureDirectoryExists
 from ..utilities.timer import Timer
+from ...MonitorFolder import MonitorFolder, q
 
 
 def load_config():
