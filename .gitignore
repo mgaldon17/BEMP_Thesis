@@ -1,6 +1,5 @@
 #ignore all kind of files
-scripts/Python/MCNP/output*
-scripts/Python/MCNP/output/*
-scripts/Python/MCNP/__pycache__
-scripts/Python/MCNP/output_nps10E7/*
-scripts/Python/.idea*
+.idea/
+Python/.DS_Store
+Python/MCNPSimulationScripts/simulation/withCorrosion/__pycache__/
+Python/MCNPSimulationScripts/__pycache__/
