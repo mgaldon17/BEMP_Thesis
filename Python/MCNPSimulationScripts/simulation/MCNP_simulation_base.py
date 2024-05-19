@@ -32,11 +32,11 @@ class MCNPSimulationBase:
 
         return values
 
-    def load_mcnp_blocks(self, source, material):
+    def load_mcnp_blocks(self, source, material, tallies, planes, mode):
         input_files_dir = os.path.join(os.path.dirname(__file__), '..', 'inputFilesParts')
 
         try:
-            with open(os.path.join(input_files_dir, 'tallies.txt')) as tally_file:
+            with open(os.path.join(input_files_dir, tallies)) as tally_file:
                 tallies = tally_file.read().rstrip()
 
             with open("inputFilesParts/" + source) as src_file:
@@ -45,10 +45,10 @@ class MCNPSimulationBase:
             with open("inputFilesParts/" + material) as mat_file:
                 materials = mat_file.read().rstrip()
 
-            with open(os.path.join(input_files_dir, 'planes_with_corrosion.txt')) as planes_file:
+            with open(os.path.join(input_files_dir, planes)) as planes_file:
                 planes = planes_file.read().rstrip()
 
-            with open(os.path.join(input_files_dir, 'mode.txt')) as mode_file:
+            with open(os.path.join(input_files_dir, mode)) as mode_file:
                 mode = mode_file.read().rstrip()
         except FileNotFoundError:
             logging.error("One or more of the required files are missing")

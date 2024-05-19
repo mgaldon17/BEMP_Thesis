@@ -13,7 +13,7 @@ from Python.MCNPSimulationScripts.simulation.utilities.timer import Timer
 from Python.MCNPSimulationScripts.monitor import MonitorFolder, q
 
 
-def run(source, material, target_material, nps, gray, plot):
+def run(source, material, target_material, nps, tallies, planes, mode):
     output_path = "output"
 
     # Checks the operative system
@@ -29,7 +29,7 @@ def run(source, material, target_material, nps, gray, plot):
     ensure_directory_exists(output_path)
     watcher = Thread(target=observer.start)
 
-    mcnp_run = Thread(target=run_mcnp, args=(source, material, target_material, nps, gray, plot, datapath))
+    mcnp_run = Thread(target=run_mcnp, args=(source, material, target_material, nps, datapath, tallies, planes, mode))
 
     watcher.start()  # Start watcher thread
     mcnp_run.start()  # Start MCNPSimulationScripts thread
@@ -42,7 +42,7 @@ def run(source, material, target_material, nps, gray, plot):
     timer.stop()
 
 
-def run_mcnp(src, material, nps, datapath):
+def run_mcnp(src, material, nps, datapath, tallies, planes, mode):
     os.environ['DATAPATH'] = datapath
 
     mcnp_base = MCNPSimulationBase()
@@ -50,7 +50,7 @@ def run_mcnp(src, material, nps, datapath):
     D_0, D_F = mcnp_base.load_config()
     argon_density_values = mcnp_base.set_density_values(D_0, D_F)
 
-    tallies, source, materials, planes, mode = mcnp_base.load_mcnp_blocks(src, material)
+    tallies, source, materials, planes, mode = mcnp_base.load_mcnp_blocks(src, material, tallies, planes, mode)
 
     logging.info(f"DATAPATH variable set to {datapath}")
 
