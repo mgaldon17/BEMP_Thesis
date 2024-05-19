@@ -7,11 +7,21 @@ C Beginning of surfaces
 2 RCC 0 4.25 0 0 2.1 0 0.7      $Chamber wall
 3 RCC 0 4.25 0 0 2.1 0 0.2      $Anode
 4 RCC 0 4.25 0 0 2.1 0 0.4      $Cavity
-21 SY 6.35 0.19                 $Anode
-22 SY 6.35 0.39                 $Cavity
-23 SY 6.35 0.69                 $Chamber cap
+5 RCC 0 4.25 0 0 2.1 0 0.2     $Anode layer of MgO
+6 RCC 0 4.25 0 0 2.1 0 0.4     $Anode layer of MgO
+7 RCC 0 4.25 0 0 2.1 0 0.7     $Anode layer of MgO
+21 SY 6.35 0.2                 $Anode
+22 SY 6.35 0.4                 $Cavity
+23 SY 6.35 0.7                 $Chamber cap
+24 SY 6.35 0.2                 $Anode layer of MgO
+25 SY 6.35 0.4                 $Cavity layer of MgO
+26 SY 6.35 0.7
 100 RPP -60 60 -60 60 -60 60    $Outer world contour
-51 RCC 2.5 5.625 0 3 0 0 1.375
-52 C/X 5.625 0 1.875
-53 PX 2.5
-54 PX 6
+51 RCC -5.357 5.625 0 2 0 0 1.8
+52 C/X 5.625 0 2.25
+53 PX -5.357
+55 PX -3.957
+56 RCC -5.357 5.625 0 4.6 0 0 0.25
+57 PX -4.157
+58 RCC -5.357 5.625 0 0.25 0 0 0.4
+59 PX -1.207 $Edit this plane every time we shift the Sr along the x axis
