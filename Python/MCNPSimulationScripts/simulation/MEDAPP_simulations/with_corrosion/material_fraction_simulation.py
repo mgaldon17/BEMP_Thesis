@@ -8,9 +8,9 @@ import tweepy.errors
 
 from source import Source
 from .materials import Materials
-from ..notificationBot import message_center as msg_center
-from ..utilities.ensureDirExists import ensureDirectoryExists
-from ..utilities.timer import Timer
+from Python.MCNPSimulationScripts.simulation.notification_bot import message_center as msg_center
+from Python.MCNPSimulationScripts.simulation.utilities.ensure_dir_exists import ensure_directory_exists
+from Python.MCNPSimulationScripts.simulation.utilities.timer import Timer
 
 
 def validate_inputs(sources, materials, target_material, nps, gray, plot):
@@ -60,7 +60,7 @@ def simulate_material_composition(sources, materials, target_material, nps, gray
         destination_folder = particle_type + " source"
 
         # Create the destination simulation if it doesn't exist
-        ensureDirectoryExists(destination_folder)
+        ensure_directory_exists(destination_folder)
 
         for folder_name in os.listdir():
             if folder_name in folders_to_move:
