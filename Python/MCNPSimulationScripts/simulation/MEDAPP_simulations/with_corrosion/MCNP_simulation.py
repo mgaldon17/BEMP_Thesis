@@ -1,4 +1,4 @@
-from ..MCNP_simulation_base import MCNPSimulationBase
+from Python.MCNPSimulationScripts.simulation.MCNP_simulation_base import MCNPSimulationBase
 
 
 class MCNP(MCNPSimulationBase):
