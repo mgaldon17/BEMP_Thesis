@@ -1,5 +1,5 @@
 #ignore all kind of files
 .idea/
 Python/.DS_Store
-Python/MCNPSimulationScripts/simulation/withCorrosion/__pycache__/
+Python/MCNPSimulationScripts/simulation/with_corrosion/__pycache__/
 Python/MCNPSimulationScripts/__pycache__/

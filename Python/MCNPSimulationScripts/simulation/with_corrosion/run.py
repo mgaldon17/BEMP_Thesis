@@ -5,12 +5,12 @@ from threading import Thread
 
 from watchdog.observers import Observer
 
+from materials import Materials
 from .MCNP_simulation import MCNP
 from ..MCNP_simulation_base import MCNPSimulationBase
 from ..utilities.checkOS import checkSystem
 from ..utilities.ensureDirExists import ensureDirectoryExists
 from ..utilities.timer import Timer
-from ..with_corrosion.source import Source
 from ...monitor import MonitorFolder, q
 
 
@@ -43,9 +43,8 @@ def run(source, material, target_material, nps, gray, plot):
     timer.stop()
 
 
-def run_mcnp(src, material, nps, datapath):
+def run_mcnp(src, material, target_material, nps, gray, plot, datapath):
     os.environ['DATAPATH'] = datapath
-
     mcnp_base = MCNPSimulationBase()
 
     D_0, D_F = mcnp_base.load_config()
@@ -55,17 +54,15 @@ def run_mcnp(src, material, nps, datapath):
 
     logging.info(f"DATAPATH variable set to {datapath}")
 
-    particle_type = Source(src).get_particle_type()
+    solute_density = Materials(material, target_material).get_solute_density()
 
     ensureDirectoryExists("output")
     os.chdir("output")
     logging.warning("Working directory changed to output")
-    # Argon density values are used to run MCNP simulations with different argon densities
-    # However, the solute density (Mg) is fixed at 1.73 g/cm^3
+
     for d in argon_density_values:
         argon_density = str(d)
-        # Run MCNP simulation with a given solute density of 1.73 g/cm^3
-        mcnp = MCNP(1.74, argon_density, tallies, source, materials, planes, mode, nps)
+        mcnp = MCNP(solute_density, argon_density, tallies, source, materials, planes, mode, nps)
 
         input_file = mcnp.get_input_file()
 

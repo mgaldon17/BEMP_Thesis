@@ -5,7 +5,7 @@ import time
 from watchdog.events import FileSystemEventHandler
 from watchdog.observers import Observer
 
-from .main.utilities.checkOS import checkSystem
+from .simulation.utilities.checkOS import checkSystem
 
 
 class MonitorFolder(FileSystemEventHandler):
