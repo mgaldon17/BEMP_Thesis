@@ -1,5 +1,6 @@
 import os
 
+
 def ensureDirectoryExists(directory_name):
     """Ensure that a directory exists. If it doesn't, create it."""
     try:

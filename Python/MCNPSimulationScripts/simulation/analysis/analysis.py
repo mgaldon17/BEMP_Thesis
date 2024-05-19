@@ -31,7 +31,6 @@ def outputToTxt(tally_dict, particleType, water_percentage):
         f.write("y_err_" + tally_dict[tally].get_number() + particleType + "_" + water_percentage + " = " + str(y_err))
         f.write("\n")
 
-
     pass
 
 
@@ -93,7 +92,7 @@ class Analyzer:
                         val = val_list[0]
                         abs_error = err_list[0]
                     tally.set_list_vals(val)
-                    tally.set_list_errors(abs_error) # List of absolute errors
+                    tally.set_list_errors(abs_error)  # List of absolute errors
 
         outputToTxt(tally_dict, self.particleType, self.water_percentage)
 

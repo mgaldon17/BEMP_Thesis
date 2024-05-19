@@ -27,6 +27,7 @@ class MonitorFolder(FileSystemEventHandler):
         """Handle the event when a file is modified."""
         pass
 
+
 if __name__ == "__main__":
     src_path = "/output"
     q = queue.Queue()
