@@ -1,4 +1,6 @@
 from ..MCNP_simulation_base import MCNPSimulationBase
+
+
 class MCNP(MCNPSimulationBase):
     """Class to represent a MCNP simulation."""
 
@@ -38,4 +40,3 @@ class MCNP(MCNPSimulationBase):
                     nps {self.nps} $Number of particles
                     prdmp 2j 1 1 10E12 $Print and dump card; PRDMP NDP NDM MCT NDMP with 1 for writing tallies for plotting
                     '''
-

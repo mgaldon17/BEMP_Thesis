@@ -92,4 +92,3 @@ class MCNPSimulationBase:
             print("Error: Permission denied when trying to open 'input.txt'.")
         except Exception as e:
             print(f"An unexpected error occurred: {str(e)}")
-

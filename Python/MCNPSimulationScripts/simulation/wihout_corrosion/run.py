@@ -5,12 +5,12 @@ from threading import Thread
 
 from watchdog.observers import Observer
 
-from ..MCNP_simulation_base import MCNPSimulationBase
-from ..withCorrosion.source import Source
 from .MCNP_simulation import MCNP
+from ..MCNP_simulation_base import MCNPSimulationBase
 from ..utilities.checkOS import checkSystem
 from ..utilities.ensureDirExists import ensureDirectoryExists
 from ..utilities.timer import Timer
+from ..withCorrosion.source import Source
 from ...MonitorFolder import MonitorFolder, q
 
 
@@ -95,4 +95,3 @@ def run_mcnp(src, material, nps, datapath):
     logging.warning("Working directory changed back to root")
     logging.warning("----- END OF THE SCRIPT -----\n")
     time.sleep(3)
-

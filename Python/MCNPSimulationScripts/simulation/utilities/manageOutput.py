@@ -15,6 +15,7 @@ def clean_output_folder():
     else:
         print('Folder does not exist.')
 
+
 def create_output_folder(OUTPUT_PATH):
     # Create output dir if not exist
     isExist = os.path.exists(OUTPUT_PATH)
@@ -23,6 +24,7 @@ def create_output_folder(OUTPUT_PATH):
         print(os.getcwd())
         os.makedirs(OUTPUT_PATH)
         print("The new directory is created!")
+
 
 if __name__ == '__main__':
     clean_output_folder()
