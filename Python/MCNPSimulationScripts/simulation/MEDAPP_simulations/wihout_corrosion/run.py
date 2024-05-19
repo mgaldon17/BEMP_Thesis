@@ -6,12 +6,11 @@ from threading import Thread
 from watchdog.observers import Observer
 
 from .MCNP_simulation import MCNP
-from Python.MCNPSimulationScripts.simulation.MCNP_simulation_base import MCNPSimulationBase
-from Python.MCNPSimulationScripts.simulation.utilities.check_os import check_system
-from Python.MCNPSimulationScripts.simulation.utilities.ensure_dir_exists import ensure_directory_exists
-from Python.MCNPSimulationScripts.simulation.utilities.timer import Timer
-from ..with_corrosion.source import Source
-from Python.MCNPSimulationScripts.monitor import MonitorFolder, q
+from ....simulation.MCNP_simulation_base import MCNPSimulationBase
+from ...utilities.check_os import check_system
+from ...utilities.ensure_dir_exists import ensure_directory_exists
+from ....simulation.utilities.timer import Timer
+from ....monitor import MonitorFolder, q
 
 
 def run(source, material, target_material, nps, gray, plot):
