@@ -5,13 +5,13 @@ from threading import Thread
 
 from watchdog.observers import Observer
 
-from materials import Materials
 from .MCNP_simulation import MCNP
-from ..MCNP_simulation_base import MCNPSimulationBase
-from ..utilities.check_os import check_system
-from ..utilities.ensure_dir_exists import ensure_directory_exists
-from ..utilities.timer import Timer
-from ...monitor import MonitorFolder, q
+from Python.MCNPSimulationScripts.simulation.MCNP_simulation_base import MCNPSimulationBase
+from Python.MCNPSimulationScripts.simulation.utilities.check_os import check_system
+from Python.MCNPSimulationScripts.simulation.utilities.ensure_dir_exists import ensure_directory_exists
+from Python.MCNPSimulationScripts.simulation.utilities.timer import Timer
+from Python.MCNPSimulationScripts.simulation.MEDAPP_simulations.with_corrosion.materials import Materials
+from Python.MCNPSimulationScripts.monitor import MonitorFolder, q
 
 
 def run(source, material, target_material, nps, gray, plot):
@@ -88,7 +88,7 @@ def run_mcnp(src, material, target_material, nps, datapath):
             return
 
     DATANAMES.clear()
-    os.chdir("../../..")
+    os.chdir("../../../..")
     logging.warning("Working directory changed back to root")
     logging.warning("----- END OF THE SCRIPT -----\n")
     time.sleep(3)
