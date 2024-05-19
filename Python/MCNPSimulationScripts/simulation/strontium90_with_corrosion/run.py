@@ -5,12 +5,12 @@ from threading import Thread
 
 from watchdog.observers import Observer
 
-from materials import Materials
 from .MCNP_simulation import MCNP
 from ..MCNP_simulation_base import MCNPSimulationBase
 from ..utilities.check_os import check_system
 from ..utilities.ensure_dir_exists import ensure_directory_exists
 from ..utilities.timer import Timer
+from ..with_corrosion.materials import Materials
 from ...monitor import MonitorFolder, q
 
 
