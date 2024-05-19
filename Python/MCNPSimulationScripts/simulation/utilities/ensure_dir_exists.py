@@ -1,6 +1,7 @@
 import os
 
-def ensureDirectoryExists(directory_name):
+
+def ensure_directory_exists(directory_name):
     """Ensure that a directory exists. If it doesn't, create it."""
     try:
         os.makedirs(directory_name, exist_ok=True)

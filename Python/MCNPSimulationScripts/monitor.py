@@ -5,7 +5,7 @@ import time
 from watchdog.events import FileSystemEventHandler
 from watchdog.observers import Observer
 
-from .main.utilities.checkOS import checkSystem
+from .simulation.utilities.check_os import check_system
 
 
 class MonitorFolder(FileSystemEventHandler):
@@ -18,7 +18,7 @@ class MonitorFolder(FileSystemEventHandler):
     def on_created(self, event):
         """Handle the event when a file is created."""
         print(event.src_path, event.event_type)
-        win, DATAPATH, sep = checkSystem()
+        win, DATAPATH, sep = check_system()
         mctan = event.src_path.split(sep)[-1]
         if mctan[:2] == "mc":
             self.queue.put(mctan)
@@ -26,6 +26,7 @@ class MonitorFolder(FileSystemEventHandler):
     def on_modified(self, event):
         """Handle the event when a file is modified."""
         pass
+
 
 if __name__ == "__main__":
     src_path = "/output"

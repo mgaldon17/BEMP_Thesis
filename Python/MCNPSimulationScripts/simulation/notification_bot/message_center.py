@@ -24,7 +24,6 @@ class MessageCenter:
     # BEARER_TOKEN = ...
 
     def __init__(self, msg):
-
         parameters = read_parameters()
 
         self.message = msg

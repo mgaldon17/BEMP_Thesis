@@ -1,9 +1,12 @@
+from Python.MCNPSimulationScripts.simulation.MCNP_simulation_base import MCNPSimulationBase
 
-class MCNP:
+
+class MCNP(MCNPSimulationBase):
     """Class to represent a MCNP simulation."""
 
     def __init__(self, solute_density, argon_density, tallies, source, materials, planes, mode, nps):
         """Initialize a MCNP instance."""
+        super().__init__()
         self.solute_density = solute_density
         self.argon_density = argon_density
         self.tallies = tallies
@@ -41,41 +44,3 @@ class MCNP:
                     nps {self.nps} $Number of particles
                     prdmp 2j 1 1 10E12 $Print and dump card; PRDMP NDP NDM MCT NDMP with 1 for writing tallies for plotting
                     '''
-
-    def get_nps(self):
-        """Get the number of particles from the input file."""
-        try:
-            with open("input.txt") as file:
-                for line in file:
-                    if "nps" in line:
-                        return line.split(" ")[1]
-        except FileNotFoundError:
-            print("Error: The file 'input.txt' was not found.")
-        except PermissionError:
-            print("Error: Permission denied when trying to open 'input.txt'.")
-        except Exception as e:
-            print(f"An unexpected error occurred: {str(e)}")
-
-    def get_tallies(self):
-        """Get the tallies from the input file."""
-        tally_array = self.tallies.split("\n")
-        tally_numbers = [tally.split(':')[0] for tally in tally_array if "f" in tally]
-        return tally_numbers
-
-    def format_input_file(self):
-        """Format the input file to make it more readable."""
-        try:
-            with open("input.txt", 'r') as file:
-                lines = file.readlines()
-
-            formatted_lines = [line[24:].rstrip() if line.startswith("                        ") else line for line in
-                               lines]
-
-            with open("input.txt", 'w') as file:
-                file.write("\n".join(formatted_lines))
-        except FileNotFoundError:
-            print("Error: The file 'input.txt' was not found.")
-        except PermissionError:
-            print("Error: Permission denied when trying to open 'input.txt'.")
-        except Exception as e:
-            print(f"An unexpected error occurred: {str(e)}")

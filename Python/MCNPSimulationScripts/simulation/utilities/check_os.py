@@ -1,6 +1,7 @@
 import platform
 
-def checkSystem():
+
+def check_system():
     is_windows = platform.system() == "Windows"
     if is_windows:
         datapath = "Z:\\MY_MCNP\\MCNP_DATA"
