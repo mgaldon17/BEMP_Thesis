@@ -8,9 +8,9 @@ import tweepy.errors
 
 from source import Source
 from .materials import Materials
-from ..notification_bot import message_center as msg_center
-from ..utilities.ensure_dir_exists import ensure_directory_exists
-from ..utilities.timer import Timer
+from Python.MCNPSimulationScripts.simulation.notification_bot import message_center as msg_center
+from Python.MCNPSimulationScripts.simulation.utilities.ensure_dir_exists import ensure_directory_exists
+from Python.MCNPSimulationScripts.simulation.utilities.timer import Timer
 
 
 def validate_inputs(sources, materials, target_material, nps, gray, plot):

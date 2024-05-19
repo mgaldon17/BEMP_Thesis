@@ -1,4 +1,4 @@
-from ..MCNP_simulation_base import MCNPSimulationBase
+from Python.MCNPSimulationScripts.simulation.MCNP_simulation_base import MCNPSimulationBase
 
 
 class MCNP(MCNPSimulationBase):
@@ -27,17 +27,7 @@ class MCNP(MCNPSimulationBase):
                     113 1 -1.5914 -3:-21                $Central anode
                     114 2 -{self.argon_density} (-4:-22) (5 24)        $Cavity
                     117 1 -1.5914 (-2:-23) (6 25)
-                    20 3 -0.001205 -100 1 2 23 #61 #62 #63 #64 #65 #66 #67 #68 #69 #70 $Space object-graveyard
-                    61 5 -8.07 53 -52 (-55:-51) 58 56
-                    62 3 -0.001205 51 -59 -52 55
-                    63 LIKE 61 BUT TRCL=(0 0 0 -1 0 0 0 1 0 0 0 -1 1)
-                    64 LIKE 62 BUT TRCL=(0 0 0 -1 0 0 0 1 0 0 0 -1 1)
-                    65 5 -8.07 -56 -57 53
-                    66 8 -4.785 -56 -51 57 -51
-                    67 LIKE 65 BUT TRCL=(0 0 0 -1 0 0 0 1 0 0 0 -1 1)
-                    68 LIKE 66 BUT TRCL=(0 0 0 -1 0 0 0 1 0 0 0 -1 1)
-                    69 5 -8.07 -58 56 53
-                    70 LIKE 69 BUT TRCL=(0 0 0 -1 0 0 0 1 0 0 0 -1 1)
+                    20 3 -0.001205 -100 1 7 26     $Space object-graveyard
 
                     {self.planes}
 

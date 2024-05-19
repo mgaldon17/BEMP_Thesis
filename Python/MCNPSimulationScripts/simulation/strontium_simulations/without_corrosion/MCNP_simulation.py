@@ -1,4 +1,4 @@
-from ..MCNP_simulation_base import MCNPSimulationBase
+from Python.MCNPSimulationScripts.simulation.MCNP_simulation_base import MCNPSimulationBase
 
 
 class MCNP(MCNPSimulationBase):
@@ -6,7 +6,6 @@ class MCNP(MCNPSimulationBase):
 
     def __init__(self, solute_density, argon_density, tallies, source, materials, planes, mode, nps):
         """Initialize a MCNP instance."""
-        super().__init__()
         self.solute_density = solute_density
         self.argon_density = argon_density
         self.tallies = tallies
@@ -27,10 +26,7 @@ class MCNP(MCNPSimulationBase):
                     11 1 -1.5914 -1                     $Chamber tail
                     113 1 -1.5914 -3:-21                $Central anode
                     114 2 -{self.argon_density} (-4:-22) (5 24)        $Cavity
-                    115 7 -2.18 (-6:-25) (4 22)    $Chamber wall
-                    116 7 -2.18 (-5:-24) (3 21)
                     117 1 -1.5914 (-2:-23) (6 25)
-                    118 7 -2.18 (-7:-26) (2 23)
                     20 3 -0.001205 -100 1 2 23 #61 #62 #63 #64 #65 #66 #67 #68 #69 #70 $Space object-graveyard
                     61 5 -8.07 53 -52 (-55:-51) 58 56
                     62 3 -0.001205 51 -59 -52 55
