@@ -54,8 +54,6 @@ def run_mcnp(src, material, nps, datapath):
 
     logging.info(f"DATAPATH variable set to {datapath}")
 
-    particle_type = Source(src).get_particle_type()
-
     ensure_directory_exists("output")
     os.chdir("output")
     logging.warning("Working directory changed to output")
