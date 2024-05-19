@@ -8,8 +8,8 @@ from watchdog.observers import Observer
 from materials import Materials
 from .MCNP_simulation import MCNP
 from ..MCNP_simulation_base import MCNPSimulationBase
-from ..utilities.checkOS import checkSystem
-from ..utilities.ensureDirExists import ensureDirectoryExists
+from ..utilities.check_os import check_system
+from ..utilities.ensure_dir_exists import ensure_directory_exists
 from ..utilities.timer import Timer
 from ...monitor import MonitorFolder, q
 
@@ -18,7 +18,7 @@ def run(source, material, target_material, nps, gray, plot):
     output_path = "output"
 
     # Checks the operative system
-    win, datapath, sep = checkSystem()
+    win, datapath, sep = check_system()
 
     timer = Timer()
     timer.start()
@@ -27,7 +27,7 @@ def run(source, material, target_material, nps, gray, plot):
     observer = Observer()
     observer.schedule(event_handler, path=output_path, recursive=True)
 
-    ensureDirectoryExists(output_path)
+    ensure_directory_exists(output_path)
     watcher = Thread(target=observer.start)
 
     mcnp_run = Thread(target=run_mcnp, args=(source, material, target_material, nps, gray, plot, datapath))
@@ -56,7 +56,7 @@ def run_mcnp(src, material, target_material, nps, gray, plot, datapath):
 
     solute_density = Materials(material, target_material).get_solute_density()
 
-    ensureDirectoryExists("output")
+    ensure_directory_exists("output")
     os.chdir("output")
     logging.warning("Working directory changed to output")
 
