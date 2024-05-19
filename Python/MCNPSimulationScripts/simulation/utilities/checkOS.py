@@ -1,5 +1,6 @@
 import platform
 
+
 def checkSystem():
     is_windows = platform.system() == "Windows"
     if is_windows:

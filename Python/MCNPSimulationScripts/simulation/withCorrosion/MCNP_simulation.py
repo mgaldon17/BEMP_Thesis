@@ -1,4 +1,3 @@
-
 class MCNP:
     """Class to represent a MCNP simulation."""
 

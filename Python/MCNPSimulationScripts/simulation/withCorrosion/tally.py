@@ -1,5 +1,6 @@
 from typing import List
 
+
 class Tally:
     """Class to represent a tally."""
 
