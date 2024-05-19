@@ -3,9 +3,9 @@ import os
 
 
 def clean_output_folder():
-    if os.path.exists("output/"):
+    if os.path.exists("../../../output"):
         print('Folder exists!')
-        os.chdir("output/")
+        os.chdir("../../../output")
         all_files = os.listdir()
 
         for f in all_files:
@@ -28,4 +28,4 @@ def create_output_folder(OUTPUT_PATH):
 
 if __name__ == '__main__':
     clean_output_folder()
-    create_output_folder("your_output_path_here")
+    create_output_folder("../../../output")
