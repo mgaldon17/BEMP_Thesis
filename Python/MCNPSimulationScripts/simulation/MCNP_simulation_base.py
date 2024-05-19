@@ -45,7 +45,7 @@ class MCNPSimulationBase:
             with open("inputFilesParts/" + material) as mat_file:
                 materials = mat_file.read().rstrip()
 
-            with open(os.path.join(input_files_dir, 'planes.txt')) as planes_file:
+            with open(os.path.join(input_files_dir, 'planes_with_corrosion.txt')) as planes_file:
                 planes = planes_file.read().rstrip()
 
             with open(os.path.join(input_files_dir, 'mode.txt')) as mode_file:
