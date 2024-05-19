@@ -1,13 +1,71 @@
 C ***************************************************************
 C ******** Source ***********************************************
-SDEF POS = d3
-     ERG = d6
-     PAR = 3
-si3 L 4 5.625 0 -4 5.625 0
-sp3 0.5 0.5
-si6 L   0.0
-	0.546            $// Energy-Bins Beta(MeV)
-	2.274
-sp6 d 0.0
-      7.63444005E-10
-      3.0084513E-6
+SDEF CEL=d1 POS=FCEL d2 AXS=1 0 0 RAD=FCEL d5 EXT=FCEL d8 PAR = 3 ERG=d21
+c
+SI1 L 66 68 $ choose which cell source region to use for source
+SP1 0.5 0.5 $ 40% from src 1; 60% from src 2
+c -- set POS for each source
+DS2 S 3 4 $ based on the cell chosen, set distribution for POS
+SI3 L -3.757 5.625 0 $ center for spatially sampling of source 1
+SP3 1 $ prob. distn for src 1 center
+SI4 L 3.757 5.625 0 $ center for spatially sampling of source 2
+SP4 1 $ prob. distn for src 2 center
+c -- set RAD for each source (must completely include cells 8 or 9)
+DS5 S 6 7 $ distns for sampling radially from each src axis
+SI6 0 1 $ radial sampling limits for src1
+SP6 -21 1 $ radial sampling weight for src1
+SI7 0 1 $ radial sampling limits for src2
+SP7 -21 1 $ radial sampling weight for src2
+c -- set EXT for each source (must completely include cells 8 or 9)
+DS8 S 9 10 $ distns for sampling axially for each src
+SI9 -1 1 $ axial sampling limits for src1
+SP9 -21 0 $ axial sampling weight for src1
+SI10 -1 1 $ axial sampling limits for src2
+SP10 -21 0 $ axial sampling weight for src2
+c -- set PAR distributions
+c si15 L 3 2
+c sp15 1 1
+c -- set Energy bins
+c ds20 s 21 22
+si21 A  0
+	1.37E-02
+	4.10E-02
+	6.83E-02
+	9.56E-02
+	1.23E-01
+	1.50E-01
+	1.77E-01
+	2.05E-01
+	2.32E-01
+	2.59E-01
+	2.87E-01
+	3.14E-01
+	3.41E-01
+	3.69E-01
+	3.96E-01
+	4.23E-01
+	4.50E-01
+	4.78E-01
+	5.05E-01
+	5.32E-01
+sp21 	0
+	7.79E-02
+	7.60E-02
+	7.50E-02
+	7.40E-02
+	7.30E-02
+	7.17E-02
+	7.01E-02
+	6.80E-02
+	6.53E-02
+	6.19E-02
+	5.78E-02
+	5.27E-02
+	4.68E-02
+	4.01E-02
+	3.27E-02
+	2.48E-02
+	1.71E-02
+	9.75E-03
+	4.28E-03
+	1.01E-03
