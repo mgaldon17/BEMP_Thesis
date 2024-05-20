@@ -1,0 +1,108 @@
+Having provided an overview of the neutron radiation and its interaction with matter, it is fundamental to go through the aspect of the dose deposition in tissue by neutron radiation and provide some background about the dosimetry methods used at MEDAPP. 
+ 
+It makes sense to introduce in this section the concept of dose and briefly explain why it is relevant in the scope of this work. Dosimetry is, in radiology, the measurement and assessment of the absorbed dose i.e. the amount of energy delivered per gram of matter, of ionizing and nuclear radiation source to a tissue. The importance of the determination of the dose lies totally in the biological direct and side effects that radiation has. Radiation is able to interrupt the biological cycle of cancerous cells and, therefore serve as an effective treatment to cancer disease. It is, hence, of crucial importance to determine the dose delivered by a source with as much precision as possible. 
+
+\subsection{Kerma and Dose}
+In the context of medical physics, kerma is the acronym for the kinetic energy released to matter. It is the kinetic energy of all charged particles \textbf{released} per unit mass \cite{AtomsRadiationAndRadiationProtection}. The total kerma is usually divided into the collision and radiation kerma. $K_{coll}$ is the energy released in collision type interactions like production of electrons by means of Coulomb interactions, while $K_{rad}$ is the energy released in radiative interactions like the Bremsstrahlung produced by the secondary particles \cite{RadiationOncologyInPhysicsHandbook}. The total kerma can be expressed as $K = K_{col} + K_{rad}$, and is usually measured in \unit{\gray} or \unit{\joule\per\kilo\gram}.
+\newpage
+The absorbed dose is usually referred to as dose, and it is the energy \textbf{absorbed} per unit mass, and it accounts for any ionizing radiation on any target \cite{AtomsRadiationAndRadiationProtection}. It has the same units as kerma. 
+
+%In the scenario that concerns the MEDAPP source, due to the scattering events, the condition in which charged particle equilibrium is never met, but a condition called transient charged particle equilibrium (TCPE) does \cite{RadiationOncologyInPhysicsHandbook}.
+
+The MEDAPP source provides a mixed beam of neutrons and photons and both contribute to the total dose. Upon interaction of neutrons with the argon gas contained in the cavity, $\gamma$-photons are generated. An additional contribution to the dose is made by the secondary electrons that are generated as a consequence of the interaction between the incoming radiation and the argon gas. %Hence, the total dose is influenced by the neutrons, photons and secondary electrons.
+
+\subsection{Bragg-Gray Cavity Theory}
+
+The evaluation of the dose is performed in the argon gas located in the middle cavity of the chamber. Given the geometry of the chamber and the location of the gas in an inner cavity between the walls and the central electrode, the cavity can be considered as a Bragg-Gray cavity.
+
+A Bragg-Gray cavity is the sensitive region of a dosimeter that provides, under two specific conditions, a useful equation that facilitates the assessment of the dose deposition to the gas located in that region of the ionization chamber. The conditions to be a Bragg-Gray cavity are the following \cite{RadiationOncologyInPhysicsHandbook}:
+
+\begin{enumerate}
+  \item The cavity size is smaller than the range of the incoming particles, so the boundaries of the cavity are not treated as a perturbation
+  \item No particle is generated inside the cavity, so the production of secondary electrons does not influence the total dose
+\end{enumerate}
+
+Holding these conditions true, the equation of the dose can be recalled as \cite{gray1936ionization}:
+
+%In an ionization chamber the dose D, which is defined in medical physics as the total energy absorbed per unit mass $D = \frac{dE}{dm}$ to the gas cavity can be obtained from the Bragg-Gray cavity equation, as discussed in \cite{gray1936ionization} and later explained in this section, as follows:
+
+\begin{align}
+\label{eq:DoseToCavityGasBragg-Gray}
+    {D_{gas} = \frac{Q}{m} \frac{\overline W_{gas}}{e}}
+\end{align}
+
+Here, $m$ corresponds to the mass of the gas of the cavity and $e$ is the fundamental electron charge. $Q$ is the total charge of the cavity and $\overline W_{gas}$ is the energy required to produce a pair of ions in the chamber gas and depends on the used gas and energy of the produced secondary or $\Delta$ electrons. Several values for $\overline W_{gas}$ are listed on Table III on the \textit{Protocol for Neutron Beam Dosimetry} \cite{aapm1980protocol}. 
+
+\subsection{Spencer-Attix Cavity Theory}
+In general, the Bragg-Gray conditions are not always met and the production of secondary electrons is not negligible. For this reason, several adjustments and corrections are applied to the theory to account for them. The Spencer-Attix theory is a more general solution that gives the dose of the gas in relation with the dose to the chamber wall and the effective mass stopping power of the wall to the gas \cite{aapm1980protocol}:
+
+\begin{align}
+\label{eq:DoseToWall}
+    {D_{wall} = S_{w,g} D_{gas}}
+\end{align}
+
+Where $S_{w,g}$ is the effective mass stopping power ratio of the wall to gas, and $D_{gas}$ is Equation \ref{eq:DoseToCavityGasBragg-Gray}. The cavity conditions are met depending on the cavity size, range of electrons and heavy ions in the cavity and the -secondary- electron energy. In general, they are met if the neutron beam has a high energy \cite{RadiationOncologyInPhysicsHandbook}, which is the case that concerns the scenario of the ionization chamber under study.
+
+If the gas of the cavity is substituted by a tissue of interest, consider a small chamber, a source of mixed $\gamma$ and neutron radiation, the total dose of the tissue results in \cite{RadiationOncologyInPhysicsHandbook}:
+
+\begin{align}
+\label{eq:DoseToTotalTissueOfMixedBeam}
+    {D_{tissue} = \frac{Q}{m} \frac{\overline W_{gas}}{e} S_{tissue,gas} p_{fl} p_{dis} p_{wall} p_{cell}} 
+\end{align}
+
+
+In Equation \ref{eq:DoseToTotalTissueOfMixedBeam}, $p_{fl}$ refers to the electron fluence perturbation correction factor, $p_{dis}$ is the correction factor for displacement of the effective measurement point, $p_{wall}$ is the wall correction factor and $p_{cell}$ is the correction factor for the central electrode \cite{RadiationOncologyInPhysicsHandbook}.
+
+The factor $p_{dis}$ depends on the on both the radiation quality and the dimensions of the gas cavity. According to IAEA TRSS 2777 and IAEA TRS 398 as discussed in 9.7.2 of \cite{RadiationOncologyInPhysicsHandbook}, a recommended value for cylindrical chambers is 0.5 times the radius. 
+
+$p_{wall}$ is added to the product to correct the perturbation of the wall of the chamber. Without this term, it would be assumed that the electron fluence of the sensitive region is the same without a wall.
+
+The last factor $p_{cell}$ corrects the slight increase in the signal due to the presence of the central electrode. This effect is found to be negligible for photons, yet relevant for neutron and electron beams. 
+
+Equation \ref{eq:DoseToTotalTissueOfMixedBeam} gives the \textbf{total} dose of a mixed constant beam of neutrons and $\gamma$-photons irradiating the whole sensitive region of an ionization chamber approximated as a \textbf{Bragg-Gray} cavity and regarding the appropriate corrections mentioned.
+
+The eventual difficulty to determine the correction parameters prevents from applying the above equations and leaves the application of the two chamber method as the only chance to measure the dose.
+
+
+\subsection{The Two Chamber Method}
+
+The two chamber method is a widely used technique in the field of fast neutron dosimetry. It is typically applied when the gamma component of the beam is strong, and is designed to separate the gamma and neutron components of the total dose. The method consists of using two ionization chambers of similar size, but with different gas and wall materials.
+
+The first chamber, commonly referred to as the neutron-sensitive chamber, is specifically designed to have a very high sensitivity to both neutrons and photons. Typically, the chamber's wall is made of a tissue-equivalent plastic material like A-150, while the cavity itself is filled with a tissue-equivalent gas. Its primary purpose is to quantify the neutron component of the overall radiation dose \cite{RadiationOncologyInPhysicsHandbook}.
+
+The second chamber, also known as the gamma-sensitive chamber, is designed to have a low sensitivity to neutrons and a high sensitivity to photons. The wall of this chamber is typically made of a material like magnesium, and the cavity is filled with argon gas \cite{RadiationOncologyInPhysicsHandbook}.
+
+The total dose measured for both chambers includes both the gamma and neutron components. By comparing the dose measured in the two chambers, it is possible to separate the gamma and neutron components and determine the total dose.
+
+The two chamber method is applied when it is not possible to measure the neutron kerma. By using a response function $\alpha_{\gamma,cal}$, one can establish the next response equation for each chamber \cite{RadiationOncologyInPhysicsHandbook}: 
+
+\begin{align}
+\label{eq:Dose of ic with neutron and gamma component}
+    {D' = \alpha_{\gamma,cal} R_{total} = D'_{n} + D'_{\gamma}} 
+\end{align}
+
+The last terms, $D'_{n}$ and $ D'_{\gamma}$ are the formal dose related to the neutron and photon components. Assuming that the ratio between the formal and actual dose is the same as the ratio of the sensitivities in the reference photon field \cite{PhDThesisofLucasSommer}, Equation \ref{eq:Dose of ic with neutron and gamma component} ban also be expressed in terms of the actual dose as follows:
+
+\begin{align}
+\label{eq:Dose of ic with neutron and gamma component in terms of actual dose}
+    {D' = \alpha_{\gamma,cal} R_{total} = kD_{n} + hD_{\gamma}} 
+\end{align}
+
+Being $k$ and $h$ the sensitivity response functions for the neutron and gamma components i.e  $\frac{\alpha_{\gamma,cal}}{\alpha_n}$ and $\frac{\alpha_{\gamma,cal}}{\alpha_\gamma}$, respectively. 
+
+Thus, the next relationship can be established for the dose of each chamber as stated in Equation \ref{eq:Dose of each chamber DU} and \ref{eq:Dose of each chamber DT} \cite{PhDThesisofLucasSommer}:
+
+\begin{align}
+\label{eq:Dose of each chamber DU}
+    {D_U' = k_U D_n + h_U D_\gamma}
+\end{align}
+
+\begin{align}
+\label{eq:Dose of each chamber DT}
+    {D_T' = k_T D_n + h_T D_\gamma}
+\end{align}
+
+These two relations are the response functions  of each ionization chamber under a field that combines neutron and gamma radiation. These are the equations that will be used to obtain the sensibility of the chamber during the calibration measurements at PTB.
+
+
+

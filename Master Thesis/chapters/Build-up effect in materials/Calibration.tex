@@ -1,0 +1,202 @@
+Several ionization chambers have been calibrated at the National Metrology Institute of Germany (PTB). To carry out the calibration measurements on the chambers, a pure neutron field of quasi monoenergetic neutrons has been used to irradiate the chambers at different energies. Even though the source does not have the same energy configuration as the MEDAPP, it does generate fast neutrons at the same energy of the MEDAPP facilities. For this reason, the PTB facilities have been found to be suitable for the calibration of the devices. 
+
+It is intended in this subsection to calculate the sensibility of the chamber. To calculate it for the PTW chambers TE-13 TM33053, TE-14 TM33053 and Mg-01 TM33054, respectively, the following formula is applied \cite{ReportPTW2018}:
+
+\begin{align}
+\label{eq:K_U,T}
+    {k_{T,U} = \frac{k_a \: G_{aw} \: V_{LG} \: k_f \: Q}{KERMA}}
+\end{align}
+
+In Equation \ref{eq:K_U,T}, $k_a$ is the chamber specific air kerma calibration value, $G_{aw}$ is the $k_a$ effective dose conversion factor, $V_{LG}$ is the correction factor for the air-gas measurement, $k_f$ is the environmental correction factor for the pressure and temperature of the air and $Q$ is the accumulated charge in the ionization chamber. The constants used in Equation \ref{eq:K_U,T} are in Table \ref{tab:constants for PTB}. The environmental correction factor $k_f$ has been calculated using Equation \ref{eq:k_f}:
+
+\begin{align}
+\label{eq:k_f}
+    {k_f = \frac{P_0 \: T}{P \: T_0}}
+\end{align}
+
+where $P_0$ and $T_0$ are reference pressure and temperature values. The  constant values are specific for each chamber type. A summary of the values used in the calculations is to be found in Table \ref{tab:constants for PTB}.
+
+The temperature and atmospheric pressure have been measured for every measurement of the charge.
+The value of ${KERMA}$ is the dose absorbed by the chamber and it has been measured to be between 5.4 and 5.6 \unit{\milli\gray}, depending on the device.
+To take the measurements, each device has been positioned at the center of a platform as shown in Figure \ref{fig:Actual IC at PTW} and it has been irradiated by the neutron source perpendicularly.
+\clearpage
+\begin{table}[!h]
+\centering
+\begin{tabular}{llllllll}
+                                              &  &  &  &  &  &                            &  \\
+\cellcolor[HTML]{D9D9D9}P_0 {[}\unit{\milli\bar}{]}         &  &  &  &  &  & 1013.25                    &  \\
+\cellcolor[HTML]{D9D9D9}T_0 {[}\unit{\kelvin}{}{]}            &  &  &  &  &  & 293.2                      &  \\
+\cellcolor[HTML]{D9D9D9}G_{aw}                   &  &  &  &  &  & 1.112                      &  \\
+\cellcolor[HTML]{D9D9D9}V_{LG} ($TE-13/14$)              &  &  &  &  &  & 0.861                      &  \\
+\cellcolor[HTML]{D9D9D9}K_a  ($TE-13$) {[}\unit{\gray\per\coulomb}{]}  &  &  &  &  &  & $3.10 \cdot 10^{7}$ &  \\
+\cellcolor[HTML]{D9D9D9}K_a  ($TE-14$){[}\unit{\gray\per\coulomb}{]}  &  &  &  &  &  & $3.09 \cdot 10^{7}$ &  \\
+\cellcolor[HTML]{D9D9D9}V_{LG} ($Mg-01$)           &  &  &  &  &  & 0.688                      &  \\
+\cellcolor[HTML]{D9D9D9}K_a ($Mg-01$){[}\unit{\gray\per\coulomb}{]}  &  &  &  &  &  & $2.68 \cdot 10^{7}$ &  \\
+                                              &  &  &  &  &  &                            & 
+\end{tabular}
+\caption{Constants used in Equation \ref{eq:K_U,T}.}
+\label{tab:constants for PTB}
+\end{table}
+
+
+
+\begin{figure}[!h]
+\centering
+\begin{minipage}{0.7\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{Master Thesis Manuel Galdon/figures/Build-up effect/PTW.jpeg} 
+    \caption{Picture of a ionization chamber set up at PTB Braunschweig. The chamber is located in the middle and set up vertically. On the right side, the radiation source is pointing perpendicularly to the tip of the chamber.}
+    \label{fig:Actual IC at PTW}
+\end{minipage}
+\end{figure}
+
+The temperature and atmospheric pressure have been measured once for each energy. The values are in the range of 20.07 and 21.7 \unit{\celsius}, and 996.9 and 1001.9 \unit{\milli\bar}. The correction factor associated to this parameters, $k_f$, is around 1.01.
+For the energies 1.2 and 2.5 \unit{\mega\electronvolt}, the kerma values, $k_{T,U}$ of each chamber have been calculated. The calculated $k_T$ and $k_U$ for the PTW chambers is:
+%1.2 MeV
+\begin{table}[!h]
+\centering
+\begin{tabular}{ccccc}
+\hline
+\rowcolor[HTML]{FCE0A7} 
+\multicolumn{1}{|c}{\cellcolor[HTML]{FCE0A7}}                       & \multicolumn{4}{c|}{\cellcolor[HTML]{FCE0A7}1.2 \unit{\mega\electronvolt}}                                                                                                                  \\ \hline
+                                                                    &                                 &                                         &                                         &                                                 \\ \cline{2-5} 
+\multicolumn{1}{c|}{}                                               & \cellcolor[HTML]{D9D9D9}Chamber & \cellcolor[HTML]{D9D9D9}Charge {[}\unit{\pico\coulomb}{]} & \cellcolor[HTML]{D9D9D9}KERMA {[}\unit{\milli\gray}{]} & \multicolumn{1}{c|}{\cellcolor[HTML]{D9D9D9}k_T} \\ \cline{2-5} 
+                                                                    &                                 &                                         &                                         &                                                 \\ \hline
+\multicolumn{1}{|c|}{\cellcolor[HTML]{FEEFD1}}                      &                                 & 173.60                                  & 5.6                                     & \multicolumn{1}{c|}{0.932 \pm \:0.001}                      \\
+\multicolumn{1}{|c|}{\cellcolor[HTML]{FEEFD1}}                      &                                 & 176.80                                  & 5.6                                     & \multicolumn{1}{c|}{0.950 \pm \:0.001}                      \\
+\multicolumn{1}{|c|}{\cellcolor[HTML]{FEEFD1}}                      & \multirow{-3}{*}{TE-14}         & 177.40                                  & 5.6                                     & \multicolumn{1}{c|}{0.953 \pm \:0.001}                      \\ \cline{2-5} 
+\multicolumn{1}{|c|}{\cellcolor[HTML]{FEEFD1}}                      &                                 &                                         &                                         &                                                 \\ \cline{2-5} 
+\multicolumn{1}{|c|}{\cellcolor[HTML]{FEEFD1}}                      &                                 & 183.80                                  & 5.6                                     & \multicolumn{1}{c|}{0.984 \pm \:0.001}                      \\
+\multicolumn{1}{|c|}{\cellcolor[HTML]{FEEFD1}}                      &                                 & 183.30                                  & 5.6                                     & \multicolumn{1}{c|}{0.982 \pm \:0.001}                      \\
+\multicolumn{1}{|c|}{\multirow{-7}{*}{\cellcolor[HTML]{FEEFD1}PTW}} & \multirow{-3}{*}{TE-13}         & 183.20                                  & 5.6                                     & \multicolumn{1}{c|}{0.981 \pm \:0.001}                      \\ \hline
+\end{tabular}
+
+\end{table}
+
+\begin{table}[!h]
+\centering
+\begin{tabular}{ccccc}
+\cline{2-5}
+\multicolumn{1}{c|}{}                                               & \cellcolor[HTML]{D9D9D9}Chamber & \cellcolor[HTML]{D9D9D9}Charge {[}\unit{\pico\coulomb}{]} & \cellcolor[HTML]{D9D9D9}KERMA {[}\unit{\milli\gray}{]} & \multicolumn{1}{c|}{\cellcolor[HTML]{D9D9D9}k_U} \\ \cline{2-5} 
+                                                                    &                                 &                                         &                                         &                                                 \\ \hline
+\multicolumn{1}{|c|}{\cellcolor[HTML]{FEEFD1}}                      &                                 & 72.59                                   & 5.6                                     & \multicolumn{1}{c|}{0.269 \pm \:0.001}                      \\
+\multicolumn{1}{|c|}{\cellcolor[HTML]{FEEFD1}}                      &                                 & 73.37                                   & 5.6                                     & \multicolumn{1}{c|}{0.272 \pm \:0.001}                      \\
+\multicolumn{1}{|c|}{\multirow{-3}{*}{\cellcolor[HTML]{FEEFD1}PTW}} & \multirow{-3}{*}{Mg-01}         & 72.72                                   & 5.6                                     & \multicolumn{1}{c|}{0.269 \pm \:0.001}                      \\ \hline
+\end{tabular}
+\caption{Calculated $k_T$ and $k_U$ for the PTW tissue equivalent and magnesium chambers at 1.2 \unit{\mega\electronvolt}, respectively.}
+\end{table}
+
+\\\\
+% 2-5 MeV
+\begin{table}[!h]
+\centering
+\begin{tabular}{ccccc}
+\hline
+\rowcolor[HTML]{FCE0A7} 
+\multicolumn{1}{|c}{\cellcolor[HTML]{FCE0A7}}                       & \multicolumn{4}{c|}{\cellcolor[HTML]{FCE0A7}2.5 \unit{\mega\electronvolt}}                                                                                                                  \\ \hline
+                                                                    &                                 &                                         &                                         &                                                 \\ \cline{2-5} 
+\multicolumn{1}{c|}{}                                               & \cellcolor[HTML]{D9D9D9}Chamber & \cellcolor[HTML]{D9D9D9}Charge {[}\unit{\pico\coulomb}{]} & \cellcolor[HTML]{D9D9D9}KERMA {[}\unit{\milli\gray}{]} & \multicolumn{1}{c|}{\cellcolor[HTML]{D9D9D9}k_T} \\ \cline{2-5} 
+                                                                    &                                 &                                         &                                         &                                                 \\ \hline
+\multicolumn{1}{|c|}{\cellcolor[HTML]{FEEFD1}}                      &                                 & 185.6                                  & 5.4                                     & \multicolumn{1}{c|}{1.029 \pm \:0.001}                      \\
+\multicolumn{1}{|c|}{\cellcolor[HTML]{FEEFD1}}                      &                                 & 186.2                                  & 5.4                                     & \multicolumn{1}{c|}{1.033 \pm \:0.001}                      \\
+\multicolumn{1}{|c|}{\cellcolor[HTML]{FEEFD1}}                      & \multirow{-3}{*}{TE-14}         & 186.1                                  & 5.4                                     & \multicolumn{1}{c|}{1.032 \pm \:0.001}                      \\ \cline{2-5} 
+\multicolumn{1}{|c|}{\cellcolor[HTML]{FEEFD1}}                      &                                 &                                         &                                         &                                                 \\ \cline{2-5} 
+\multicolumn{1}{|c|}{\cellcolor[HTML]{FEEFD1}}                      &                                 & 186.2                                  & 5.4                                     & \multicolumn{1}{c|}{1.038 \pm \:0.001}                      \\
+\multicolumn{1}{|c|}{\cellcolor[HTML]{FEEFD1}}                      &                                 & 186.6                                  & 5.4                                     & \multicolumn{1}{c|}{1.040 \pm \:0.001}                      \\
+\multicolumn{1}{|c|}{\multirow{-7}{*}{\cellcolor[HTML]{FEEFD1}PTW}} & \multirow{-3}{*}{TE-13}         & 186.1                                  & 5.6                                     & \multicolumn{1}{c|}{1.037 \pm \:0.001}                      \\ \hline
+\end{tabular}
+
+\end{table}
+\\\\
+\begin{table}[!h]
+\centering
+\begin{tabular}{ccccc}
+\cline{2-5}
+\multicolumn{1}{c|}{}                                               & \cellcolor[HTML]{D9D9D9}Chamber & \cellcolor[HTML]{D9D9D9}Charge {[}\unit{\pico\coulomb}{]} & \cellcolor[HTML]{D9D9D9}KERMA {[}\unit{\milli\gray}{]} & \multicolumn{1}{c|}{\cellcolor[HTML]{D9D9D9}k_U} \\ \cline{2-5} 
+                                                                    &                                 &                                         &                                         &                                                 \\ \hline
+\multicolumn{1}{|c|}{\cellcolor[HTML]{FEEFD1}}                      &                                 & 52.54                                   & 5.4                                     & \multicolumn{1}{c|}{0.202 \pm \:0.001}                      \\
+\multicolumn{1}{|c|}{\cellcolor[HTML]{FEEFD1}}                      &                                 & 52.41                                   & 5.4                                     & \multicolumn{1}{c|}{0.202 \pm \:0.001}                      \\
+\multicolumn{1}{|c|}{\multirow{-3}{*}{\cellcolor[HTML]{FEEFD1}PTW}} & \multirow{-3}{*}{Mg-01}         & 52.41                                   & 5.4                                     & \multicolumn{1}{c|}{0.202 \pm \:0.001}                      \\ \hline
+\end{tabular}
+\caption{Calculated $k_T$ and $k_U$ for the PTW tissue equivalent and magnesium chambers at 2.5 \unit{\mega\electronvolt}, respectively.}
+\end{table}
+
+\\\\ %5 MeV
+
+%\clearpage
+%In the measurements for the 5 \unit{\mega\electronvolt}, the value of KERMA could not be measured at PTW. Instead and for the purpose of this calculations, a value of 5 \unit{\milli\gray} has been selected. 
+
+%\begin{table}[!h]
+%\centering
+%\begin{tabular}{ccccc}
+%\hline
+%\multicolumn{5}{|c|}{\cellcolor[HTML]{FCE0A7}5   \unit{\mega\electronvolt}}                                                                                                                                                                                       \\ \hline
+%\multicolumn{1}{l}{}                                                & %\multicolumn{1}{l}{}            & \multicolumn{1}{l}{}                    & %\multicolumn{1}{l}{}                    & \multicolumn{1}{l}{}                            \\
+%\multicolumn{1}{l}{}                                                & %\multicolumn{1}{l}{}            & \multicolumn{1}{l}{}                    & %\multicolumn{1}{l}{}                    & \multicolumn{1}{l}{}                         %   \\ \cline{2-5} 
+%\multicolumn{1}{l|}{}                                               & \cellcolor[HTML]{D9D9D9}Chamber & \cellcolor[HTML]{D9D9D9}Charge {[}\unit{\pico\coulomb}{]} & \cellcolor[HTML]{D9D9D9}KERMA {[}\unit{\milli\gray}{]} & \multicolumn{1}{c|}{\cellcolor[HTML]{D9D9D9}k_T} \\ \cline{2-5} 
+%\multicolumn{1}{l}{}                                                & \multicolumn{1}{l}{}            & \multicolumn{1}{l}{}                    & \multicolumn{1}{l}{}                    & \multicolumn{1}{l}{}                            \\ \hline
+%\multicolumn{1}{|c|}{\cellcolor[HTML]{FEEFD1}}                      &                                 & 186.8                                 & 5                                       & \multicolumn{1}{c|}{1.126 \pm \:0.001}                      \\
+%\multicolumn{1}{|c|}{\cellcolor[HTML]{FEEFD1}}                      &                                 & 186.7                                 & 5                                       & \multicolumn{1}{c|}{1.125 \pm \:0.001}                      \\
+%\multicolumn{1}{|c|}{\cellcolor[HTML]{FEEFD1}}                      & \multirow{-3}{*}{TE-14}         & 185.6                                 & 5                                       & \multicolumn{1}{c|}{1.119 \pm \:0.001}                      \\ \cline{2-5} 
+%\multicolumn{1}{|c|}{\cellcolor[HTML]{FEEFD1}}                      & \multicolumn{1}{l}{}            &                                         &                                         &                                                 \\ \cline{2-5} 
+%\multicolumn{1}{|c|}{\cellcolor[HTML]{FEEFD1}}                      &                                 & 186.4                                 & 5                                       & \multicolumn{1}{c|}{1.126 \pm \:0.001}                      \\
+%\multicolumn{1}{|c|}{\cellcolor[HTML]{FEEFD1}}                      &                                 & 187.7                                 & 5                                       & \multicolumn{1}{c|}{1.133 \pm \:0.001}                      \\
+%\multicolumn{1}{|c|}{\multirow{-7}{*}{\cellcolor[HTML]{FEEFD1}PTW}} & \multirow{-3}{*}{TE-13}         & 188.3                                 & 5                                       & \multicolumn{1}{c|}{1.137 \pm \:0.001}                      \\ \hline
+%\end{tabular}
+%\end{table}
+
+%\begin{table}
+%\centering
+%\begin{tabular}{cccccc}
+%\multicolumn{1}{l}{}                                                & \multicolumn{1}{l}{}                                                         & \multicolumn{1}{l}{}            & \multicolumn{1}{l}{}                    & \multicolumn{1}{l}{}                    & \multicolumn{1}{l}{}                            \\
+%\multicolumn{1}{l}{}                                                & \multicolumn{1}{l}{}                                                         & \multicolumn{1}{l}{}            & \multicolumn{1}{l}{}                    & \multicolumn{1}{l}{}                    & \multicolumn{1}{l}{}                            \\ \cline{3-6} 
+%\multicolumn{1}{l}{}                                                & \multicolumn{1}{c|}{}                                                        & \cellcolor[HTML]{D9D9D9}Chamber & \cellcolor[HTML]{D9D9D9}Charge {[}\unit{\pico\coulomb}{]} & \cellcolor[HTML]{D9D9D9}KERMA {[}\unit{\milli\gray}{]} & \multicolumn{1}{c|}{\cellcolor[HTML]{D9D9D9}k_U} \\ \cline{3-6} 
+%\multicolumn{1}{l}{}                                                & \multicolumn{1}{l}{}                                                         & \multicolumn{1}{l}{}            & \multicolumn{1}{l}{}                    & \multicolumn{1}{l}{}                    & \multicolumn{1}{l}{}                            \\ \hline
+%\multicolumn{1}{|c}{\cellcolor[HTML]{FEEFD1}}                       & \multicolumn{1}{c|}{\cellcolor[HTML]{FEEFD1}}                                &                                 & 45.050                                  & 5                                       & \multicolumn{1}{c|}{0.188 \pm \:0.001}                      \\
+%\multicolumn{1}{|c}{\cellcolor[HTML]{FEEFD1}}                       & \multicolumn{1}{c|}{\cellcolor[HTML]{FEEFD1}}                                &                                 & 45.810                                  & 5                                       & \multicolumn{1}{c|}{0.191 \pm \:0.001}                      \\
+%\multicolumn{1}{|c}{\cellcolor[HTML]{FEEFD1}}                       & \multicolumn{1}{c|}{\multirow{-3}{*}{\cellcolor[HTML]{FEEFD1}1mm Mg cap}}    & \multirow{-3}{*}{Mg-01}         & 46.500                                  & 5                                       & \multicolumn{1}{c|}{0.194 \pm \:0.001}                      \\ \cline{3-6} 
+%\multicolumn{1}{|c}{\cellcolor[HTML]{FEEFD1}}                       & \multicolumn{1}{l|}{\cellcolor[HTML]{FEEFD1}}                                & \multicolumn{1}{l}{}            &                                         &                                         &                                                 \\ \cline{3-6} 
+%\multicolumn{1}{|c}{\cellcolor[HTML]{FEEFD1}}                       & \multicolumn{1}{c|}{\cellcolor[HTML]{FEEFD1}}                                &                                 & 45.840                                  & 5                                       & \multicolumn{1}{c|}{0.191 \pm \:0.001}                      \\
+%\multicolumn{1}{|c}{\cellcolor[HTML]{FEEFD1}}                       & \multicolumn{1}{c|}{\cellcolor[HTML]{FEEFD1}}                                &                                 & 46.010                                  & 5                                       & \multicolumn{1}{c|}{0.192 \pm \:0.001}                      \\
+%\multicolumn{1}{|c}{\cellcolor[HTML]{FEEFD1}}                       & \multicolumn{1}{c|}{\multirow{-3}{*}{\cellcolor[HTML]{FEEFD1}2   mm Mg cap}} & \multirow{-3}{*}{Mg-01}         & 44.690                                  & 5                                       & \multicolumn{1}{c|}{0.186 \pm \:0.001}                      \\ \cline{3-6} 
+%\multicolumn{1}{|c}{\cellcolor[HTML]{FEEFD1}}                       & \multicolumn{1}{l|}{\cellcolor[HTML]{FEEFD1}}                                & \multicolumn{1}{l}{}            &                                         &                                         &                                                 \\ \cline{3-6} 
+%\multicolumn{1}{|c}{\cellcolor[HTML]{FEEFD1}}                       & \multicolumn{1}{c|}{\cellcolor[HTML]{FEEFD1}}                                &                                 & 45.510                                  & 5                                       & \multicolumn{1}{c|}{0.189 \pm \:0.001}                      \\
+%\multicolumn{1}{|c}{\cellcolor[HTML]{FEEFD1}}                       & \multicolumn{1}{c|}{\cellcolor[HTML]{FEEFD1}}                                &                                 & 44.660                                  & 5                                       & \multicolumn{1}{c|}{0.186 \pm \:0.001}                      \\
+%\multicolumn{1}{|c}{\multirow{-11}{*}{\cellcolor[HTML]{FEEFD1}PTW}} & \multicolumn{1}{c|}{\multirow{-3}{*}{\cellcolor[HTML]{FEEFD1}No cap}}        & \multirow{-3}{*}{Mg-01}         & 44.990                                  & 5                                       & \multicolumn{1}{c|}{0.187 \pm \:0.001}                      \\ \hline
+%\end{tabular}
+%\end{table}
+\clearpage
+
+\subsection{Data Comparison}
+
+The same measurements were performed by the MEDAPP team at the same facility for the same ionization chambers in 2018. According to the calibration performed by Dr. Markus Kellermeier and Dr. Lucas Sommer \cite{ReportPTW2018}, the values of the measured kerma have varied at 2.5 \unit{\mega\electronvolt} with regards to those stated on the report. 
+
+A comparison of the values of the sensibility for the ionization chamber is presented. The values of $k_U$ and $k_T$ are calculated from the initial measurements of the charge and KERMA of the calibration of 2018 \cite{ReportPTW2018} and are plotted in the next figure:
+
+\begin{figure}[!h]
+\centering
+\begin{minipage}{0.8\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{Master Thesis Manuel Galdon/figures/Build-up effect/Comparison k.jpg} 
+    \caption{Values of $k_U$ and $k_T$ measured at PTB in different years for 2.5 \unit{\mega\electronvolt}.}
+    \label{fig:Comparison of k at PTB}
+\end{minipage}
+\end{figure}
+
+The sensibility in 2004 is taken from \textit{Bericht zur Basisdosimetrie für medizinische Bestrahlung an der Strahlkonverteranlage am FRM-II Garching (2006)} \cite{basisdosimetrieMEDAPP} as 0.943 for TE-13 and TE-14 and assumed to be unchanged in 2018. For Mg-01, the value in 2004 is 0.02 \cite{basisdosimetrieMEDAPP}. A linear fit is also performed from the data of the Figure \ref{fig:Comparison of k at PTB} in order to compare the slopes:
+\newpage
+\begin{table}[!h]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+\rowcolor[HTML]{A9D9C6} 
+Chamber & Slope [10^{-3}]\\ \hline
+TE-13           & 5.6                                \\ \hline
+TE-14           & 3.1                               \\ \hline
+Mg-01           & 9.6                               \\ \hline
+\end{tabular}
+\caption{Slope comparison of the linear fit for the sensibility of the chambers TE-13, TE-14 and Mg-01 at 2.5 \unit{\mega\electronvolt}.}
+\label{table: Slope comparison for MEDAPP source at the energy deposition. Neutrons}
+\end{table}
+
+In this comparison, TE-13 and TE-14 show similar and relatively higher slopes, between $3.1 \cdot 10^{-3}$ and $5.6 \cdot 10^{-3}$ [year]$^{-1}$, implying a consistent increase in sensibility over the measured period. On the other hand, Mg-01 has a lower slope of $9.6 \cdot 10^{-3}$ [year]$^{-1}$, indicating a less pronounced change in sensibility compared to the tissue equivalent chambers.
