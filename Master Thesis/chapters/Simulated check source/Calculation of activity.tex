@@ -1,0 +1,46 @@
+In this subsection, the calculations of the activity of the source are discussed. This step is necessary to set the decay energies and probabilities of the source in the simulated setup. 
+
+The production of the \ce{^{90}{}Sr} sample dates from the year 1980 according to \emph{Radioaktive Kontrollvorrichtung 39 Typ 8921 für PTW-Dosimeter} \cite{kontrollvorrichtung}. The exact production date of the radioactive material remains unknown. For the purpose of the calculations, the exact date and initial activity $A_0$, that is taken as a reference to obtain the activity of the sample are \textbf{0.9} $\boldsymbol{mCi}$, this is, 33 \unit{\mega\becquerel}. 
+
+The only decay mode possible for strontium is $\beta^-$ decay. The daughter nucleus \ce{^{90}Y}, has three potential decay modes into \ce{^{90}Zr}, as indicated in the following table sourced from the \textit{International Atomic Energy Agency} \cite{intlAtomicEnergy}:
+
+\begin{table}[!h]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|l|}
+\hline
+\rowcolor[HTML]{A9D9C6} 
+\multicolumn{1}{|c|}{\cellcolor[HTML]{A9D9C6}\#} & {\color[HTML]{000000} \begin{tabular}[c]{@{}l@{}}\textless{}E_{$\beta$^{-}}\textgreater \\ {[}\unit{\kilo\electronvolt]}\end{tabular}} & \begin{tabular}[c]{@{}l@{}}I_{$\beta$^{-}(abs)} \\  {[}\%{]}\end{tabular} & \begin{tabular}[c]{@{}l@{}}Daughter level \\  {[}keV{]}\end{tabular} & J$\pi$ & \begin{tabular}[c]{@{}l@{}}E_{$\beta$^{-}_ {max}}\\  {[}keV{]}\end{tabular} & Transition type \\ \hline
+1                                                & 24.2 5                                                                                                 & 0.0000014                                                   & 2186.27                                                          & 2+ & 92.2                                                        & 1st non-unique  \\ \hline
+2                                                & 184.6                                                                                                & 0.0115                                                     & 1760.74                                                           & 0+ & 517.8                                                       & 1st unique      \\ \hline
+3                                                & 932.4                                                                                                & 99.9885                                                   & 0                                                                    & 0+ & 2278.5                                                      & 1st unique      \\ \hline
+\end{tabular}
+\caption{Decay paths of \ce{^{90}_{39}Y} according to the International Atomic Energy Agency.}
+\label{table: decay paths of yttrium-90} %according to the International Atomic Energy Agency
+\end{table}
+
+The decay listed as #\emph{$1$} has such a very low absolute probability that the yttrium decay path into the most excited state of zirconium has been neglected. It is assumed from this point, that there will be a total of \textbf{three $\boldsymbol{\beta}^-$} and only \textbf{one $\boldsymbol{\gamma}$} emission in the entire decay chain. Those are the decays that have been included in the MCNP model of the \ce{^{90}{}Sr} source. 
+
+Regarding the $\beta^-$ decays, these are included in the model only after having the spectra of the strontium and yttrium sampled accordingly to account for the continuous nature of the $\beta^-$ decay. The $\gamma$ emission is considered separately in MCNP and only one energy is regarded in our problem as it is a discrete event. Further explanations about the separation and configuration of the energies are given later in this chapter.
+
+From nuclear physics it is known that a parent-daughter nuclear decay chain is ruled by a system of two differential equations describing the particle production rate of the parent and daughter nucleus whose solution \cite{NUK3Notes} for the daughter nucleus is:
+
+\begin{align}
+\label{eq:Number of daughter nucleus as a function of time}
+    {N_{D}(t) = \frac{\lambda_{P} N_{P} (0)}{\lambda_{D}-\lambda_{P}} (e^{-\lambda_{P} t} -e^{-\lambda_{D} t} )+ N_{D}(0)} \: e^{-\lambda_{D} t}
+\end{align}
+
+From Equation \ref{eq:Number of daughter nucleus as a function of time}, and taking into account that the half life of the parent is much longer than that of the daughter, it can be concluded that the decay chain reaches a situation known as \textbf{secular} equilibrium. This means that both activities reach a saturation activity after a very long time. This means that the activity of the daughter can be calculated as:
+
+\begin{align}
+\label{eq:Activity of daughter nucleus as a function of time}
+    {A_{D}(t) = -\frac{dN_{D}}{dt} =  \lambda_{D}N_{D}(t)}
+\end{align}
+
+In Equation \ref{eq:Activity of daughter nucleus as a function of time}, the term $\lambda_{P}N_{P}(t)$ is not stated because it is neglected as the quantity is much smaller than the term $\lambda_{D}N_{D}(t)$ as $\lambda_{D} > \lambda_{P}$. Here, the parameters of Equations \ref{eq:Activity of daughter nucleus as a function of time} and \ref{eq:Number of daughter nucleus as a function of time} are the same, where $\lambda_{P}$ and $\lambda_{D}$ stand for the radioactive decay constants calculated from the half lives of the parent (strontium) and daughter (yttrium), respectively. $N_{P} (0)$ stands for the initial number of nucleus of the strontium. For the strontium sample, i.e. the parent nucleus, the activity is simply calculated according to the radioactive decay law:
+
+\begin{align}
+\label{eq:Activity of parent nucleus as a function of time}
+    {A_{P}(t) = \lambda_{P} N_{P} (0) e^{-\lambda_{P} t}} 
+\end{align}
+
+Taking as the reference date for the calculation of the activities from \ref{eq:Activity of parent nucleus as a function of time} and \ref{eq:Activity of daughter nucleus as a function of time} the $5^{th}$ of July of 2023, it results in 12.02 \unit{\mega\becquerel} and 12.018 \unit{\mega\becquerel}, respectively. As it is expected from the secular equilibrium, both samples have approximately the same activity.

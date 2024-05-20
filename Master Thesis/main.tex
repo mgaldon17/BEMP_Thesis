@@ -1,0 +1,65 @@
+\RequirePackage[l2tabu,orthodox]{nag}
+
+% TODO: decide if one-sided/two-sided
+%\documentclass[headsepline,footsepline,footinclude=false,fontsize=11pt,paper=a4,listof=totoc,bibliography=totoc,BCOR=12mm,DIV=12]{scrbook} % two-sided
+%\documentclass[headsepline,footsepline,footinclude=false,oneside,fontsize=11pt,paper=a4,listof=totoc,bibliography=totoc]{scrbook} % one-sided
+\documentclass[headsepline,footinclude=false, fontsize=12pt,paper=a4,listof=totoc,bibliography=totoc, BCOR=12mm,DIV=15]{scrbook}
+\usepackage{subcaption}
+\usepackage{multirow}
+\usepackage[table,xcdraw]{xcolor}
+% TODO: change citation style in settings
+\input{settings}
+
+% TODO: change thesis information
+\newcommand*{\getUniversity}{Technical University of Munich}
+\newcommand*{\getFaculty}{Department of Physics}
+\newcommand*{\getTitle}{Characterization of Neutron Response \\ of Ionization Chambers}
+\newcommand*{\getTitleGer}{Charakterisierung des Neutronenansprechverhaltens\\ von Ionisationskammern}
+\newcommand*{\getAuthor}{Manuel Trigueros Galdón}
+\newcommand*{\getDoctype}{Master's Thesis}
+\newcommand*{\getSupervisor}{Prof. Dr. Peter Müller-Buschbaum}
+\newcommand*{\getAdvisor}{Dr. Tobias Chemnitz}
+\newcommand*{\getMentor}{Dr. Dimitrios Karampinos}
+\newcommand*{\getSubmissionDate}{December 15th, 2023}
+\newcommand*{\getSubmissionLocation}{Munich}
+
+\begin{document}
+
+% Set page numbering to avoid "destination with the same identifier has been already used" warning for cover page.
+% (see https://en.wikibooks.org/wiki/LaTeX/Hyperlinks#Problems_with_Links_and_Pages).
+\pagenumbering{alph}
+\input{pages/cover}
+
+\frontmatter{}
+
+\input{pages/title}
+\input{pages/abstract}
+%\input{pages/acknowledgments}
+\input{pages/disclaimer}
+\microtypesetup{protrusion=false}
+\tableofcontents{}
+\microtypesetup{protrusion=true}
+
+\mainmatter{}
+
+\input{chapters/01_introduction}
+\input{chapters/02_basics}
+\input{chapters/03_Atmospheric_corrosion_of_Mg}
+\input{chapters/04_Build-up effect in materials}
+\input{chapters/05_Check source}
+\input{pages/conclusions 2}
+
+\input{pages/acknowledgments}
+% \appendix{}
+
+\microtypesetup{protrusion=false}
+\listoffigures{}
+\listoftables{}
+\microtypesetup{protrusion=true}
+
+%\input{pages/ownContribution}
+\bibliographystyle{spmpsci}      % mathematics and physical sciences
+
+\bibliography{bibliography.bib} 
+
+\end{document}

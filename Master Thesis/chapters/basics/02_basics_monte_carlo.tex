@@ -1,0 +1,21 @@
+\label{section: Monte Carlo Method}
+The Monte Carlo method is a statistical technique used to simulate and analyze complex systems. The basic idea behind the Monte Carlo method is to use random sampling to simulate complex probabilistic events \cite{MonteCarloMethods}. This is done by generating numbers between 0 and 1 repeatedly in a computer, and those numbers are used to generate a distribution of samples that represent the target probability distribution \cite{MonteCarloMethods}.
+
+The key advantage of the Monte Carlo method is that it can be used to analyze systems that are cannot be solved using deterministic methods. It can be used, for instance, to predict the response of a system of particles that account for interactions with each other. These interactions are particle collisions and inherently stochastic.
+
+The Monte Carlo method can be applied to a wide variety of problems whose nature is in a good fit for the method. To predict the response of a particle system that accounts for nuclear reactions, one of the most powerful applications is the Monte Carlo N-Particle simulation (MCNP). An overview of MCNP simulation will be provided below.
+
+
+\subsection{MCNP Simulations}
+\label{subsection:MCNP Simulations}
+MCNP is a general-purpose radiation-transport code whose purpose is to solve a particle transport problem in a simulated environment using the Monte Carlo method. \cite{mcnp5Manual}
+
+The code is developed and maintained by Los Alamos National Laboratory in Los Alamos, New Mexico (USA). One of the many applications of the code is dosimetry. In this field, generally a detailed environment is created and loaded into the code via input file. The configuration of the simulation is stablished in the input file using a set of cards for each element that is to be present in the environment. MCNP offers a card for every feature of the simulation regarding the physics of the problem or the geometrical setup. The input of MCNP is then, a simple text file that includes the cards and geometric boundaries organized in three code blocks, as it is required by the code engine. The execution takes place in the command line and the only graphic interface if only meant to visualise the geometry.
+
+MCNP allows the user to freely set up the materials and the structures simulated. The structures are built defining planes in a Cartesian system and forming volumes out of their intersections. In the simulations of this project, it has been followed the definition, molecular fraction and cross section listed on the \textit{Compendium of Material Composition Data for Radiation Transport Modeling} \cite{matcomposition}. The compendium has undergone several revisions year by year and it contains today the most up to date and tailored information of the material composition for MCNP problems. 
+
+An important card used in the analysis performed in the next chapters is the tally card. Tallies can be thought of as detectors placed within a cell to measure the desired quantity. For example, the neutron and charge flux can be calculated and graphically displayed. The dose disposition tally \textit{F6}, is perhaps the most relevant in the problem of the ionization chamber. 
+
+The output of MCP6 is another text file containing all the value of the quantity measured with each tally. The result for the \textit{F6} tally is provided in \unit{\mega\electronvolt\per\gram} by default, and the particle flux in number of particles per square centimeter \cite{mcnp6Manual}. Every measurement comes along with its statistical error.
+
+In some cases, it is necessary to extract the output data of MCNP and handle them with a more powerful data treatment software to be able to perform a decent analysis of the problem. This is the case of the ionization chamber simulations. Here, the simulation has been executed multiple times in an automated application in Python, each in a slightly changed environment, to study the response of the device. 
