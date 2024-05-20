@@ -43,11 +43,15 @@ The input parameters of this script can be modified to customize the simulations
 The parts of the input file stored in the resources folder form the input file that was used in this Master's Thesis. However, this automation tool is capable to execute the MCNP simulation for any other geometry, sources, materials, etc.
 In order to do so, the user must provide the input files in the resources folder and modify the parameters in the run.py script accordingly.
 
-To run the simulations, simply execute the `run.py` script:
+To run the simulations, simply execute the `main.py` script:
 ```bash
 python run.py
 ```
 
+When the execution is finished, a notification will be sent on Twitter including basic details of the simulation. This feature can be disabled by commenting the line  `twitter.send_tweet("Simulation finished")` in the `run.py` script.
+In order to use this feature, the user must have a Twitter Developer account and create an application to obtain the necessary keys and tokens.
+
+For this repository, there is a Twitter Account set up with the necessary keys and tokens. Please follow the user @MCNPBot to see the notifications. 
 ## Understanding the Results
 
 The outcome of the simulations is stored in the `output` directory. MCNP executions generate several output files, including the `.o` file, which contains the results of each simulation. This tool runs multiple executions for a variable density of the argon gas in the cavity of the chamber. 
