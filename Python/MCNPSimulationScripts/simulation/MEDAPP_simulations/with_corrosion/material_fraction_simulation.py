@@ -115,7 +115,8 @@ def create_message(materials, sources, total_time):
     message = (f"Simulation finished at {timestamp} h {timezone} for material{'s :' if len(materials) > 1 else ''} "
                f"{mats_msg} and source{'s :' if len(sources) > 1 else ''} {source_msg}. {total_time}")
 
-    send_message(message, timestamp, timezone, total_time)
+
+    send_message(os.environ[message], timestamp, timezone, total_time)
 
 
 def send_message(message, timestamp, timezone, total_time):
