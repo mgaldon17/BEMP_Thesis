@@ -1,0 +1,21 @@
+\chapter{Reference Measurements}
+
+\section{Calibration Measurements in Neutron Reference Field}
+
+\input{Master Thesis Manuel Galdon/chapters/Build-up effect in materials/Calibration}
+
+\section{Build-up Effect}
+As neutrons slow down i.e. lose energy, the likelihood of interacting with atomic nuclei rises, resulting in a region near the material surface known as the "build-up region" of the material where neutron fluence increases significantly. In the next plot, that behaviour is clearly noticeable. In Figure \ref{fig:Cross seciton neutrons}, the cross section of neutrons is assessed on selected isotopes and hydrogen-rich plastic foils \cite{NeutronImaging}.
+
+\begin{figure}[!h]
+\centering
+\begin{minipage}{0.9\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{Master Thesis Manuel Galdon/figures/Build-up effect/cross section neutrons.png} 
+    \caption{Cross section measured in  \textit{barns} of various selected isotopes as a function of neutron energy. }
+    \label{fig:Cross seciton neutrons}
+\end{minipage}
+\end{figure}
+
+There are definite regions in Figure \ref{fig:Cross seciton neutrons} where the cross section peaks at a certain value or experiments slight increase (depending on the target nuclei) to finally descend again at a higher neutron temperature. When this happens, the energy deposited in the material undergoes a fluctuation. This is the \textit{build-up effect} and it might take place in both magnesium and tissue equivalent plastic ionization chambers. In this section, the simulation of the effect in both materials is presented. In order to study it, the simulations are designed using a cylinder whose radius is 0.75 \unit{\milli\meter}, and the energy deposition per cubic centimeter at different energies is measured. Finally, the source used in the simulations is a monochromatic plane neutron, as it was used at PTB.
+\input{Master Thesis Manuel Galdon/chapters/Build-up effect in materials/Cylinder simulations}

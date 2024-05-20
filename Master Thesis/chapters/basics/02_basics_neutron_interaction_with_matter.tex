@@ -1,0 +1,84 @@
+Neutrons expose a large number of properties. Some of those properties, are are relevant to the study of their interaction with matter. In the present project, the response of the ionization chambers is described in terms of the cross section, mean free path and energy loss. For this reason, the concepts will be briefly introduced in this section.
+
+\subsection{Micro- and Macroscopic Cross Section}
+
+The cross section is the probability of a scattering or absorption event to occur between a neutron and the nucleus \cite{rinard1991neutron}. The probability of each type of event is independent of the others \cite{rinard1991neutron}. As a consequence, each probability contributes to the total probability or cross section.
+
+The absorption cross section is the probability of a nucleus of being absorbed, $P_{abs}$, over the atom density. The mathematical expression is, therefore \cite{rinard1991neutron}:
+\begin{align} 
+    \label{eq:Cross section}
+    {\sigma_a = \frac{P_{abs}}{N / A} } \; [\unit{\square\cm}]
+\end{align}
+
+In Equation \ref{eq:Cross section}, N and A stand for the total number of target atoms within the area A.  The cross section defining the probability of an individual neutron interaction is referred to as \textit{microscopic} cross section. Furthermore, the total (microscopic) cross section is the sum of the absorption and scattering cross section:
+
+\begin{align} 
+    \label{eq:Total cross section}
+    {\sigma_t = \sigma_a + \sigma_s } \; [\unit{\square\cm}]
+\end{align}
+
+In Equation \ref{eq:Cross section}, $\sigma_t$ represents the total probability of any event taking place. $\sigma_a$ and $\sigma_s$, represent the absorption and scattering cross section, respectively. A common unit to measure the cross section is the \textit{barn}. It is represented as \textit{b} and is equal to $10^{-24}$ \unit{\square\cm}. A barn is a unit used simply for the convenience of avoid working with very small numbers, since typical values for the cross section are in the range of $10^{-21}$ to $10^{-27}$ \unit{\square\cm} for heavy nuclei \cite{rinard1991neutron}. 
+
+%Up to this point, it has only been considered an individual interaction. In a scenario where a neutron beam interact with a mixture of materials and not with a single atom, the concept of \textit{macroscopic} cross section becomes necessary. However, the macroscopic cross section is not commonly used when it is intended to provide accurate results of the interaction probability. This is caused by the complexity of the material and the successive scattering that the neutrons will undergo.
+In this project, only the microscopic cross section, also referred to as simply cross section, is relevant for the understanding of plots and response of the devices.
+%%%%%%%%%%% Maybe remove macroscopic cross section ? 
+%Up to this point, it has only been considered an individual interaction. In a scenario where a neutron beam interact with a mixture of materials and not with a single atom, the concept of \textit{macroscopic} cross section arises. A bulk material is understood as a succession of atomic layers, each with a their respective microscopic cross section. As it is discussed by P.Rinard in \textit{Neutron Interaction with Matter} \cite{rinard1991neutron}, the intensity of the beam decays exponentially with the cross section, atom density and distance in accordance with the Beer-Lambert law:
+
+%\begin{align}
+%\label{eq:Beer-LambertLaw}
+%    {{I(d) = I_0 \, e^ \, {-N \sigma_t d}}}
+%\end{align}
+
+%where $N$ is the atom density, $\sigma_t$ is the total cross section and $d$ is the thickness of the material. For each element of the material, the atom density is $N_i = \frac{\rho N_a n_i}{M}$, where $\rho$ is the density of the element, $N_a$ is Avogadro's number, M is the molecular weight of the sample and $n$ is the number of atoms in the material $i$ \cite{rinard1991neutron}.
+
+%Considering that the macroscopic cross sections of each material $i$ are addable, the macroscopic cross section $\sum$ for a mixture of materials is, therefore:
+
+%\begin{align}
+%\label{eq:MacroscopicCrossSection}
+%    { \sum = \sum_{l=1}^{L} N_i \sigma_i = \sum_{l=1}^{L} \frac{\rho N_a n_i}{M}  \sigma_i} \; [\unit{cm^2}]
+%\end{align}
+
+%In some environments, the use of the macroscopic cross section can lead to less accurate results than the microscopic cross section due to the complexity of the material. For this reason, the microscopic is the concept that is more used and commonly referred to simply as cross section, becoming necessary to specify when the macroscopic is used.
+
+\subsection{Interaction Neutron-Nuclei}
+
+In nuclear physics, when an interaction occurs, a simple notation is used to provide concise information about the interaction of interest as well as the initial target and products of the nuclear interaction. In the case of study, if a neutron hits a target $T$ and gives as a resultant nucleus and an outgoing particle $x$, the interaction is shown as \cite{PhDThesisofLucasSommer}:
+
+\begin{align} \label{eq1:NuclearReactionNomenclature}
+    T\,(n,x)\,R
+\end{align}
+
+Here, $n$ stands for the incoming neutron, $x$ represents the outgoing particle and $T$ and $R$, the target and residual nucleus of the heavy nuclei, respectively. The outgoing particle does not necessarily need to be another neutron, or many other particles.\\
+
+In case of a scattering event, this can be either elastic or inelastic. The de-excitation of a nucleus after inelastic scattering occurs via $\gamma$-emission \cite{PhDThesisofLucasSommer}. Following discussions about the energy change of the system take place in the next subsection. 
+
+\subsection{Average Energy Loss}
+When a neutron whose kinetic energy is $E_{kin}$ encounters a target nucleus of atomic weight $A$, the average energy loss is equal to \cite{rinard1991neutron}:
+
+\begin{align}
+\label{eq:LossOfEnergyofParticleInteraction}
+    \frac{2\,E_{kin} A}{(1+A)^2}
+\end{align}
+
+In Equation \ref{eq:LossOfEnergyofParticleInteraction}, it is described the mean energy loss \textbf{per collision}. After several collisions with the same target, the neutron will be thermalised i.e. will have its energy reduced. 
+
+While a fast neutron needs to collide with a carbon atom an average of over a hundred times to reach thermal equilibrium, it only needs 27 collisions if it does with a hydrogen atom \cite{rinard1991neutron}. This means that the average energy loss reaches its maximum in the case of hydrogen. In such case, Equation \ref{eq:LossOfEnergyofParticleInteraction} results in:
+
+\begin{align}
+\label{eq:LossOfEnergyofNeutronInteraction}
+    \frac{1}{2} E_{kin}
+\end{align}
+
+According to Equation \ref{eq:LossOfEnergyofNeutronInteraction}, a neutron loses half of its kinetic energy when it collides with a hydrogen atom. For this reason, only the interaction of neutrons and hydrogen is considered in the study of the response of the ionization chambers.
+
+\subsection{Mean Free Path}
+In particle physics, the mean free path $\lambda$, is the average distance that a moving particle with a cross section $\sigma$ travels in a medium of density $\rho$ without interacting with any other particle on its way. As it is shown in the next equation, it is inversely proportional to those parameters:
+
+\begin{align} 
+    \label{eq:MeanFreePath}
+    {\lambda \propto \frac{1}{\sigma \rho} } \; [\unit{m}]
+\end{align}
+
+The mean free path is always relative to the particle and the medium. A shorter mean free path means that the particle will interact multiple times per unit distance, which will affect the dose deposition in the medium.
+
+The reason why "particles" is used over "neutrons" is because the concept of mean free path can be applied to any other particle and it is not a specific property of neutrons. 
