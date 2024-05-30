@@ -60,6 +60,40 @@ The output files are then processed by the `analyze.py` script, which extracts t
 
 The vectors containing the relevant data for the user will be stored in a .txt file  for the user to choose the desired tool to plot them.
 
+# MCNP Simulation Analysis
+
+This repository contains scripts for running and analyzing MCNP (Monte Carlo N-Particle) simulations. The main script for analysis is `analysis.py`, located in the `Python/MCNPSimulationScripts/simulation/analysis` directory.
+
+## Understanding the Scripts
+
+The `analysis.py` script is used to analyze the results of a MCNP simulation. It reads the output files of the simulation, processes the data, and writes the results to a text file.
+
+The script uses the `Analyzer` class to perform the analysis. The `Analyzer` class has methods for reading the simulation output files, processing the data, and writing the results to a text file.
+
+The `outputToTxt` function is used to write the results to a text file. It takes as input a dictionary of tally numbers and their corresponding values and errors, the type of particle used in the simulation, and the number of particles used in the simulation. It writes these data to a text file in the `resources` directory.
+
+## Understanding the MCNP Output Files
+
+The MCNP output files are named `mctal`, `mctam`, `mctan`, etc., and are located in the `resources/simulation_result` directory. These files contain the results of the MCNP simulation.
+
+Each file contains a list of tally numbers and their corresponding values and errors. A tally number represents a specific measurement in the simulation, such as the number of particles that hit a certain target.
+
+## Understanding the Result.txt File
+
+The `result.txt` file is created by the `outputToTxt` function and is located in the `resources` directory. This file contains the processed results of the MCNP simulation.
+
+The file is structured as follows:
+
+- For each tally number, there are two lines: one for the value and one for the error. The lines are formatted as `y_<tally number>_<particle type> = <value>` and `y_err_<tally number>_<particle type> = <error>`.
+- After the tally data, there is a section titled "Simulation Details" that contains information about the simulation, such as the type of particle used and the number of particles.
+
+## Running the Scripts
+
+To run the `analysis.py` script, navigate to the `Python/MCNPSimulationScripts/simulation/analysis` directory and run the script with Python:
+
+```bash
+python analysis.py
+
 ## Contributing
 
 Contributions are welcome. Please make sure to update tests as appropriate.

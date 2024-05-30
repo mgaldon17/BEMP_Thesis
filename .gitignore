@@ -1,4 +1,4 @@
-#ignore all kind of files
+#ignore all kind of resources
 .idea/
 Python/.DS_Store
 Python/MCNPSimulationScripts/simulation/MEDAPP_simulations/with_corrosion/__pycache__/
