@@ -51,7 +51,7 @@ class MCNPSimulationBase:
             with open(os.path.join(input_files_dir, mode)) as mode_file:
                 mode = mode_file.read().rstrip()
         except FileNotFoundError:
-            logging.error("One or more of the required files are missing")
+            logging.error("One or more of the required resources are missing")
             return None, None, None, None, None
         return tallies, source, materials, planes, mode
 
