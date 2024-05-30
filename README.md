@@ -92,14 +92,9 @@ The file is structured as follows:
 To run the `analysis.py` script, navigate to the `Python/MCNPSimulationScripts/simulation/analysis` directory and run the script with Python:
 
 ```bash
-python analysis.py
+python analysis_IC-33051.py
+```
 
 ## Contributing
 
 Contributions are welcome. Please make sure to update tests as appropriate.
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
-
-Please note that this is a general overview of the project. For more specific details, please refer to the individual scripts and their respective documentation.
