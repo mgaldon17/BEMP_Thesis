@@ -1,10 +1,10 @@
 from .simulation.MEDAPP_simulations.with_corrosion import run
 
 if __name__ == '__main__':
-    # Define the source files
+    # Define the source resources
     source_files = ["resources/MEDAPP_Source.txt"]
 
-    # Define the material files
+    # Define the material resources
     material_files = [
         "/hydromagnesite/materials_0%_water + 100%_hydro.txt",
         "/hydromagnesite/materials_99%_hydro + 1%_water.txt",
