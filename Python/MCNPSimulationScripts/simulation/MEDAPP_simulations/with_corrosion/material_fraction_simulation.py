@@ -6,7 +6,7 @@ import time
 import pytz
 import tweepy.errors
 
-from source import Source
+from .source import Source
 from .materials import Materials
 from Python.MCNPSimulationScripts.simulation.notification_bot import message_center as msg_center
 from Python.MCNPSimulationScripts.simulation.utilities.ensure_dir_exists import ensure_directory_exists
