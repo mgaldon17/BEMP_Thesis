@@ -1,24 +1,28 @@
 import os
 import unittest
-from unittest.mock import patch, MagicMock
+from unittest.mock import patch, MagicMock, mock_open
 
 from Python.MCNPSimulationScripts.simulation.analysis import analysis_IC_33051
 
 class TestAnalyzer(unittest.TestCase):
     @patch('Python.MCNPSimulationScripts.simulation.analysis.analysis_IC_33051.os')  # Updated line
-    def test_analyze(self, mock_os):
+    @patch('builtins.open', new_callable=mock_open, read_data="mocked file content")
+    def test_analyze(self, mock_file, mock_os):
         mock_os.path.join.return_value = "/path/to/result.txt"
-        mock_os.chdir.return_value = None
+        mock_os.chdir.side_effect = None
 
         # Get the path of the current file
         current_file_path = os.path.realpath(__file__)
-
-
-        analyzer = analysis_IC_33051.Analyzer(current_file_path + "/mock_simulation_results", "10E8", [1.0, 2.0], "neutron")
+        parent_dir_path = os.path.dirname(
+            os.path.dirname(
+                os.path.dirname(
+                    os.path.dirname(
+                        os.path.dirname(current_file_path)))))
+        analyzer = analysis_IC_33051.Analyzer(parent_dir_path + "/results/simulation_result", "10E8", [1.0, 2.0], "neutron")
         analyzer.analyze()
 
         mock_os.path.join.assert_called_once_with("..", "result.txt")
-        mock_os.chdir.assert_called_once_with(current_file_path + "/resources/simulation_result")
+        mock_os.chdir.assert_called_once_with(parent_dir_path + "/results/simulation_result")
 
     def test_convertIntoGray(self):
         analyzer = analysis_IC_33051.Analyzer("/path/to/directory", "10E8", [1.0, 2.0], "neutron")
