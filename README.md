@@ -45,7 +45,7 @@ In order to do so, the user must provide the input files in the resources folder
 
 To run the simulations, simply execute the `main.py` script:
 ```bash
-python run.py
+python test_run.py
 ```
 
 When the execution is finished, a notification will be sent on Twitter including basic details of the simulation. This feature can be disabled by commenting the line  `twitter.send_tweet("Simulation finished")` in the `run.py` script.
@@ -92,7 +92,7 @@ The file is structured as follows:
 To run the `analysis.py` script, navigate to the `Python/MCNPSimulationScripts/simulation/analysis` directory and run the script with Python:
 
 ```bash
-python analysis_IC-33051.py
+python analysis_IC_33051.py
 ```
 
 ## Contributing

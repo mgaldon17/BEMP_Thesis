@@ -24,7 +24,7 @@ class Materials:
                                 raise ValueError(f"Invalid density value: {density_str}")
 
     def get_solute_percentage(self):
-        input_files_dir = os.path.join(os.path.dirname(__file__), 'inputFilesParts')
+        input_files_dir = os.path.join(os.path.dirname(__file__), './resources/inputFilesParts')
         with open(os.path.join(input_files_dir, self.material), 'r') as f:
             for line in f:
                 if '%' in line:

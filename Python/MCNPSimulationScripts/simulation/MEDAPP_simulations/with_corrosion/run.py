@@ -5,13 +5,13 @@ from threading import Thread
 
 from watchdog.observers import Observer
 
-from materials import Materials
+from ..with_corrosion.materials import Materials
 from .MCNP_simulation import MCNP
 from ....simulation.MCNP_simulation_base import MCNPSimulationBase
 from ...utilities.check_os import check_system
 from ...utilities.ensure_dir_exists import ensure_directory_exists
 from ....simulation.utilities.timer import Timer
-from ....monitor import MonitorFolder, q
+from ....monitor import MonitorFolder, queue as q
 
 
 def run(source, material, target_material, nps, tallies, planes, mode):
@@ -23,7 +23,7 @@ def run(source, material, target_material, nps, tallies, planes, mode):
     timer = Timer()
     timer.start()
 
-    event_handler = MonitorFolder()
+    event_handler = MonitorFolder(q)
     observer = Observer()
     observer.schedule(event_handler, path=output_path, recursive=True)
 
