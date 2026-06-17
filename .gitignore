@@ -5,6 +5,8 @@ Python/MCNPSimulationScripts/simulation/MEDAPP_simulations/with_corrosion/__pyca
 Python/MCNPSimulationScripts/__pycache__/
 
 # LaTeX build artifacts (regenerated on every compile)
+# latexmk writes everything here (see Makefile: -outdir=build)
+Master Thesis/build/
 Master Thesis/*.aux
 Master Thesis/*.bbl
 Master Thesis/*.blg
