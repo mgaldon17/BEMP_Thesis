@@ -3,3 +3,20 @@
 Python/.DS_Store
 Python/MCNPSimulationScripts/simulation/MEDAPP_simulations/with_corrosion/__pycache__/
 Python/MCNPSimulationScripts/__pycache__/
+
+# LaTeX build artifacts (regenerated on every compile)
+Master Thesis/*.aux
+Master Thesis/*.bbl
+Master Thesis/*.blg
+Master Thesis/*.fdb_latexmk
+Master Thesis/*.fls
+Master Thesis/*.lof
+Master Thesis/*.lot
+Master Thesis/*.toc
+Master Thesis/*.out
+Master Thesis/*.log
+Master Thesis/*.synctex.gz
+Master Thesis/main.pdf
+Master Thesis/logos/*-eps-converted-to.pdf
+# keep the final thesis PDF tracked
+!Master Thesis/BEMP_Thesis_of_Manuel_Galdon.pdf
