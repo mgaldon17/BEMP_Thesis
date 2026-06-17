@@ -3,29 +3,37 @@ import time
 
 import pytz
 import tweepy
-import base64
+from dotenv import load_dotenv
+
+# Load credentials from a .env file (searched from the current working
+# directory upwards). Copy .env.example to .env and fill in your values.
+load_dotenv()
+
+REQUIRED_KEYS = (
+    "BEARER_TOKEN",
+    "CONSUMER_KEY",
+    "CONSUMER_SECRET",
+    "ACCESS_TOKEN",
+    "ACCESS_TOKEN_SECRET",
+)
+
 
 def read_parameters():
-    input_files_dir = os.path.join(os.path.dirname(__file__), 'config', '')
-
-    with open(os.path.join(input_files_dir, 'auth_params.txt'), 'rb') as file:
-        base64_encoded_parameters = file.read()
-
-    # Decode the base64-encoded parameters
-    decoded_parameters = base64.b64decode(base64_encoded_parameters).decode()
-
-    parameters = {key.strip(): value.strip() for line in decoded_parameters.split('\n') if '=' in line for key, value in [line.strip().split('=')]}
+    parameters = {key: os.getenv(key) for key in REQUIRED_KEYS}
+    missing = [key for key, value in parameters.items() if not value]
+    if missing:
+        raise RuntimeError(
+            "Missing Twitter credentials in the environment: "
+            + ", ".join(missing)
+            + ". Copy .env.example to .env and fill in the values."
+        )
     return parameters
 
 
 class MessageCenter:
 
-    # In order to be able to read the auth parameters, those must be written in a txt file in config/auth_params.txt
-    # CONSUMER_KEY = ...
-    # CONSUMER_SECRET = ...
-    # ACCESS_TOKEN = ...
-    # ACCESS_TOKEN_SECRET = ...
-    # BEARER_TOKEN = ...
+    # Credentials are read from environment variables (loaded from .env):
+    # CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN, ACCESS_TOKEN_SECRET, BEARER_TOKEN
 
     def __init__(self, msg):
         parameters = read_parameters()

@@ -20,3 +20,9 @@ Master Thesis/main.pdf
 Master Thesis/logos/*-eps-converted-to.pdf
 # keep the final thesis PDF tracked
 !Master Thesis/BEMP_Thesis_of_Manuel_Galdon.pdf
+
+# Environment files with secrets (Twitter/X API credentials)
+.env
+*/.env
+**/.env
+!.env.example

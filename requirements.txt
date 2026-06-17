@@ -5,3 +5,4 @@ os==0.1.4
 tweepy==3.10.0
 pytz==2021.1
 watchdog==2.1.5
+python-dotenv==1.0.1
