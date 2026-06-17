@@ -28,3 +28,7 @@ Master Thesis/logos/*-eps-converted-to.pdf
 !.env.example
 # Never re-commit the old credentials file (purged from history)
 **/auth_params.txt
+# Python
+__pycache__/
+*.pyc
+.venv/
