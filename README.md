@@ -1,100 +1,179 @@
-# Master's Thesis: Characterization of Neutron Response of Ionisation Chambers 
+<div align="center">
 
-This is the repository of the Master's Thesis of Manuel Trigueros Galdon. The project is written in Python and is designed to run Monte Carlo N-Particle (MCNP) simulations for analyzing the behavior of different materials under various conditions.
+# ☢️ Characterization of Neutron Response of Ionization Chambers
 
-## Prerequisites
+**Master's Thesis — Manuel Trigueros Galdón**
+Technical University of Munich (TUM) · Department of Physics · FRM II
 
-To run the MCNP simulations in this project, you must have a valid license from Los Alamos National Laboratory. MCNP is a licensed software and its use is restricted to license holders only. Please visit the [official MCNP website](https://mcnp.lanl.gov/) for more information on how to obtain a license.
+[![Read the Thesis](https://img.shields.io/badge/📄_Read_the_Thesis-PDF-red?style=for-the-badge)](Master%20Thesis/BEMP_Thesis_of_Manuel_Galdon.pdf)
 
-However, the analysis of the nuclear data can be performed using this application provided that the user has the necessary data files. Data files are included in this repository.
-## Project Structure
+![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=flat-square&logo=python&logoColor=white)
+![MCNP6](https://img.shields.io/badge/MCNP6-Monte_Carlo-orange?style=flat-square)
+![LaTeX](https://img.shields.io/badge/LaTeX-Thesis-008080?style=flat-square&logo=latex&logoColor=white)
+![License](https://img.shields.io/badge/MCNP-License_Required-lightgrey?style=flat-square)
 
-The project is organized into several directories, each containing scripts for different types of simulations:
+*A Python automation toolkit for running and analyzing Monte Carlo N-Particle (MCNP) simulations
+that study how a corrosion layer alters the neutron and gamma response of dosimetry ionization chambers.*
 
-- `MEDAPP Simulations`: This directory contains scripts for running simulations of the ionization chamber with and without a corrosion layer. The simulations are designed to analyze the behavior of the chamber under various conditions, taking into account the effects of the corrosion layer.
+</div>
 
-- `Strontium 90 Simulations`: This directory contains scripts for running simulations of the ionization chamber with and without a corrosion layer irradiated by a Strontium 90 source. The simulations are designed to analyze the behavior of the chamber under various conditions.
+---
 
-## Getting Started
+## 📖 About
 
-To get started with the project, you will need to have Python installed on your system. You can then clone the repository and install the required dependencies.
+Magnesium ionization chambers used in fast-neutron therapy develop an atmospheric **corrosion layer**
+(hydromagnesite) that changes their **sensitivity** to radiation, introducing uncertainty in dosimetric
+measurements. This work combines neutron/X-ray CT imaging, MCNP Monte Carlo simulations and a PTB
+calibration to characterize that effect on the PTW **TM33054** (magnesium) and **TM33053** (A-150 tissue
+equivalent) chambers.
+
+> 📄 **The full thesis is available here → [`BEMP_Thesis_of_Manuel_Galdon.pdf`](Master%20Thesis/BEMP_Thesis_of_Manuel_Galdon.pdf)**
+
+## 📑 Table of Contents
+
+- [Prerequisites](#-prerequisites)
+- [Project Structure](#-project-structure)
+- [Getting Started](#-getting-started)
+- [Configuration (.env)](#-configuration-env)
+- [Running the Simulations](#-running-the-simulations)
+- [Notification Bot](#-notification-bot)
+- [Understanding the Results](#-understanding-the-results)
+- [The Thesis Document](#-the-thesis-document)
+- [Contributing](#-contributing)
+
+## ✅ Prerequisites
+
+| Requirement | Notes |
+|---|---|
+| 🐍 **Python 3.x** | Install dependencies with `pip install -r requirements.txt` |
+| ⚛️ **MCNP6 license** | MCNP is licensed software from Los Alamos National Laboratory. Running simulations requires a valid license — see the [official MCNP website](https://mcnp.lanl.gov/). |
+| 📊 **Data files** | The nuclear data files needed for analysis are included in this repository, so the **analysis** stage can be run without an MCNP license. |
+
+## 🗂️ Project Structure
+
+```
+BEMP_Thesis/
+├── Master Thesis/                 # LaTeX source + compiled thesis PDF
+│   └── BEMP_Thesis_of_Manuel_Galdon.pdf
+├── Python/
+│   └── MCNPSimulationScripts/
+│       └── simulation/
+│           ├── MEDAPP_simulations/      # Chamber w/ and w/o corrosion (MEDAPP source)
+│           ├── strontium_simulations/   # Chamber irradiated by a Sr-90 source
+│           ├── analysis/                # Output parsing & plotting
+│           └── notification_bot/        # Twitter/X "simulation finished" notifier
+├── MATLAB/                        # Auxiliary plotting/analysis
+├── .env.example                  # Template for Twitter/X credentials
+└── requirements.txt
+```
+
+## 🚀 Getting Started
 
 ```bash
+# 1. Clone
 git clone https://github.com/mgaldon17/BEMP_Thesis.git
 cd BEMP_Thesis
+
+# 2. (recommended) create a virtual environment
+python -m venv .venv && source .venv/bin/activate
+
+# 3. Install dependencies
 pip install -r requirements.txt
 ```
 
-## Running the Simulations
+## 🔐 Configuration (.env)
 
-To run the simulations, you can use the `run.py` script in the respective directory based on the type of simulation you want to run. This script sets up the MCNP simulations with the specified source and material, runs the simulations, and then analyzes the results.
-The input parameters of this script can be modified to customize the simulations according to your requirements. Those parameters are: 
+The optional notification bot posts to Twitter/X when a simulation finishes. Credentials are read from a
+**`.env` file** (never committed). To enable it:
 
-| Parameter         | Type   | Description                                                                  | Example                                                        |
-|-------------------|--------|------------------------------------------------------------------------------|----------------------------------------------------------------|
-| Source            | List   | The source input file                                                        | `["resources/MEDAPP_Source.txt"]`                              |
-| Materials         | List   | The materials input files                                                    | `["/hydromagnesite/materials_0%_water + 100%_hydro.txt", ...]` |
-| Target Material   | String | The material of the corrosion layer. If there is no layer, simply enter "Mg" | `"hydromagnesite"`                                             |
-| Number of Particles | String | The number of particles to simulate                                          | `"10E8"`                                                       |
-| Tallies           | String | The tallies input file                                                       | `"resources/tallies.txt"`                                      |
-| Planes            | String | The planes input file                                                        | `"resources/planes_with_corrosion"`                            |
-| Mode              | String | The mode input file                                                          | `"resources/mode.txt"`                                         |
+```bash
+cp .env.example .env
+```
 
-The parts of the input file stored in the resources folder form the input file that was used in this Master's Thesis. However, this automation tool is capable to execute the MCNP simulation for any other geometry, sources, materials, etc.
-In order to do so, the user must provide the input files in the resources folder and modify the parameters in the run.py script accordingly.
+Then fill in your own Twitter/X API credentials in `.env`:
 
-To run the simulations, simply execute the `main.py` script:
+```dotenv
+CONSUMER_KEY=your_consumer_key
+CONSUMER_SECRET=your_consumer_secret
+ACCESS_TOKEN=your_access_token
+ACCESS_TOKEN_SECRET=your_access_token_secret
+BEARER_TOKEN=your_bearer_token
+```
+
+> 🔒 `.env` is listed in `.gitignore`, so your secrets stay local. Get the keys/tokens from the
+> [Twitter/X Developer Portal](https://developer.twitter.com/). The bot is fully optional — the
+> simulations run without it.
+
+## ▶️ Running the Simulations
+
+Use the `run.py` script in the relevant simulation directory. It sets up the MCNP input, runs the
+simulation and triggers the analysis. The input parameters can be customized:
+
+| Parameter | Type | Description | Example |
+|---|---|---|---|
+| **Source** | List | The source input file | `["resources/MEDAPP_Source.txt"]` |
+| **Materials** | List | The materials input files | `["/hydromagnesite/materials_0%_water + 100%_hydro.txt", ...]` |
+| **Target Material** | String | Corrosion-layer material (use `"Mg"` for no layer) | `"hydromagnesite"` |
+| **Number of Particles** | String | Number of particles to simulate | `"10E8"` |
+| **Tallies** | String | The tallies input file | `"resources/tallies.txt"` |
+| **Planes** | String | The planes input file | `"resources/planes_with_corrosion"` |
+| **Mode** | String | The mode input file | `"resources/mode.txt"` |
+
+The files in the `resources` folder reproduce the exact input used in the thesis, but the tool can run
+MCNP for **any** geometry, source or material — just provide the input files and adjust `run.py`.
+
 ```bash
 python run.py
 ```
 
-When the execution is finished, a notification will be sent on Twitter including basic details of the simulation. This feature can be disabled by commenting the line  `twitter.send_tweet("Simulation finished")` in the `run.py` script.
-In order to use this feature, the user must have a Twitter Developer account and create an application to obtain the necessary keys and tokens.
+## 🤖 Notification Bot
 
-For this repository, there is a Twitter Account set up with the necessary keys and tokens. Please follow the user @MCNPBot to see the notifications. 
-## Understanding the Results
+When a run finishes, the bot (`notification_bot/message_center.py`) sends a tweet such as
+*"Simulation finished at HH:MM:SS"*. It loads credentials from `.env` via
+[`python-dotenv`](https://pypi.org/project/python-dotenv/).
 
-The outcome of the simulations is stored in the `output` directory. MCNP executions generate several output files, including the `.o` file, which contains the results of each simulation. This tool runs multiple executions for a variable density of the argon gas in the cavity of the chamber. 
+- ✅ Configure it by copying `.env.example` → `.env` (see [Configuration](#-configuration-env)).
+- 🚫 To disable notifications, comment out the `MessageCenter(...).send_tweet()` call in your `run.py`.
 
-The output files are then processed by the `analyze.py` script, which extracts the relevant data and generates plots to visualize the results.
+## 📈 Understanding the Results
 
-The vectors containing the relevant data for the user will be stored in a .txt file  for the user to choose the desired tool to plot them.
+MCNP executions generate output files (e.g. the `.o` / `mctal` files in `resources/simulation_result`).
+The toolkit runs multiple executions across a varying argon-gas density in the chamber cavity, then:
 
-# MCNP Simulation Analysis
-
-This repository contains scripts for running and analyzing MCNP (Monte Carlo N-Particle) simulations. The main script for analysis is `analysis.py`, located in the `Python/MCNPSimulationScripts/simulation/analysis` directory.
-
-## Understanding the Scripts
-
-The `analysis.py` script is used to analyze the results of a MCNP simulation. It reads the output files of the simulation, processes the data, and writes the results to a text file.
-
-The script uses the `Analyzer` class to perform the analysis. The `Analyzer` class has methods for reading the simulation output files, processing the data, and writing the results to a text file.
-
-The `outputToTxt` function is used to write the results to a text file. It takes as input a dictionary of tally numbers and their corresponding values and errors, the type of particle used in the simulation, and the number of particles used in the simulation. It writes these data to a text file in the `resources` directory.
-
-## Understanding the MCNP Output Files
-
-The MCNP output files are named `mctal`, `mctam`, `mctan`, etc., and are located in the `resources/simulation_result` directory. These files contain the results of the MCNP simulation.
-
-Each file contains a list of tally numbers and their corresponding values and errors. A tally number represents a specific measurement in the simulation, such as the number of particles that hit a certain target.
-
-## Understanding the Result.txt File
-
-The `result.txt` file is created by the `outputToTxt` function and is located in the `resources` directory. This file contains the processed results of the MCNP simulation.
-
-The file is structured as follows:
-
-- For each tally number, there are two lines: one for the value and one for the error. The lines are formatted as `y_<tally number>_<particle type> = <value>` and `y_err_<tally number>_<particle type> = <error>`.
-- After the tally data, there is a section titled "Simulation Details" that contains information about the simulation, such as the type of particle used and the number of particles.
-
-## Running the Scripts
-
-To run the `analysis.py` script, navigate to the `Python/MCNPSimulationScripts/simulation/analysis` directory and run the script with Python:
+1. **`analysis.py`** (in `Python/MCNPSimulationScripts/simulation/analysis`) reads the output, processes the
+   tallies and writes a `result.txt`.
+2. For each tally it writes a value/error pair:
+   `y_<tally>_<particle> = <value>` and `y_err_<tally>_<particle> = <error>`,
+   followed by a **Simulation Details** section.
+3. The resulting vectors are stored as plain text so you can plot them with the tool of your choice.
 
 ```bash
+cd Python/MCNPSimulationScripts/simulation/analysis
 python analysis_IC-33051.py
 ```
 
-## Contributing
+## 📚 The Thesis Document
 
-Contributions are welcome. Please make sure to update tests as appropriate.
+The compiled thesis lives in the **`Master Thesis/`** directory:
+
+📄 **[BEMP_Thesis_of_Manuel_Galdon.pdf](Master%20Thesis/BEMP_Thesis_of_Manuel_Galdon.pdf)**
+
+To rebuild it from the LaTeX source:
+
+```bash
+cd "Master Thesis"
+latexmk -pdf -shell-escape -jobname=BEMP_Thesis_of_Manuel_Galdon main.tex
+```
+
+> Requires a TeX distribution (e.g. TeX Live / TinyTeX) and Ghostscript for the EPS logo conversion.
+
+## 🤝 Contributing
+
+Contributions are welcome — feel free to open an issue or a pull request. Please update tests and
+documentation as appropriate.
+
+---
+
+<div align="center">
+<sub>Built for the Master's Thesis at the Heinz Maier-Leibnitz Zentrum (FRM II), TUM.</sub>
+</div>

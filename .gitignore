@@ -26,3 +26,5 @@ Master Thesis/logos/*-eps-converted-to.pdf
 */.env
 **/.env
 !.env.example
+# Never re-commit the old credentials file (purged from history)
+**/auth_params.txt
