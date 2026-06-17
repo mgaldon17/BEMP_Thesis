@@ -1,0 +1,115 @@
+\begin{thebibliography}{10}
+\providecommand{\url}[1]{{#1}}
+\providecommand{\urlprefix}{URL }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{DOI~\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{DOI~\discretionary{}{}{}\begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem{ESTAR}
+Nist star (stopping power and range tables for electrons, protons, and helium ions).
+\newblock \url{http://physics.nist.gov/Star}.
+\newblock Accessed: January 2023
+
+\bibitem{MineralogyDatabase}
+Webmineral.
+\newblock \url{http://www.webmineral.com/} (1996).
+\newblock Accessed: April 2023
+
+\bibitem{PTWFarmer}
+Ptw dosimetry - farmer ionization chambers 30010.
+\newblock \url{https://www.ptwdosimetry.com/en/products/farmer-ionization-chambers-30010} (2023).
+\newblock Accessed: July 2023
+
+\bibitem{aapm1980protocol}
+AAPM: {Protocol for Neutron Beam Dosimetry} (1980)
+
+\bibitem{MonteCarloMethods}
+Adrian~Barbu, S.C.Z.: Monte Carlo Methods (2020)
+
+\bibitem{DesignOfThimbleChamber}
+Aird, E.G.A., Farmer, F.T.: The design of a thimble chamber for the farmer dosemeter.
+\newblock Physics in Medicine \& Biology \textbf{17}(2), 169 (1972).
+\newblock \doi{10.1088/0031-9155/17/2/001}.
+\newblock \urlprefix\url{https://dx.doi.org/10.1088/0031-9155/17/2/001}
+
+\bibitem{modernlabExperiments}
+Boeglin, W.: Modern Lab Experiments. Chapter 4: Beta Spectroscopy (2023)
+
+\bibitem{ACEDataTables}
+Conlin, J.L., Parsons, D.K., Gardiner, S.J., Gray, M.G., Kahler~III, A.C., White, M.C., Lee, M.B.: Listing of available ace data tables.
+\newblock Tech. rep., Los Alamos National Lab.(LANL), Los Alamos, NM (United States) (2014)
+
+\bibitem{BetaRayAtlas}
+Cross, W.G.: A short atlas of beta ray spectra (1983)
+
+\bibitem{NeutronImaging}
+Dinesh K.~Aswal Partha S.~Sarkar, Y.S.K.: Neutron Imaging. (2022)
+
+\bibitem{IntroToNuclearAndParticle}
+Ferbel, D..: Introduction to Nuclear and Particle Physics (2003)
+
+\bibitem{Heinz}
+{Forschungszentrum J{\"u}lich}: Mlz garching - radiotherapy and biology (2022).
+\newblock \urlprefix\url{https://mlz-garching.de/englisch/industry-und-medicine/radiotherapy-und-biology.html}.
+\newblock Accessed: February 2023
+
+\bibitem{gray1936ionization}
+Gray, L.H.: {An Ionization Method for the Absolute Measurement of $\gamma$-Ray Energy}.
+\newblock Proceedings of the Royal Society of London. Series A-Mathematical and Physical Sciences \textbf{156}(889), 578--596 (1936)
+
+\bibitem{AtmosphericCorrosionMgAlloys}
+J{\"o}nsson, M.: The atmospheric corrosion of magnesium alloys: Influence of microstructure and environments.
+\newblock Ph.D. thesis, KTH (2007)
+
+\bibitem{NUK3Notes}
+Juan, P.M.: Lecture notes of applications of radioactivity in industry, research and medicine (2022)
+
+\bibitem{PTWKammerBauplan}
+Kühn, D.: Ionization chambers for neutron dosimetry.
+
+\bibitem{intlAtomicEnergy}
+Laboratory, L.A.N.: International Atomic Energy Agency - Nuclear Data Section - https://www-nds.iaea.org/ (2007-2023)
+
+\bibitem{RadiationOncologyInPhysicsHandbook}
+Podgorsak, E.B.: Radiation oncology physics (2005)
+
+\bibitem{kontrollvorrichtung}
+PTW~Freiburg, P.T.W.D.P.G.: Radioaktive Kontrollvorrichtung 39 Typ 8921 für PTW-Dosimeter (1994)
+
+\bibitem{matcomposition}
+R.G. Williams~III C.J.~Gesh, R.P.: Compendium of Material Composition Data for Radiation Transport Modeling (2006)
+
+\bibitem{rinard1991neutron}
+Rinard, P.: {Neutron Interactions with Matter}.
+\newblock Passive Nondestructive Assay of Nuclear Materials (375-377) (1991)
+
+\bibitem{ReportPTW2018}
+Sommer, L.B.: Bestimmung des Neutronen-Ansprechverhaltens einer Mg- und einer Al-Mg-Ionisationskammer relativ zu einer TE-Kammer in einem quasi-monoenergetischen Neutronenstrahl der PTB in Braunschweig (2018)
+
+\bibitem{PhDThesisofLucasSommer}
+Sommer, L.B.: Development and validation of a 3d neutron therapy treatment planning software for frm ii.
+\newblock Ph.D. thesis, Technische Universit{\"a}t M{\"u}nchen (2022)
+
+\bibitem{AtomsRadiationAndRadiationProtection}
+Turner, J.E.: Atoms, Radiation and Radiation Protection. (2014)
+
+\bibitem{basisdosimetrieMEDAPP}
+Wagner, F., Kampfer, S., Kneschaurek, P.: {Bericht zur Basisdosimetrie für medizinische Bestrahlung an der Strahlkonverteranlage am FRM II in Garching.} (2006)
+
+\bibitem{wagner2015FNTstatus}
+Wagner, F.M., Breitkreutz, H., Loeper-Kabasakal, B., Specht, H.: {Fast Neutron Therapy: A Status Report}.
+\newblock Sibirskiy Onkologicheskiy Zhurnal \textbf{6}(IMPULSE-2017-00167), 5--12 (2015)
+
+\bibitem{wagner2008MEDAPP}
+Wagner, F.M., Kneschaurek, P., Kastenm{\"u}ller, A., Loeper-Kabasakal, B., Kampfer, S., Breitkreutz, H., Waschkowski, W., Molls, M., Petry, W.: {The Munich Fission Neutron Therapy Facility MEDAPP at the Research Reactor FRM II}.
+\newblock Strahlentherapie und Onkologie \textbf{184}(12), 643--646 (2008)
+
+\bibitem{mcnp5Manual}
+{X-5 Monte Carlo Team}: {MCNP A General Monte Carlo N-Particle Transport Code Version 5 Volume I: Overview and Theory}.
+\newblock Los Alamos National Laboratory, Los Alamos, NM, LA-UR-03-1987  (2003)
+
+\bibitem{mcnp6Manual}
+{X-5 Monte Carlo Team}: {MCNP A General Monte Carlo N-Particle Transport Code Version 6.2}.
+\newblock Los Alamos National Laboratory, Los Alamos, NM, LA-UR-03-1987  (2003)
+
+\end{thebibliography}

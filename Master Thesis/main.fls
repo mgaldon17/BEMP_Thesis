@@ -1,6 +1,0 @@
-PWD /Users/galdon/BEMP_Thesis/Master Thesis
-INPUT /Users/galdon/Library/TinyTeX/texmf.cnf
-INPUT /Users/galdon/Library/TinyTeX/texmf-dist/web2c/texmf.cnf
-INPUT /Users/galdon/Library/TinyTeX/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/galdon/BEMP_Thesis/Master Thesis/main.tex
-OUTPUT main.log

@@ -1,0 +1,957 @@
+PWD /Users/galdon/BEMP_Thesis/Master Thesis
+INPUT /Users/galdon/Library/TinyTeX/texmf.cnf
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/web2c/texmf.cnf
+INPUT /Users/galdon/Library/TinyTeX/texmf-var/web2c/pdftex/pdflatex.fmt
+INPUT main.tex
+OUTPUT BEMP_Thesis_of_Manuel_Galdon.log
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/nag/nag.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/nag/nag.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/nag/nag-l2tabu.cfg
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/nag/nag-l2tabu.cfg
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/nag/nag-l2tabu.cfg
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/nag/nag-orthodox.cfg
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/nag/nag-orthodox.cfg
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/nag/nag-orthodox.cfg
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/koma-script/scrbook.cls
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/koma-script/scrbook.cls
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/koma-script/scrkbase.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/koma-script/scrkbase.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/koma-script/scrbase.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/koma-script/scrbase.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/koma-script/scrlfile.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/koma-script/scrlfile.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/koma-script/scrlfile-hook.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/koma-script/scrlfile-hook.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/koma-script/scrlogo.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/koma-script/scrlogo.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/koma-script/tocbasic.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/koma-script/tocbasic.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/caption/caption.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/koma-script/typearea.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/koma-script/scrsize12pt.clo
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/koma-script/scrsize12pt.clo
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/koma-script/scrsize12pt.clo
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/koma-script/typearea.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/caption/subcaption.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/caption/subcaption.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/caption/caption.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/caption/caption3.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/caption/caption3.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/multirow/multirow.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/multirow/multirow.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/colortbl/colortbl.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/colortbl/colortbl.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/tools/array.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/tools/array.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/graphics/color.sty
+INPUT ./settings.tex
+INPUT ./settings.tex
+INPUT ./settings.tex
+INPUT ./settings.tex
+INPUT settings.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/base/inputenc.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/base/inputenc.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/base/fontenc.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/base/fontenc.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/jknappen/ec/ecrm1200.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/psnfss/mathpazo.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/psnfss/mathpazo.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/babel/babel.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/babel/babel.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/babel/txtbabel.def
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/babel/locale/invalid/babel-ngerman.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/babel/locale/invalid/babel-ngerman.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/babel/locale/invalid/babel-ngerman.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/babel/locale/en/babel-english.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/babel/locale/en/babel-english.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/babel/locale/en/babel-english.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/babel/locale/de/babel-de.ini
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/babel-german/ngerman.ldf
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/babel-german/ngerman.ldf
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/babel-german/ngerman.ldf
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/babel-german/babel-german.def
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/babel/locale/en/babel-en.ini
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/babel-english/english.ldf
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/babel-english/english.ldf
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/babel-english/english.ldf
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/csquotes/csquotes.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/csquotes/csquotes.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/csquotes/csquotes.def
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/csquotes/csquotes.def
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/csquotes/csquotes.def
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/csquotes/csquotes.cfg
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/csquotes/csquotes.cfg
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/csquotes/csquotes.cfg
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/datetime2/datetime2.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/datetime2/datetime2.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/tracklang/tracklang.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/tracklang/tracklang.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/tracklang/tracklang.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/tracklang/tracklang.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/tracklang/tracklang.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/tracklang/tracklang.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/tracklang/tracklang.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/adjustbox/adjustbox.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/adjustbox/adjustbox.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/adjustbox/adjcalc.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/adjustbox/adjcalc.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/adjustbox/trimclip.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/adjustbox/trimclip.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/graphics/trig.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/graphics/trig.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/collectbox/collectbox.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/collectbox/collectbox.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/adjustbox/tc-pdftex.def
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/adjustbox/tc-pdftex.def
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/adjustbox/tc-pdftex.def
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/scrhack/scrhack.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/scrhack/scrhack.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/listings/listings.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/listings/listings.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/listings/lstpatch.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/listings/lstpatch.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/listings/lstpatch.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/listings/lstmisc.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/listings/lstmisc.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/listings/lstmisc.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/listings/listings.cfg
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/listings/listings.cfg
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/listings/listings.cfg
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/lstaddons/lstautogobble.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/lstaddons/lstautogobble.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/pgf.revision.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/pgf.revision.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfint.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/pgfplots/pgfplots.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/pgfplots/pgfplots.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-luatex.def
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-luatex.def
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/pgfplots.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/pgfplotscore.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/libs/pgfplotslibrary.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_loader.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_pgfutil-common-lists.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsliststructure.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsliststructureext.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsarray.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsmatrix.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstableshared.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsdeque.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.data.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.verb.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.surfshading.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surfshading.pgfsys-pdftex.def
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surfshading.pgfsys-pdftex.def
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/util/pgfplotscolormap.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/util/pgfplotscolor.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/pgfplotsstackedplots.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/pgfplotsplothandlers.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplothandler.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplotimage.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/pgfplots.scaling.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/pgfplotscoordprocessing.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/pgfplots.errorbars.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/pgfplots.markers.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/pgfplotsticks.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/pgfplots.paths.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathmorphing.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathmorphing.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathmorphing.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathmorphing.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathreplacing.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathreplacing.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathreplacing.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathreplacing.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.contourlua.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.contourlua.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryplotmarks.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryplotmarks.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmarks.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmarks.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/pgfplots/pgfplotstable.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/pgfplots/pgfplotstable.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstable.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstable.coltype.code.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/microtype/microtype.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/microtype/microtype.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/microtype/microtype-pdftex.def
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/microtype/microtype-pdftex.def
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/microtype/microtype-pdftex.def
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/microtype/microtype.cfg
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/microtype/microtype.cfg
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/microtype/microtype.cfg
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/stringenc/stringenc.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/stringenc/stringenc.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/url/url.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/url/url.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/tools/tabularx.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/tools/tabularx.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/isotope/isotope.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/isotope/isotope.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/siunitx/siunitx.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/siunitx/siunitx.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/mhchem/mhchem.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/mhchem/mhchem.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/tools/calc.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/tools/calc.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/chemgreek/chemgreek.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/chemgreek/chemgreek.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/was/upgreek.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/was/upgreek.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/hyphenat/hyphenat.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/hyphenat/hyphenat.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/bookmark/bookmark.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/bookmark/bookmark.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/bookmark/bookmark.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/psnfss/t1pplx.fd
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/psnfss/t1pplx.fd
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/psnfss/t1pplx.fd
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/adobe/palatino/pplr9e.tfm
+INPUT ./BEMP_Thesis_of_Manuel_Galdon.aux
+INPUT ./BEMP_Thesis_of_Manuel_Galdon.aux
+INPUT BEMP_Thesis_of_Manuel_Galdon.aux
+OUTPUT BEMP_Thesis_of_Manuel_Galdon.aux
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/grfext/grfext.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/grfext/grfext.sty
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/microtype/mt-ppl.cfg
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/microtype/mt-ppl.cfg
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/microtype/mt-ppl.cfg
+OUTPUT BEMP_Thesis_of_Manuel_Galdon.pdf
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
+INPUT ./pages/cover.tex
+INPUT ./pages/cover.tex
+INPUT ./pages/cover.tex
+INPUT ./pages/cover.tex
+INPUT pages/cover.tex
+INPUT ./logos/tum.pdf
+INPUT ./logos/tum.pdf
+INPUT ./logos/tum.pdf
+INPUT ./logos/tum.pdf
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/adobe/palatino/pplr9e.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/adobe/palatino/pplr9e.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/adobe/palatino/pplr9e.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/adobe/palatino/pplr9e.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/adobe/palatino/pplb9e.tfm
+INPUT ./logos/FRM2_logo.eps
+INPUT ./logos/FRM2_logo.eps
+INPUT ./logos/FRM2_logo.eps
+INPUT ./logos/FRM2_logo.eps
+INPUT ./logos/FRM2_logo-eps-converted-to.pdf
+INPUT ./logos/FRM2_logo-eps-converted-to.pdf
+INPUT ./logos/FRM2_logo.eps
+INPUT ./logos/FRM2_logo-eps-converted-to.pdf
+INPUT ./logos/FRM2_logo-eps-converted-to.pdf
+INPUT ./logos/FRM2_logo-eps-converted-to.pdf
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/vf/adobe/palatino/pplr9e.vf
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/mathpazo/fplmr.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/enc/dvips/base/8r.enc
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/vf/adobe/palatino/pplr9e.vf
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/mathpazo/fplmr.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/vf/adobe/palatino/pplr9e.vf
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/mathpazo/fplmr.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/vf/adobe/palatino/pplb9e.vf
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/adobe/palatino/pplb8r.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/mathpazo/fplmb.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/vf/adobe/palatino/pplr9e.vf
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/mathpazo/fplmr.tfm
+INPUT ./pages/title.tex
+INPUT ./pages/title.tex
+INPUT ./pages/title.tex
+INPUT ./pages/title.tex
+INPUT pages/title.tex
+INPUT ./logos/tum.pdf
+INPUT ./logos/tum.pdf
+INPUT ./logos/tum.pdf
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/adobe/palatino/pplb9e.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/psnfss/ot1pplx.fd
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/psnfss/ot1pplx.fd
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/psnfss/ot1pplx.fd
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/adobe/palatino/pplr9t.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/adobe/palatino/pplr9t.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/adobe/palatino/pplr9t.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/psnfss/omlzplm.fd
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/psnfss/omlzplm.fd
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/psnfss/omlzplm.fd
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/mathpazo/zplmr7m.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/mathpazo/zplmr7m.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/mathpazo/zplmr7m.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/psnfss/omszplm.fd
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/psnfss/omszplm.fd
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/psnfss/omszplm.fd
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/mathpazo/zplmr7y.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/mathpazo/zplmr7y.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/mathpazo/zplmr7y.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/psnfss/omxzplm.fd
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/psnfss/omxzplm.fd
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/psnfss/omxzplm.fd
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/mathpazo/zplmr7v.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/mathpazo/zplmr7v.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/mathpazo/zplmr7v.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/psnfss/ot1zplm.fd
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/psnfss/ot1zplm.fd
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/psnfss/ot1zplm.fd
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/mathpazo/zplmr7t.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/mathpazo/zplmr7t.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/mathpazo/zplmr7t.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/euler/eurm10.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/microtype/mt-eur.cfg
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/microtype/mt-eur.cfg
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/tex/latex/microtype/mt-eur.cfg
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/euler/eurm10.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/euler/eurm7.tfm
+INPUT ./logos/FRM2_logo.eps
+INPUT ./logos/FRM2_logo.eps
+INPUT ./logos/FRM2_logo.eps
+INPUT ./logos/FRM2_logo.eps
+INPUT ./logos/FRM2_logo-eps-converted-to.pdf
+INPUT ./logos/FRM2_logo-eps-converted-to.pdf
+INPUT ./logos/FRM2_logo.eps
+INPUT ./logos/FRM2_logo-eps-converted-to.pdf
+INPUT ./logos/FRM2_logo-eps-converted-to.pdf
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/vf/adobe/palatino/pplb9e.vf
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/adobe/palatino/pplb8r.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/mathpazo/fplmb.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/vf/adobe/palatino/pplr9e.vf
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/mathpazo/fplmr.tfm
+INPUT ./pages/abstract.tex
+INPUT ./pages/abstract.tex
+INPUT ./pages/abstract.tex
+INPUT ./pages/abstract.tex
+INPUT pages/abstract.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/adobe/palatino/pplb9e.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/adobe/palatino/pplb9e.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/vf/adobe/palatino/pplb9e.vf
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/adobe/palatino/pplb8r.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/mathpazo/fplmb.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/vf/public/mathpazo/zplmr7m.vf
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/mathpazo/fplmri.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/adobe/palatino/pplri8r.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/vf/public/mathpazo/zplmr7y.vf
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/mathpazo/fplmr.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/vf/adobe/palatino/pplr9t.vf
+INPUT ./pages/disclaimer.tex
+INPUT ./pages/disclaimer.tex
+INPUT ./pages/disclaimer.tex
+INPUT ./pages/disclaimer.tex
+INPUT pages/disclaimer.tex
+INPUT ./BEMP_Thesis_of_Manuel_Galdon.toc
+INPUT ./BEMP_Thesis_of_Manuel_Galdon.toc
+INPUT BEMP_Thesis_of_Manuel_Galdon.toc
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/adobe/palatino/pplr9e.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/adobe/palatino/pplr9e.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/vf/adobe/palatino/pplb9e.vf
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/adobe/palatino/pplb8r.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/mathpazo/fplmb.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/vf/adobe/palatino/pplr9e.vf
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/adobe/palatino/pplri9e.tfm
+OUTPUT BEMP_Thesis_of_Manuel_Galdon.toc
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/adobe/palatino/pplri9e.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/vf/adobe/palatino/pplri9e.vf
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/vf/adobe/palatino/pplri9e.vf
+INPUT ./chapters/01_introduction.tex
+INPUT ./chapters/01_introduction.tex
+INPUT ./chapters/01_introduction.tex
+INPUT ./chapters/01_introduction.tex
+INPUT chapters/01_introduction.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/vf/adobe/palatino/pplr9t.vf
+INPUT ./chapters/02_basics.tex
+INPUT ./chapters/02_basics.tex
+INPUT ./chapters/02_basics.tex
+INPUT ./chapters/02_basics.tex
+INPUT chapters/02_basics.tex
+INPUT ./chapters/basics/02_basics_context_about_FRMII.tex
+INPUT ./chapters/basics/02_basics_context_about_FRMII.tex
+INPUT chapters/basics/02_basics_context_about_FRMII.tex
+INPUT ./chapters/basics/02_basics_neutron_interaction_with_matter.tex
+INPUT ./chapters/basics/02_basics_neutron_interaction_with_matter.tex
+INPUT chapters/basics/02_basics_neutron_interaction_with_matter.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/adobe/palatino/pplb9e.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/vf/adobe/palatino/pplb9e.vf
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/adobe/palatino/pplb8r.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/mathpazo/fplmb.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/vf/public/mathpazo/zplmr7m.vf
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/mathpazo/fplmri.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/adobe/palatino/pplri8r.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/vf/public/mathpazo/zplmr7t.vf
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
+INPUT ./chapters/basics/02_basics_neutron_radiation_interaction.tex
+INPUT ./chapters/basics/02_basics_neutron_radiation_interaction.tex
+INPUT chapters/basics/02_basics_neutron_radiation_interaction.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/vf/public/mathpazo/zplmr7y.vf
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
+INPUT ./figures/Basic-design-of-a-cylindrical-Farmer-type-ionisation-chamber-From-Podgorsak-2005a.png
+INPUT ./figures/Basic-design-of-a-cylindrical-Farmer-type-ionisation-chamber-From-Podgorsak-2005a.png
+INPUT ./figures/Basic-design-of-a-cylindrical-Farmer-type-ionisation-chamber-From-Podgorsak-2005a.png
+INPUT ./figures/Basic-design-of-a-cylindrical-Farmer-type-ionisation-chamber-From-Podgorsak-2005a.png
+INPUT ./figures/Basic-design-of-a-cylindrical-Farmer-type-ionisation-chamber-From-Podgorsak-2005a.png
+INPUT ./chapters/basics/02_basics_dosimetric_principles.tex
+INPUT ./chapters/basics/02_basics_dosimetric_principles.tex
+INPUT ./chapters/basics/02_basics_dosimetric_principles.tex
+INPUT ./chapters/basics/02_basics_dosimetric_principles.tex
+INPUT chapters/basics/02_basics_dosimetric_principles.tex
+INPUT ./chapters/basics/02_basics_monte_carlo.tex
+INPUT ./chapters/basics/02_basics_monte_carlo.tex
+INPUT chapters/basics/02_basics_monte_carlo.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/vf/public/mathpazo/zplmr7m.vf
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/mathpazo/fplmri.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/adobe/palatino/pplri8r.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/vf/adobe/palatino/pplr9t.vf
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/mathpazo/fplmr.tfm
+INPUT ./chapters/03_Atmospheric_corrosion_of_Mg.tex
+INPUT ./chapters/03_Atmospheric_corrosion_of_Mg.tex
+INPUT ./chapters/03_Atmospheric_corrosion_of_Mg.tex
+INPUT ./chapters/03_Atmospheric_corrosion_of_Mg.tex
+INPUT chapters/03_Atmospheric_corrosion_of_Mg.tex
+INPUT ./chapters/Atmospheric corrosion/03_Corrosion of Mg.tex
+INPUT ./chapters/Atmospheric corrosion/03_Corrosion of Mg.tex
+INPUT ./chapters/Atmospheric corrosion/03_Corrosion of Mg.tex
+INPUT ./chapters/Atmospheric corrosion/03_Corrosion of Mg.tex
+INPUT chapters/Atmospheric corrosion/03_Corrosion of Mg.tex
+INPUT ./chapters/Atmospheric corrosion/03_Imaging of IC.tex
+INPUT ./chapters/Atmospheric corrosion/03_Imaging of IC.tex
+INPUT ./chapters/Atmospheric corrosion/03_Imaging of IC.tex
+INPUT ./chapters/Atmospheric corrosion/03_Imaging of IC.tex
+INPUT chapters/Atmospheric corrosion/03_Imaging of IC.tex
+INPUT ./figures/Imaging/reconstruction of EXRADIN CT corrosion Mg.png
+INPUT ./figures/Imaging/reconstruction of EXRADIN CT corrosion Mg.png
+INPUT ./figures/Imaging/reconstruction of EXRADIN CT corrosion Mg.png
+INPUT ./figures/Imaging/reconstruction of EXRADIN CT corrosion Mg.png
+INPUT ./figures/Imaging/reconstruction of EXRADIN CT corrosion Mg.png
+INPUT ./figures/Imaging/PTW CT corrosion Mg_1.png
+INPUT ./figures/Imaging/PTW CT corrosion Mg_1.png
+INPUT ./figures/Imaging/PTW CT corrosion Mg_1.png
+INPUT ./figures/Imaging/PTW CT corrosion Mg_1.png
+INPUT ./figures/Imaging/PTW CT corrosion Mg_1.png
+INPUT ./figures/Imaging/PTW CT corrosion Mg_2.png
+INPUT ./figures/Imaging/PTW CT corrosion Mg_2.png
+INPUT ./figures/Imaging/PTW CT corrosion Mg_2.png
+INPUT ./figures/Imaging/PTW CT corrosion Mg_2.png
+INPUT ./figures/Imaging/PTW CT corrosion Mg_2.png
+INPUT ./figures/Imaging/recon-filt-reslice-left.png
+INPUT ./figures/Imaging/recon-filt-reslice-left.png
+INPUT ./figures/Imaging/recon-filt-reslice-left.png
+INPUT ./figures/Imaging/recon-filt-reslice-left.png
+INPUT ./figures/Imaging/recon-filt-reslice-left.png
+INPUT ./figures/Imaging/Neutron scan.jpg
+INPUT ./figures/Imaging/Neutron scan.jpg
+INPUT ./figures/Imaging/Neutron scan.jpg
+INPUT ./figures/Imaging/Neutron scan.jpg
+INPUT ./figures/Imaging/Neutron scan.jpg
+INPUT ./chapters/Atmospheric corrosion/03_Simulated MgO layers.tex
+INPUT ./chapters/Atmospheric corrosion/03_Simulated MgO layers.tex
+INPUT ./chapters/Atmospheric corrosion/03_Simulated MgO layers.tex
+INPUT ./chapters/Atmospheric corrosion/03_Simulated MgO layers.tex
+INPUT chapters/Atmospheric corrosion/03_Simulated MgO layers.tex
+INPUT ./figures/IC_scale.jpg
+INPUT ./figures/IC_scale.jpg
+INPUT ./figures/IC_scale.jpg
+INPUT ./figures/IC_scale.jpg
+INPUT ./figures/IC_scale.jpg
+INPUT ./figures/IC closeup_scale.jpg
+INPUT ./figures/IC closeup_scale.jpg
+INPUT ./figures/IC closeup_scale.jpg
+INPUT ./figures/IC closeup_scale.jpg
+INPUT ./figures/IC closeup_scale.jpg
+INPUT ./figures/corrosion/Hydromagnesite/Neutrons and Photons/+F6.jpg
+INPUT ./figures/corrosion/Hydromagnesite/Neutrons and Photons/+F6.jpg
+INPUT ./figures/corrosion/Hydromagnesite/Neutrons and Photons/+F6.jpg
+INPUT ./figures/corrosion/Hydromagnesite/Neutrons and Photons/+F6.jpg
+INPUT ./figures/corrosion/Hydromagnesite/Neutrons and Photons/+F6.jpg
+INPUT ./figures/corrosion/Hydromagnesite/Neutrons and Photons/Energy deposition.jpg
+INPUT ./figures/corrosion/Hydromagnesite/Neutrons and Photons/Energy deposition.jpg
+INPUT ./figures/corrosion/Hydromagnesite/Neutrons and Photons/Energy deposition.jpg
+INPUT ./figures/corrosion/Hydromagnesite/Neutrons and Photons/Energy deposition.jpg
+INPUT ./figures/corrosion/Hydromagnesite/Neutrons and Photons/Energy deposition.jpg
+INPUT ./figures/corrosion/Hydromagnesite/Neutrons and Photons/neutrons.jpg
+INPUT ./figures/corrosion/Hydromagnesite/Neutrons and Photons/neutrons.jpg
+INPUT ./figures/corrosion/Hydromagnesite/Neutrons and Photons/neutrons.jpg
+INPUT ./figures/corrosion/Hydromagnesite/Neutrons and Photons/neutrons.jpg
+INPUT ./figures/corrosion/Hydromagnesite/Neutrons and Photons/neutrons.jpg
+INPUT ./figures/corrosion/Hydromagnesite/Neutrons and Photons/electrons vs protons.jpg
+INPUT ./figures/corrosion/Hydromagnesite/Neutrons and Photons/electrons vs protons.jpg
+INPUT ./figures/corrosion/Hydromagnesite/Neutrons and Photons/electrons vs protons.jpg
+INPUT ./figures/corrosion/Hydromagnesite/Neutrons and Photons/electrons vs protons.jpg
+INPUT ./figures/corrosion/Hydromagnesite/Neutrons and Photons/electrons vs protons.jpg
+INPUT ./figures/corrosion/Hydromagnesite/Neutrons/+F6.jpg
+INPUT ./figures/corrosion/Hydromagnesite/Neutrons/+F6.jpg
+INPUT ./figures/corrosion/Hydromagnesite/Neutrons/+F6.jpg
+INPUT ./figures/corrosion/Hydromagnesite/Neutrons/+F6.jpg
+INPUT ./figures/corrosion/Hydromagnesite/Neutrons/+F6.jpg
+INPUT ./figures/corrosion/Hydromagnesite/Neutrons/energy deposition.jpg
+INPUT ./figures/corrosion/Hydromagnesite/Neutrons/energy deposition.jpg
+INPUT ./figures/corrosion/Hydromagnesite/Neutrons/energy deposition.jpg
+INPUT ./figures/corrosion/Hydromagnesite/Neutrons/energy deposition.jpg
+INPUT ./figures/corrosion/Hydromagnesite/Neutrons/energy deposition.jpg
+INPUT ./figures/corrosion/Hydromagnesite/Neutrons/neutrons.jpg
+INPUT ./figures/corrosion/Hydromagnesite/Neutrons/neutrons.jpg
+INPUT ./figures/corrosion/Hydromagnesite/Neutrons/neutrons.jpg
+INPUT ./figures/corrosion/Hydromagnesite/Neutrons/neutrons.jpg
+INPUT ./figures/corrosion/Hydromagnesite/Neutrons/neutrons.jpg
+INPUT ./figures/corrosion/Hydromagnesite/Neutrons/electrons vs protons.jpg
+INPUT ./figures/corrosion/Hydromagnesite/Neutrons/electrons vs protons.jpg
+INPUT ./figures/corrosion/Hydromagnesite/Neutrons/electrons vs protons.jpg
+INPUT ./figures/corrosion/Hydromagnesite/Neutrons/electrons vs protons.jpg
+INPUT ./figures/corrosion/Hydromagnesite/Neutrons/electrons vs protons.jpg
+INPUT ./chapters/04_Build-up effect in materials.tex
+INPUT ./chapters/04_Build-up effect in materials.tex
+INPUT ./chapters/04_Build-up effect in materials.tex
+INPUT ./chapters/04_Build-up effect in materials.tex
+INPUT chapters/04_Build-up effect in materials.tex
+INPUT ./chapters/Build-up effect in materials/Calibration.tex
+INPUT ./chapters/Build-up effect in materials/Calibration.tex
+INPUT ./chapters/Build-up effect in materials/Calibration.tex
+INPUT ./chapters/Build-up effect in materials/Calibration.tex
+INPUT chapters/Build-up effect in materials/Calibration.tex
+INPUT ./figures/Build-up effect/PTW.jpeg
+INPUT ./figures/Build-up effect/PTW.jpeg
+INPUT ./figures/Build-up effect/PTW.jpeg
+INPUT ./figures/Build-up effect/PTW.jpeg
+INPUT ./figures/Build-up effect/PTW.jpeg
+INPUT ./figures/Build-up effect/Comparison k.jpg
+INPUT ./figures/Build-up effect/Comparison k.jpg
+INPUT ./figures/Build-up effect/Comparison k.jpg
+INPUT ./figures/Build-up effect/Comparison k.jpg
+INPUT ./figures/Build-up effect/Comparison k.jpg
+INPUT ./figures/Build-up effect/cross section neutrons.png
+INPUT ./figures/Build-up effect/cross section neutrons.png
+INPUT ./figures/Build-up effect/cross section neutrons.png
+INPUT ./figures/Build-up effect/cross section neutrons.png
+INPUT ./figures/Build-up effect/cross section neutrons.png
+INPUT ./chapters/Build-up effect in materials/Cylinder simulations.tex
+INPUT ./chapters/Build-up effect in materials/Cylinder simulations.tex
+INPUT ./chapters/Build-up effect in materials/Cylinder simulations.tex
+INPUT ./chapters/Build-up effect in materials/Cylinder simulations.tex
+INPUT chapters/Build-up effect in materials/Cylinder simulations.tex
+INPUT ./chapters/Build-up effect in materials/A150.tex
+INPUT ./chapters/Build-up effect in materials/A150.tex
+INPUT ./chapters/Build-up effect in materials/A150.tex
+INPUT ./chapters/Build-up effect in materials/A150.tex
+INPUT chapters/Build-up effect in materials/A150.tex
+INPUT ./figures/Build-up effect/TE cylinder with plane source.jpg
+INPUT ./figures/Build-up effect/TE cylinder with plane source.jpg
+INPUT ./figures/Build-up effect/TE cylinder with plane source.jpg
+INPUT ./figures/Build-up effect/TE cylinder with plane source.jpg
+INPUT ./figures/Build-up effect/TE cylinder with plane source.jpg
+INPUT ./chapters/Build-up effect in materials/Magnesium.tex
+INPUT ./chapters/Build-up effect in materials/Magnesium.tex
+INPUT ./chapters/Build-up effect in materials/Magnesium.tex
+INPUT ./chapters/Build-up effect in materials/Magnesium.tex
+INPUT chapters/Build-up effect in materials/Magnesium.tex
+INPUT ./figures/Build-up effect/Mg cylinder only.jpg
+INPUT ./figures/Build-up effect/Mg cylinder only.jpg
+INPUT ./figures/Build-up effect/Mg cylinder only.jpg
+INPUT ./figures/Build-up effect/Mg cylinder only.jpg
+INPUT ./figures/Build-up effect/Mg cylinder only.jpg
+INPUT ./figures/Build-up effect/Mg cylinder only - detail.jpg
+INPUT ./figures/Build-up effect/Mg cylinder only - detail.jpg
+INPUT ./figures/Build-up effect/Mg cylinder only - detail.jpg
+INPUT ./figures/Build-up effect/Mg cylinder only - detail.jpg
+INPUT ./figures/Build-up effect/Mg cylinder only - detail.jpg
+INPUT ./figures/Build-up effect/cross section of Mg.png
+INPUT ./figures/Build-up effect/cross section of Mg.png
+INPUT ./figures/Build-up effect/cross section of Mg.png
+INPUT ./figures/Build-up effect/cross section of Mg.png
+INPUT ./figures/Build-up effect/cross section of Mg.png
+INPUT ./chapters/05_Check source.tex
+INPUT ./chapters/05_Check source.tex
+INPUT ./chapters/05_Check source.tex
+INPUT ./chapters/05_Check source.tex
+INPUT chapters/05_Check source.tex
+INPUT ./chapters/Simulated check source/Simulated check source.tex
+INPUT ./chapters/Simulated check source/Simulated check source.tex
+INPUT chapters/Simulated check source/Simulated check source.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/adobe/palatino/pplr9t.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/adobe/palatino/pplr9t.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/mathpazo/zplmr7m.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/mathpazo/zplmr7m.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/mathpazo/zplmr7y.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/mathpazo/zplmr7y.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/mathpazo/zplmr7v.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/mathpazo/zplmr7v.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/mathpazo/zplmr7t.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/mathpazo/zplmr7t.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/euler/eurm10.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/euler/eurm10.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/adobe/palatino/pplb9e.tfm
+INPUT ./chapters/Simulated check source/Sr-90 as a source.tex
+INPUT ./chapters/Simulated check source/Sr-90 as a source.tex
+INPUT ./chapters/Simulated check source/Sr-90 as a source.tex
+INPUT ./chapters/Simulated check source/Sr-90 as a source.tex
+INPUT chapters/Simulated check source/Sr-90 as a source.tex
+INPUT ./figures/Sr90_decay.png
+INPUT ./figures/Sr90_decay.png
+INPUT ./figures/Sr90_decay.png
+INPUT ./figures/Sr90_decay.png
+INPUT ./figures/Sr90_decay.png
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/vf/public/mathpazo/zplmr7t.vf
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
+INPUT ./figures/Sr90-sketch.png
+INPUT ./figures/Sr90-sketch.png
+INPUT ./figures/Sr90-sketch.png
+INPUT ./figures/Sr90-sketch.png
+INPUT ./figures/Sr90-sketch.png
+INPUT ./figures/sr-90.PNG
+INPUT ./figures/sr-90.PNG
+INPUT ./figures/sr-90.PNG
+INPUT ./figures/sr-90.PNG
+INPUT ./figures/sr-90.PNG
+INPUT ./chapters/Simulated check source/Calculation of activity.tex
+INPUT ./chapters/Simulated check source/Calculation of activity.tex
+INPUT ./chapters/Simulated check source/Calculation of activity.tex
+INPUT ./chapters/Simulated check source/Calculation of activity.tex
+INPUT chapters/Simulated check source/Calculation of activity.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/adobe/palatino/pplb9t.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/adobe/palatino/pplb9t.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/adobe/palatino/pplb9t.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/mathpazo/zplmb7m.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/mathpazo/zplmb7m.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/mathpazo/zplmb7m.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/mathpazo/zplmb7y.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/mathpazo/zplmb7y.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/mathpazo/zplmb7y.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/mathpazo/zplmb7t.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/mathpazo/zplmb7t.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/mathpazo/zplmb7t.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/euler/eurb10.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/euler/eurb10.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/euler/eurb7.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/vf/public/mathpazo/zplmb7m.vf
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/mathpazo/fplmbi.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/cm/cmmib10.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/adobe/palatino/pplbi8r.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/vf/public/mathpazo/zplmr7y.vf
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
+INPUT ./chapters/Simulated check source/Sampling of the emission spectra.tex
+INPUT ./chapters/Simulated check source/Sampling of the emission spectra.tex
+INPUT ./chapters/Simulated check source/Sampling of the emission spectra.tex
+INPUT ./chapters/Simulated check source/Sampling of the emission spectra.tex
+INPUT chapters/Simulated check source/Sampling of the emission spectra.tex
+INPUT ./figures/sr-90 decay spectrum.PNG
+INPUT ./figures/sr-90 decay spectrum.PNG
+INPUT ./figures/sr-90 decay spectrum.PNG
+INPUT ./figures/sr-90 decay spectrum.PNG
+INPUT ./figures/sr-90 decay spectrum.PNG
+INPUT ./figures/Y-90 decay spectrum.PNG
+INPUT ./figures/Y-90 decay spectrum.PNG
+INPUT ./figures/Y-90 decay spectrum.PNG
+INPUT ./figures/Y-90 decay spectrum.PNG
+INPUT ./figures/Y-90 decay spectrum.PNG
+INPUT ./chapters/Simulated check source/Setting up the source.tex
+INPUT ./chapters/Simulated check source/Setting up the source.tex
+INPUT ./chapters/Simulated check source/Setting up the source.tex
+INPUT ./chapters/Simulated check source/Setting up the source.tex
+INPUT chapters/Simulated check source/Setting up the source.tex
+INPUT ./figures/sr-90_full_setup.PNG
+INPUT ./figures/sr-90_full_setup.PNG
+INPUT ./figures/sr-90_full_setup.PNG
+INPUT ./figures/sr-90_full_setup.PNG
+INPUT ./figures/sr-90_full_setup.PNG
+INPUT ./figures/void_setup.png
+INPUT ./figures/void_setup.png
+INPUT ./figures/void_setup.png
+INPUT ./figures/void_setup.png
+INPUT ./figures/void_setup.png
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/adobe/palatino/pplbi9e.tfm
+INPUT ./chapters/Simulated check source/Bremsstrahlung.tex
+INPUT ./chapters/Simulated check source/Bremsstrahlung.tex
+INPUT ./chapters/Simulated check source/Bremsstrahlung.tex
+INPUT ./chapters/Simulated check source/Bremsstrahlung.tex
+INPUT chapters/Simulated check source/Bremsstrahlung.tex
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/vf/adobe/palatino/pplbi9e.vf
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/adobe/palatino/pplbi8r.tfm
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/public/mathpazo/fplmbi.tfm
+INPUT ./figures/Sr in VOID normalized to activity.jpg
+INPUT ./figures/Sr in VOID normalized to activity.jpg
+INPUT ./figures/Sr in VOID normalized to activity.jpg
+INPUT ./figures/Sr in VOID normalized to activity.jpg
+INPUT ./figures/Sr in VOID normalized to activity.jpg
+INPUT ./figures/Y in VOID normalized to activity.jpg
+INPUT ./figures/Y in VOID normalized to activity.jpg
+INPUT ./figures/Y in VOID normalized to activity.jpg
+INPUT ./figures/Y in VOID normalized to activity.jpg
+INPUT ./figures/Y in VOID normalized to activity.jpg
+INPUT ./figures/Sr in air.jpg
+INPUT ./figures/Sr in air.jpg
+INPUT ./figures/Sr in air.jpg
+INPUT ./figures/Sr in air.jpg
+INPUT ./figures/Sr in air.jpg
+INPUT ./figures/Y in air.jpg
+INPUT ./figures/Y in air.jpg
+INPUT ./figures/Y in air.jpg
+INPUT ./figures/Y in air.jpg
+INPUT ./figures/Y in air.jpg
+INPUT ./figures/Sr BS spectrum.png
+INPUT ./figures/Sr BS spectrum.png
+INPUT ./figures/Sr BS spectrum.png
+INPUT ./figures/Sr BS spectrum.png
+INPUT ./figures/Sr BS spectrum.png
+INPUT ./figures/Y BS spectrum.png
+INPUT ./figures/Y BS spectrum.png
+INPUT ./figures/Y BS spectrum.png
+INPUT ./figures/Y BS spectrum.png
+INPUT ./figures/Y BS spectrum.png
+INPUT ./chapters/Simulated check source/Electron simulation.tex
+INPUT ./chapters/Simulated check source/Electron simulation.tex
+INPUT ./chapters/Simulated check source/Electron simulation.tex
+INPUT ./chapters/Simulated check source/Electron simulation.tex
+INPUT chapters/Simulated check source/Electron simulation.tex
+INPUT ./figures/check source/+f6.jpg
+INPUT ./figures/check source/+f6.jpg
+INPUT ./figures/check source/+f6.jpg
+INPUT ./figures/check source/+f6.jpg
+INPUT ./figures/check source/+f6.jpg
+INPUT ./pages/conclusions 2.tex
+INPUT ./pages/conclusions 2.tex
+INPUT ./pages/conclusions 2.tex
+INPUT ./pages/conclusions 2.tex
+INPUT pages/conclusions 2.tex
+INPUT ./pages/acknowledgments.tex
+INPUT ./pages/acknowledgments.tex
+INPUT ./pages/acknowledgments.tex
+INPUT ./pages/acknowledgments.tex
+INPUT pages/acknowledgments.tex
+INPUT ./BEMP_Thesis_of_Manuel_Galdon.lof
+INPUT ./BEMP_Thesis_of_Manuel_Galdon.lof
+INPUT BEMP_Thesis_of_Manuel_Galdon.lof
+OUTPUT BEMP_Thesis_of_Manuel_Galdon.lof
+INPUT ./BEMP_Thesis_of_Manuel_Galdon.lot
+INPUT ./BEMP_Thesis_of_Manuel_Galdon.lot
+INPUT BEMP_Thesis_of_Manuel_Galdon.lot
+OUTPUT BEMP_Thesis_of_Manuel_Galdon.lot
+INPUT ./BEMP_Thesis_of_Manuel_Galdon.bbl
+INPUT ./BEMP_Thesis_of_Manuel_Galdon.bbl
+INPUT BEMP_Thesis_of_Manuel_Galdon.bbl
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/tfm/jknappen/ec/ectt1200.tfm
+INPUT BEMP_Thesis_of_Manuel_Galdon.aux
+INPUT /Users/galdon/Library/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1200.600pk
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/type1/public/mathpazo/fplmbi.pfb
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb
+INPUT /Users/galdon/Library/TinyTeX/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb

@@ -1,0 +1,39 @@
+\babel@toc {english}{}\relax 
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Basic design of a Farmer Ionization Chamber.}}{6}{figure.caption.3}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces X-ray CT scan of EXRADIN chamber (left) and the PTW TM33054 chamber (right). Both devices are made of magnesium.}}{14}{figure.caption.4}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Image of the X-ray CT scan of the PTW TM33054 ionization chamber.}}{15}{figure.caption.5}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Neutron scan of TM33054 (left) and CT values vs. distance plot (right).}}{15}{figure.caption.6}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Simulated PTW chamber (left) and a close-up of the tip of the chamber (right). In the close-up, it is noticeable that a layer of hydromagnesite, shown in green, is added to the surface of the anode and to the inner part of the wall. The scale bar has been placed at the bottom of both images. }}{16}{figure.caption.7}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Simulation of PTW TM33054 with a 0.37 \unit {\milli \meter } thick layer of hydromagnesite on all magnesium surfaces. Tally +F6. In the legend the fraction of water is stated in percentages.}}{18}{figure.caption.9}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Energy deposition in the sensitive region of the PTW TM33054 chamber with a hydromagnesite layer.}}{19}{figure.caption.10}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Dose delivered by neutrons in the sensitive region of the PTW TM33054 chamber with a 0.37 \unit {\milli \meter } thick hydromagnesite layer.}}{20}{figure.caption.12}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Simulation of PTW TM33054 with a 0.37 \unit {\milli \meter } thick layer of hydromagnesite on all magnesium surfaces. Electron and proton contribution.}}{21}{figure.caption.13}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Simulation of PTW TM33054 with a 0.37 \unit {\milli \meter } thick layer of hydromagnesite on all magnesium surfaces using the MEDAPP neutron source. Tally +F6. In the legend the fraction of water is stated in percentages.}}{22}{figure.caption.14}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Energy deposition in the sensitive region of the PTW TM33054 chamber with a hydromagnesite layer using the MEDAPP neutron source.}}{23}{figure.caption.15}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Simulation of PTW TM33054 with a 0.37 \unit {\milli \meter } thick layer of hydromagnesite on all magnesium surfaces using the MEDAPP neutron source. Neutron contribution.}}{24}{figure.caption.17}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Simulation of PTW TM33054 with a 0.37 \unit {\milli \meter } thick layer of hydromagnesite on all magnesium surfaces. Electron and proton contribution.}}{25}{figure.caption.18}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Picture of a ionization chamber set up at PTB Braunschweig. The chamber is located in the middle and set up vertically. On the right side, the radiation source is pointing perpendicularly to the tip of the chamber.}}{28}{figure.caption.20}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Values of $k_U$ and $k_T$ measured at PTB in different years for 2.5 \unit {\mega \electronvolt }.}}{30}{figure.caption.25}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Cross section measured in \textit {barns} of various selected isotopes as a function of neutron energy. }}{31}{figure.caption.27}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Energy deposition plot of a TE cylinder plot using a plane neutron source at different energies. There is no gap between the source plane and the cylinder.}}{32}{figure.caption.28}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Energy deposition plot of the magnesium cylinder plot using a plane neutron source at different energies. There is no gap between the source plane and the cylinder.}}{33}{figure.caption.29}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Close-up of the energy deposition plot of the magnesium cylinder plot using a plane neutron source at different energies. There is no gap between the source plane and the cylinder.}}{34}{figure.caption.30}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces MCNP plot of the cross section in $barns$ of Mg.}}{35}{figure.caption.31}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Decay scheme of Sr-90, masses and half lives of Sr-90 and daughter nuclei \cite {modernlabExperiments}.}}{37}{figure.caption.32}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Sketch (left) and simulation (right) of the \ce {^{90}{}Sr} source.}}{38}{figure.caption.33}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Number of beta particles emitted per \unit {\mega \electronvolt } for one transition of \ce {^{90}{}Sr} (left) and \ce {^{90}{}Y} (right).}}{40}{figure.caption.36}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Geometrical arrangement of the simulated \ce {^{90}{}Sr} source and the PTW TM33054 magnesium chamber.}}{42}{figure.caption.38}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Particle flux in empty geometry.}}{43}{figure.caption.39}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Particle flux in vacuum of \ce {^{90}Sr} (left) and \ce {^{90}Y} (right).}}{45}{figure.caption.40}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Particle flux in air of \ce {^{90}Sr} (left plot) and \ce {^{90}Y} (right plot) against the energy bin. The right axis is the $\beta ^-$ decay probability of strontium and yttrium in each energy bin, referred to as "Input $\beta ^-$". These values serve as input for the \emph {SDEF} card of MCNP. The left axis is the particle flux i.e. intensity of the radiation measured in number of particles that move through each \unit {\square \centi \meter } of surface.}}{46}{figure.caption.41}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Bremsstrahlung spectrum of \ce {^{90}Sr} (left) and \ce {^{90}Y} (right)}}{47}{figure.caption.42}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Simulation of PTW-33054 with a 0.37 \unit {\milli \meter } thick layer of hydromagnesite on all magnesium surfaces using the check source, without a corrosion layer, and TE chamber. The magnesium chamber has been simulated without a concentration of water. Tally +F6.}}{48}{figure.caption.43}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

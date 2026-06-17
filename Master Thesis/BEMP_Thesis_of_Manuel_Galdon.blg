@@ -1,0 +1,58 @@
+This is BibTeX, Version 0.99e (TeX Live 2026)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: BEMP_Thesis_of_Manuel_Galdon.aux
+The style file: spmpsci.bst
+Database file #1: bibliography.bib
+Warning--entry type for "ESTAR" isn't style-file defined
+--line 88 of file bibliography.bib
+Warning--entry type for "PTWFarmer" isn't style-file defined
+--line 959 of file bibliography.bib
+Warning--entry type for "MineralogyDatabase" isn't style-file defined
+--line 965 of file bibliography.bib
+Warning--to sort, need author or key in PTWFarmer
+Warning--to sort, need author or key in ESTAR
+Warning--to sort, need author or key in MineralogyDatabase
+Warning--missing publisher in RadiationOncologyInPhysicsHandbook
+Warning--there's a number but no volume in rinard1991neutron
+You've used 29 entries,
+            2945 wiz_defined-function locations,
+            763 strings with 9482 characters,
+and the built_in function-call counts, 9586 in all, are:
+= -- 710
+> -- 285
+< -- 0
++ -- 123
+- -- 92
+* -- 448
+:= -- 1287
+add.period$ -- 20
+call.type$ -- 29
+change.case$ -- 126
+chr.to.int$ -- 0
+cite$ -- 34
+duplicate$ -- 884
+empty$ -- 999
+format.name$ -- 97
+if$ -- 2057
+int.to.chr$ -- 0
+int.to.str$ -- 29
+missing$ -- 195
+newline$ -- 115
+num.names$ -- 52
+pop$ -- 498
+preamble$ -- 1
+purify$ -- 104
+quote$ -- 0
+skip$ -- 284
+stack$ -- 0
+substring$ -- 230
+swap$ -- 425
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 114
+warning$ -- 5
+while$ -- 59
+width$ -- 31
+write$ -- 253
+(There were 8 warnings)
