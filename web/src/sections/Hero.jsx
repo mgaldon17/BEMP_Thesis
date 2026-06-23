@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <section className="section section--hero" id="hero">
       <div className="hero__content">
-        <span className="mono eyebrow">☢ MASTER&apos;S THESIS · TUM · FRM II</span>
+        <span className="mono eyebrow">☢ MANUEL GALDÓN · MASTER&apos;S THESIS · TUM · FRM II</span>
 
         <h1 className="hero__title">
           Characterization of <span className="accent">Neutron</span> Response

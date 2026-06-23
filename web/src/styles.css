@@ -30,7 +30,6 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
-  cursor: none; /* replaced by custom cursor on desktop */
 }
 
 ::selection { background: var(--cherenkov); color: var(--void); }
@@ -82,8 +81,20 @@ main {
 }
 
 .prose p { margin-bottom: 1.2rem; max-width: 60ch; color: var(--steel); }
-.prose strong { color: var(--steel); font-weight: 600; }
-.prose strong { color: #eaf2f6; }
+.prose strong { color: #eaf2f6; font-weight: 600; }
+.prose sup {
+  font-size: 0.7em;
+  vertical-align: super;
+  line-height: 0;
+}
+.prose code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  color: var(--cherenkov);
+  background: rgba(43, 214, 255, 0.08);
+  padding: 0.1em 0.4em;
+  border-radius: 3px;
+}
 
 /* ── Buttons ─────────────────────────────────────────────────────────────── */
 .btn {
@@ -192,7 +203,7 @@ main {
 }
 .material {
   border: 1px solid rgba(205, 214, 220, 0.12);
-  background: rgba(13, 17, 21, 0.5);
+  background: rgba(13, 17, 21, 0.72);
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
@@ -252,7 +263,17 @@ main {
   letter-spacing: -0.02em;
   margin-bottom: 1.2rem;
 }
-.cta__sub { max-width: 52ch; color: var(--steel-dim); margin-bottom: 2.5rem; }
+.cta__sub {
+  max-width: 52ch;
+  color: var(--steel);
+  margin: 0 auto 2.5rem;
+  /* Semi-translucent frame so the pitch stays legible over the atom. */
+  display: inline-block;
+  background: rgba(6, 8, 10, 0.55);
+  border: 1px solid rgba(205, 214, 220, 0.14);
+  padding: 0.8rem 1.2rem;
+  border-radius: 4px;
+}
 .cta__actions, .hero__actions { display: flex; gap: 1rem; flex-wrap: wrap; }
 .section--cta .cta__actions { justify-content: center; }
 
@@ -264,6 +285,40 @@ main {
   border-top: 1px solid rgba(205, 214, 220, 0.1);
 }
 .footer__line { font-size: 0.65rem; }
+
+/* ── Frozen state screens (maintenance / unpublished) ────────────────────── */
+.state-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  pointer-events: none; /* let mouse parallax through to the canvas */
+}
+.state-screen .eyebrow { color: var(--cherenkov); margin-bottom: 1.2rem; }
+.state-screen__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.2rem, 7vw, 4.5rem);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  text-shadow: 0 2px 40px rgba(6, 8, 10, 0.8);
+}
+.state-screen__sub {
+  margin-top: 1.4rem;
+  color: var(--steel);
+  max-width: 40ch;
+  /* Framed black background so the subtitle stays legible over the atom. */
+  display: inline-block;
+  background: rgba(6, 8, 10, 0.85);
+  border: 1px solid rgba(205, 214, 220, 0.18);
+  padding: 0.7rem 1.1rem;
+  border-radius: 4px;
+}
 
 /* ============================================================================
    Overlays — all pointer-events: none
@@ -282,26 +337,6 @@ main {
     transparent 40%,
     rgba(0, 0, 0, 0.55) 100%
   );
-}
-
-/* Custom cursor */
-.cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 26px;
-  height: 26px;
-  border: 1px solid var(--steel);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 100;
-  mix-blend-mode: difference;
-  transition: width 0.2s, height 0.2s, background 0.2s;
-}
-.cursor--hover {
-  width: 54px;
-  height: 54px;
-  background: rgba(205, 214, 220, 0.15);
 }
 
 /* Vertical scroll progress bar (right edge) */
@@ -371,18 +406,13 @@ main {
    Responsive — mobile: hide cursor/bar, single-column grids
    ============================================================================ */
 @media (max-width: 760px) {
-  body { cursor: auto; font-size: 16px; }
-  .cursor, .scroll-progress { display: none; }
+  body { font-size: 16px; }
+  .scroll-progress { display: none; }
   .frmii__layout,
   .team__grid,
   .stack__grid { grid-template-columns: 1fr; }
   .section { min-height: auto; padding-top: 7rem; padding-bottom: 7rem; }
   .section--hero { min-height: 100vh; }
-}
-
-@media (hover: none) and (pointer: coarse) {
-  body { cursor: auto; }
-  .cursor { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {

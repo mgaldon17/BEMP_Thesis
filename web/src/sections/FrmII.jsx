@@ -9,21 +9,23 @@ export default function FrmII() {
       <div className="frmii__layout">
         <figure className="frmii__figure">
           {/*
-            PLACEHOLDER IMAGE — public/frmii.jpg
-            Replace with a properly-licensed photo of the FRM II / Garching
-            campus: use a Wikimedia Commons image (free licence) or one from
-            the official MLZ press kit, and update the attribution caption
-            below to match. Do NOT hotlink Google Images results.
+            "View in the pool of FRM II" — photo © Bernhard Ludewig / TUM.
+            Source: https://www.mep.tum.de/cnsi/projekte/conversion-of-frm-ii/
+            Used here with visible credit. If reuse rights are ever a concern,
+            replace public/frmii.jpg with a Wikimedia Commons / MLZ press-kit
+            image and update the caption below to match.
           */}
           <img
             className="frmii__img"
             src={`${import.meta.env.BASE_URL}frmii.jpg`}
-            alt="The FRM II research neutron source in Garching"
+            alt="View in the pool of the FRM II research neutron source, Garching"
             loading="lazy"
           />
           <figcaption className="mono frmii__credit">
-            {/* // rellenar atribución real: e.g. "Photo: <author>, Wikimedia Commons, CC BY-SA 4.0" */}
-            IMAGE PLACEHOLDER · replace with licensed photo + attribution
+            Photo: © Bernhard Ludewig / TUM ·{' '}
+            <a href="https://www.mep.tum.de/cnsi/projekte/conversion-of-frm-ii/" target="_blank" rel="noreferrer">
+              mep.tum.de
+            </a>
           </figcaption>
         </figure>
 
@@ -35,9 +37,12 @@ export default function FrmII() {
             <strong>Heinz Maier-Leibnitz Zentrum (MLZ)</strong>.
           </p>
           <p>
-            Its intense neutron beams enable the imaging and irradiation work
-            behind this thesis — including the neutron CT used to inspect the
-            corrosion layer on the chambers.
+            Its medical application facility, <strong>MEDAPP</strong>, supplies
+            a beam of fast neutrons produced by{' '}
+            <strong><sup>235</sup>U fission</strong> —
+            used for <strong>Fast Neutron Therapy</strong>, the palliative
+            treatment of shallow tumours that is the clinical context this
+            thesis is built around.
           </p>
         </div>
       </div>

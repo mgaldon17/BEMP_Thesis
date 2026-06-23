@@ -2,7 +2,7 @@
 
 # ☢️ Characterization of Neutron Response of Ionization Chambers
 
-**Master's Thesis — Manuel Trigueros Galdón**
+**Master's Thesis — Manuel Galdón**
 Technical University of Munich (TUM) · Department of Physics · FRM II
 
 [![Read the Thesis](https://img.shields.io/badge/📄_Read_the_Thesis-PDF-red?style=for-the-badge)](Master%20Thesis/BEMP_Thesis_of_Manuel_Galdon.pdf)
@@ -39,6 +39,7 @@ equivalent) chambers.
 - [Notification Bot](#-notification-bot)
 - [Understanding the Results](#-understanding-the-results)
 - [The Thesis Document](#-the-thesis-document)
+- [Web Landing](#-web-landing)
 - [Contributing](#-contributing)
 
 ## ✅ Prerequisites
@@ -63,6 +64,8 @@ BEMP_Thesis/
 │           ├── analysis/                # Output parsing & plotting
 │           └── notification_bot/        # Twitter/X "simulation finished" notifier
 ├── MATLAB/                        # Auxiliary plotting/analysis
+├── web/                          # One-page WebGL landing (Vite + React + three.js)
+├── .github/workflows/            # CI: notification, Pages deploy, unpublish, maintenance
 ├── .env.example                  # Template for Twitter/X credentials
 └── requirements.txt
 ```
@@ -166,6 +169,30 @@ latexmk -pdf -shell-escape -jobname=BEMP_Thesis_of_Manuel_Galdon main.tex
 ```
 
 > Requires a TeX distribution (e.g. TeX Live / TinyTeX) and Ghostscript for the EPS logo conversion.
+
+## 🌐 Web Landing
+
+A one-page WebGL landing that presents the thesis lives in [`web/`](web/). A particle-built atom
+**decomposes** along a curl-noise flow as you scroll and **reassembles** as you scroll back up, with a
+subtle Cherenkov-blue bloom. Built with **Vite · React 18 · three.js** (`@react-three/fiber`, `drei`,
+`postprocessing`), **Lenis** smooth scroll and a **Zustand** scroll store.
+
+```bash
+cd web
+npm install
+npm run dev      # http://localhost:5173
+npm run build    # -> web/dist
+```
+
+It is deployed to **GitHub Pages** by the workflows in [`.github/workflows/`](.github/workflows/):
+
+| Workflow | Trigger | What it does |
+|---|---|---|
+| `deploy.yml` | push to `main` / manual | Builds `web/` and publishes `web/dist`. |
+| `unpublish.yml` | manual (`OFFLINE` confirm) | Replaces the site with the *Unpublished page* (atom fully decomposed). |
+| `maintenance.yml` | manual `on`/`off` + weekly cron | *Under maintenance* page (atom frozen at 26%); weekly `npm audit` + link-check that opens an issue on failure. |
+
+See [`web/README.md`](web/README.md) for the full architecture, the decompose effect and image attribution.
 
 ## 🤝 Contributing
 

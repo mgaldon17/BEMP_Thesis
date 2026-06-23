@@ -1,7 +1,7 @@
 name: Unpublish landing (take site offline)
 
-# Manual only — replaces the live site with a minimal "Site offline" page so
-# the Pages URL stops serving the landing.
+# Manual only — replaces the live site with the "Unpublished page" (the same
+# atom, fully decomposed) so the Pages URL stops serving the landing.
 #
 # NOTE: this is a SOFT take-down. To fully disable GitHub Pages, go to
 #   Settings -> Pages -> "Unpublish site" / set Source to "None".
@@ -37,50 +37,32 @@ jobs:
   build-offline:
     needs: guard
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
     steps:
-      - name: Generate minimal offline page
-        run: |
-          mkdir -p offline
-          cat > offline/index.html <<'HTML'
-          <!DOCTYPE html>
-          <html lang="en">
-            <head>
-              <meta charset="UTF-8" />
-              <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-              <title>Site offline</title>
-              <style>
-                :root { --void:#06080a; --steel:#cdd6dc; --steel-dim:#7e8c94; --cherenkov:#2bd6ff; }
-                * { margin:0; box-sizing:border-box; }
-                body {
-                  background:var(--void); color:var(--steel);
-                  font-family:ui-monospace,"JetBrains Mono",monospace;
-                  min-height:100vh; display:flex; align-items:center; justify-content:center;
-                  text-align:center; padding:2rem;
-                  background-image:radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,.6) 100%);
-                }
-                .box { max-width:520px; }
-                .tag { color:var(--cherenkov); letter-spacing:.3em; text-transform:uppercase; font-size:.7rem; }
-                h1 { font-size:clamp(1.6rem,5vw,2.6rem); margin:1rem 0; letter-spacing:-.02em; }
-                p { color:var(--steel-dim); line-height:1.6; }
-              </style>
-            </head>
-            <body>
-              <div class="box">
-                <span class="tag">&#9762; reactor offline</span>
-                <h1>This site is offline</h1>
-                <p>The landing page has been temporarily unpublished.</p>
-              </div>
-            </body>
-          </html>
-          HTML
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - run: npm ci
+      - run: npm run build
+
+      # Publish the "Unpublished page" (fully-decomposed atom) as the site root.
+      - name: Promote unpublish page to index
+        run: cp dist/unpublish.html dist/index.html
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
+        with:
+          enablement: true
 
       - name: Upload offline artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: offline
+          path: web/dist
 
   deploy:
     needs: build-offline

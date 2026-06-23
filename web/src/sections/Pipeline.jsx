@@ -73,7 +73,7 @@ export default function Pipeline() {
 
           {/* ── analysis.py ────────────────────────────────────────── */}
           <g className="node">
-            <rect x="320" y="560" width="300" height="60" rx="6" className="box box--run" />
+            <rect x="270" y="560" width="400" height="60" rx="6" className="box box--run" />
             <text x="470" y="584" className="dlabel dlabel--accent" textAnchor="middle">analysis.py</text>
             <text x="470" y="604" className="ditem" textAnchor="middle">parse tallies → value/error · argon-density sweep</text>
           </g>

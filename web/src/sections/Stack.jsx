@@ -3,7 +3,7 @@ const ITEMS = [
   { sym: 'λ', name: 'Python', tag: 'AUTOMATION', desc: 'Toolkit that builds, runs and analyses the MCNP simulations.' },
   { sym: '∫', name: 'LaTeX', tag: 'THESIS', desc: 'The written thesis and its typesetting.' },
   { sym: 'f(x)', name: 'MATLAB', tag: 'ANALYSIS', desc: 'Auxiliary analysis and plotting of results.' },
-  { sym: '⚖', name: 'PTB', tag: 'CALIBRATION', desc: 'Traceable metrological calibration of the chambers.' },
+  { sym: '⚖', name: 'PTB calibration', tag: 'METROLOGY', desc: 'Traceable calibration of the chambers, performed at the PTB.' },
   { sym: '◎', name: 'Neutron / X-ray CT', tag: 'IMAGING', desc: 'Imaging the atmospheric corrosion layer on the chambers.' },
 ]
 

@@ -6,7 +6,6 @@ import Scene from './scene/Scene'
 import Loader from './ui/Loader'
 import Grain from './ui/Grain'
 import Vignette from './ui/Vignette'
-import Cursor from './ui/Cursor'
 import ScrollProgress from './ui/ScrollProgress'
 
 import Hero from './sections/Hero'
@@ -70,7 +69,6 @@ export default function App() {
       <Loader />
       <Grain />
       <Vignette />
-      <Cursor />
       <ScrollProgress />
 
       {/* Scrolling content above the canvas */}
