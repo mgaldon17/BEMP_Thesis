@@ -10,24 +10,30 @@ export default function Team() {
         {/* Author — verified */}
         <article className="card card--author">
           <span className="mono card__role">AUTHOR</span>
-          <h3 className="card__name">Manuel Trigueros Galdón</h3>
+          <h3 className="card__name">Manuel Galdón</h3>
           <p className="card__detail">
             M.Sc. Biomedical Engineering &amp; Medical Physics — TUM
           </p>
         </article>
 
-        {/* // rellenar con nombres reales — supervisores TUM / FRM II */}
-        <article className="card card--placeholder">
-          <span className="mono card__role">SUPERVISION · TUM / FRM II</span>
-          <h3 className="card__name">— to be filled —</h3>
-          <p className="card__detail">{/* // rellenar con nombres reales */}Thesis supervisors</p>
+        {/* Supervision — from the thesis acknowledgements */}
+        <article className="card">
+          <span className="mono card__role">SUPERVISION · FRM II / TUM</span>
+          <h3 className="card__name">Dr. Tobias Chemnitz</h3>
+          <p className="card__detail">
+            Continuous supervision (FRM II) · Prof. Dr. Peter Müller-Buschbaum,
+            supervisor (TUM)
+          </p>
         </article>
 
-        {/* // rellenar con nombres reales — colaboradores PTB */}
-        <article className="card card--placeholder">
-          <span className="mono card__role">COLLABORATION · PTB</span>
-          <h3 className="card__name">— to be filled —</h3>
-          <p className="card__detail">{/* // rellenar con nombres reales */}Calibration partners</p>
+        {/* Collaboration — from the thesis acknowledgements */}
+        <article className="card">
+          <span className="mono card__role">COLLABORATION · FRM II / PTB</span>
+          <h3 className="card__name">Dr. Lucas Sommer</h3>
+          <p className="card__detail">
+            Neutron-dosimetry simulations (FRM II) · Dr. Ralf Nolte, PTB
+            calibration
+          </p>
         </article>
       </div>
     </section>

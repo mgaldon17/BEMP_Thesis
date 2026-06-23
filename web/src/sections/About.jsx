@@ -28,14 +28,17 @@ export default function About() {
         <p>
           A reproducible <strong>Python automation toolkit</strong> prepares,
           runs and analyses the MCNP simulations end to end — closing the loop
-          from input deck to plotted result.
+          from input deck to plotted result. Each run executes MCNP6 across{' '}
+          <strong>96 MPI processes</strong>, and a{' '}
+          <strong>Twitter notification bot</strong> posted a message whenever a
+          simulation finished.
         </p>
       </div>
 
       <ul className="microdata">
         <li className="mono"><span>INSTITUTION</span>TUM · FRM II / MLZ</li>
         <li className="mono"><span>YEAR</span>2024</li>
-        <li className="mono"><span>METHODS</span>MCNP6 · CT · PTB</li>
+        <li className="mono"><span>METHODS</span>MCNP6 · CT · Calibration</li>
       </ul>
     </section>
   )

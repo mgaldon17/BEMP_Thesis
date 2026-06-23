@@ -243,9 +243,10 @@ export default function DecomposeParticles() {
     m.uTime = state.clock.elapsedTime
     m.uOpacity += ((useStore.getState().loaded ? 1 : 0) - m.uOpacity) * (1 - Math.pow(0.01, delta))
 
-    // Gentle whole-object rotation tied to scroll + a slow idle drift.
+    // Rotation is driven SOLELY by scroll progress, so scrolling back to the
+    // top returns the atom to its exact original orientation (no idle drift).
     if (groupRef.current) {
-      groupRef.current.rotation.y = progress.current * 0.5 + state.clock.elapsedTime * 0.02
+      groupRef.current.rotation.y = progress.current * 0.5
       groupRef.current.rotation.x = progress.current * 0.12
     }
 

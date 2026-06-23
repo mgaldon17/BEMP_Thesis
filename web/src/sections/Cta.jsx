@@ -8,7 +8,7 @@ export default function Cta() {
       </h2>
       <p className="cta__sub">
         A real metrology problem in neutron dosimetry — tackled with CT imaging,
-        Monte Carlo simulation and traceable PTB calibration.
+        96-core MPI Monte Carlo simulation (MCNP6) and traceable PTB calibration.
       </p>
       <div className="cta__actions">
         <a className="btn btn--primary" href={THESIS_PDF} target="_blank" rel="noreferrer">

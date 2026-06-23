@@ -39,17 +39,35 @@ Tunables live at the top of `DecomposeParticles.jsx`:
 ## Images
 
 - `public/atom.jpg` — the particle subject. Replaceable.
-- `public/frmii.jpg` — **placeholder**. Replace with a properly-licensed photo
-  of FRM II / Garching (Wikimedia Commons or the official MLZ press kit) and
-  update the attribution caption in `src/sections/FrmII.jsx`.
+- `public/frmii.jpg` — *"View in the pool of FRM II"*, photo **© Bernhard
+  Ludewig / TUM**, from
+  [mep.tum.de](https://www.mep.tum.de/cnsi/projekte/conversion-of-frm-ii/),
+  with visible credit in `src/sections/FrmII.jsx`. Swap it for a Wikimedia
+  Commons / MLZ press-kit image if reuse rights are ever a concern.
+
+## State pages (frozen atom)
+
+The site is **multi-page** (`vite.config.js` → `index.html`,
+`maintenance.html`, `unpublish.html`). The two extra pages reuse the *same*
+`Scene` / `DecomposeParticles`: `src/main.jsx` reads `data-state` on `#root`
+and renders `src/StateScreen.jsx`, which pins the decompose progress and shows
+a centred message — no scroll, no sections.
+
+- `maintenance.html` → atom frozen at **26%** decompose · "Under maintenance"
+- `unpublish.html` → atom **fully decomposed (100%)** · "Unpublished page"
 
 ## Deployment (GitHub Pages, project page)
 
 `vite.config.js` sets `base: '/<REPO_NAME>/'` in production. Edit `REPO_NAME`
-there if the repository is renamed. Workflows live in `.github/workflows/`:
+there if the repository is renamed. Workflows live in `../.github/workflows/`:
 
 - **deploy.yml** — builds `web/` and publishes `web/dist` on push to `main`.
-- **unpublish.yml** — manual; replaces the site with an "offline" page.
-- **maintenance.yml** — manual on/off maintenance page + weekly audit/link-check.
+- **unpublish.yml** — manual (type `OFFLINE` to confirm); builds and promotes
+  `unpublish.html` to `index.html` so the URL shows the fully-decomposed atom.
+- **maintenance.yml** — manual `on` (promotes `maintenance.html`) / `off`
+  (re-deploys the normal build); weekly cron runs `npm audit` + a link-check
+  and opens an issue on failure without touching production.
 
-Enable Pages once under **Settings → Pages → Source: GitHub Actions**.
+The workflows pass `enablement: true` to `actions/configure-pages`, so Pages is
+auto-enabled on the first run. If that's blocked, enable it once under
+**Settings → Pages → Source: GitHub Actions**.
