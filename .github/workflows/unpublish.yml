@@ -1,0 +1,94 @@
+name: Unpublish landing (take site offline)
+
+# Manual only — replaces the live site with a minimal "Site offline" page so
+# the Pages URL stops serving the landing.
+#
+# NOTE: this is a SOFT take-down. To fully disable GitHub Pages, go to
+#   Settings -> Pages -> "Unpublish site" / set Source to "None".
+# The API to disable Pages from Actions is not stable, so we don't automate it.
+on:
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: 'Type "OFFLINE" to confirm taking the site down'
+        required: true
+        default: ''
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validate confirmation
+        run: |
+          if [ "${{ inputs.confirm }}" != "OFFLINE" ]; then
+            echo "::error::Confirmation failed. Re-run and type OFFLINE to proceed."
+            exit 1
+          fi
+
+  build-offline:
+    needs: guard
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate minimal offline page
+        run: |
+          mkdir -p offline
+          cat > offline/index.html <<'HTML'
+          <!DOCTYPE html>
+          <html lang="en">
+            <head>
+              <meta charset="UTF-8" />
+              <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+              <title>Site offline</title>
+              <style>
+                :root { --void:#06080a; --steel:#cdd6dc; --steel-dim:#7e8c94; --cherenkov:#2bd6ff; }
+                * { margin:0; box-sizing:border-box; }
+                body {
+                  background:var(--void); color:var(--steel);
+                  font-family:ui-monospace,"JetBrains Mono",monospace;
+                  min-height:100vh; display:flex; align-items:center; justify-content:center;
+                  text-align:center; padding:2rem;
+                  background-image:radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,.6) 100%);
+                }
+                .box { max-width:520px; }
+                .tag { color:var(--cherenkov); letter-spacing:.3em; text-transform:uppercase; font-size:.7rem; }
+                h1 { font-size:clamp(1.6rem,5vw,2.6rem); margin:1rem 0; letter-spacing:-.02em; }
+                p { color:var(--steel-dim); line-height:1.6; }
+              </style>
+            </head>
+            <body>
+              <div class="box">
+                <span class="tag">&#9762; reactor offline</span>
+                <h1>This site is offline</h1>
+                <p>The landing page has been temporarily unpublished.</p>
+              </div>
+            </body>
+          </html>
+          HTML
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload offline artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: offline
+
+  deploy:
+    needs: build-offline
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy offline page
+        id: deployment
+        uses: actions/deploy-pages@v4

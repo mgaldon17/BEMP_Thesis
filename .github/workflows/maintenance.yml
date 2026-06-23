@@ -1,0 +1,178 @@
+name: Maintenance
+
+# Two roles:
+#  1. workflow_dispatch  -> toggle a "Under maintenance" page on/off.
+#  2. schedule (weekly)  -> security audit + link-check, open an issue on
+#                           failure. Never deploys, so production stays up.
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Maintenance mode'
+        type: choice
+        required: true
+        default: 'on'
+        options:
+          - 'on'   # publish the "Under maintenance" page
+          - 'off'  # re-deploy the normal landing build
+  schedule:
+    # Every Monday at 06:00 UTC.
+    - cron: '0 6 * * 1'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+  issues: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  # ── workflow_dispatch + mode=on : publish maintenance page ──────────────
+  maintenance-on:
+    if: github.event_name == 'workflow_dispatch' && inputs.mode == 'on'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate maintenance page
+        run: |
+          mkdir -p maint
+          cat > maint/index.html <<'HTML'
+          <!DOCTYPE html>
+          <html lang="en">
+            <head>
+              <meta charset="UTF-8" />
+              <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+              <title>Under maintenance</title>
+              <style>
+                :root { --void:#06080a; --steel:#cdd6dc; --steel-dim:#7e8c94; --cherenkov:#2bd6ff; --amber:#ffb400; }
+                * { margin:0; box-sizing:border-box; }
+                body {
+                  background:var(--void); color:var(--steel);
+                  font-family:ui-monospace,"JetBrains Mono",monospace;
+                  min-height:100vh; display:flex; align-items:center; justify-content:center;
+                  text-align:center; padding:2rem;
+                  background-image:radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,.6) 100%);
+                }
+                .tag { color:var(--amber); letter-spacing:.3em; text-transform:uppercase; font-size:.7rem; }
+                h1 { font-size:clamp(1.6rem,5vw,2.6rem); margin:1rem 0; letter-spacing:-.02em; }
+                p { color:var(--steel-dim); line-height:1.6; }
+              </style>
+            </head>
+            <body>
+              <div>
+                <span class="tag">&#9762; scheduled maintenance</span>
+                <h1>Under maintenance</h1>
+                <p>The landing is being updated. Back online shortly.</p>
+              </div>
+            </body>
+          </html>
+          HTML
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: maint
+      - name: Deploy maintenance page
+        uses: actions/deploy-pages@v4
+
+  # ── workflow_dispatch + mode=off : restore normal build ─────────────────
+  maintenance-off:
+    if: github.event_name == 'workflow_dispatch' && inputs.mode == 'off'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - run: npm ci
+      - run: npm run build
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: web/dist
+      - name: Re-deploy landing
+        uses: actions/deploy-pages@v4
+
+  # ── schedule : audit + link-check, open issue on failure (no deploy) ────
+  audit:
+    if: github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - run: npm ci
+
+      - name: Security audit
+        id: npmaudit
+        continue-on-error: true
+        run: npm audit --audit-level=high
+
+      - name: Build for link-check
+        run: npm run build
+
+      - name: Link check (thesis / repo links still alive)
+        id: links
+        continue-on-error: true
+        run: |
+          set +e
+          # Collect external URLs embedded in the built site.
+          urls=$(grep -rhoE 'https?://[^"'"'"' )<>]+' dist | sort -u)
+          fail=0
+          report=""
+          while IFS= read -r url; do
+            [ -z "$url" ] && continue
+            code=$(curl -sS -o /dev/null -L --max-time 25 -w '%{http_code}' "$url")
+            echo "$code  $url"
+            if [ "$code" -ge 400 ] || [ "$code" -eq 000 ]; then
+              fail=1
+              report="${report}- \`${code}\` ${url}\n"
+            fi
+          done <<< "$urls"
+          echo "report<<EOF" >> "$GITHUB_OUTPUT"
+          echo -e "$report" >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
+          exit $fail
+
+      - name: Open issue on failure
+        if: steps.npmaudit.outcome == 'failure' || steps.links.outcome == 'failure'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const audit = '${{ steps.npmaudit.outcome }}';
+            const links = '${{ steps.links.outcome }}';
+            const report = `${{ steps.links.outputs.report }}`;
+            let body = '## Weekly maintenance check failed\n\n';
+            if (audit === 'failure') {
+              body += '### npm audit\n`npm audit --audit-level=high` reported vulnerabilities. ' +
+                      'See the [workflow run](' +
+                      `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}) for details.\n\n`;
+            }
+            if (links === 'failure') {
+              body += '### Broken links\nThe following links returned an error status:\n\n' +
+                      (report.trim() || '_see run logs_') + '\n';
+            }
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `Maintenance: weekly check failed (${new Date().toISOString().slice(0,10)})`,
+              body,
+              labels: ['maintenance'],
+            });
